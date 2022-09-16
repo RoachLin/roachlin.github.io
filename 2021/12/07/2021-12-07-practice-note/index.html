@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>实习笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="&amp;emsp; KafkaKafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。Kafka是一种高吞吐量的分布式发布订阅消息系统，它可以处理消费者在网站中的所有动作流数据。 change stream在MongoDB3.6引入的新feature中，change stream无疑是非常吸引人的。 Change streams allow applicatio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实习笔记">
+<meta property="og:url" content="https://roachlin.github.io/project/2021/12/07/2021-12-07-practice-note/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="&amp;emsp; KafkaKafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。Kafka是一种高吞吐量的分布式发布订阅消息系统，它可以处理消费者在网站中的所有动作流数据。 change stream在MongoDB3.6引入的新feature中，change stream无疑是非常吸引人的。 Change streams allow applicatio">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-12-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-28T07:40:55.311Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/project/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/project/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/project/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/project/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/project/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/project/">Home</a>
+        
+          <a class="main-nav-link" href="/project/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/project/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://roachlin.github.io/project"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2021-12-07-practice-note" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2021/12/07/2021-12-07-practice-note/" class="article-date">
+  <time class="dt-published" datetime="2021-12-06T16:00:00.000Z" itemprop="datePublished">2021-12-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      实习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&amp;emsp;</p>
+<h1 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h1><p>Kafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。Kafka是一种高吞吐量的分布式发布订阅消息系统，它可以处理消费者在网站中的所有动作流数据。</p>
+<h1 id="change-stream"><a href="#change-stream" class="headerlink" title="change stream"></a>change stream</h1><p>在MongoDB3.6引入的新feature中，change stream无疑是非常吸引人的。</p>
+<p>Change streams allow applications to access real-time data changes without the complexity and risk of tailing the oplog.</p>
+<p>Change stream允许应用实时获取mongodb数据的变更，这是一个呼声很高的需求，可以用于ETL、跨平台数据同步、通知服务等。以前没有change stream时，也可以通过tail oplog来追踪修改，但这是复杂、危险的野路子。</p>
+<h1 id="URI"><a href="#URI" class="headerlink" title="URI"></a>URI</h1><p>在电脑术语中，统一资源标识符（Uniform Resource Identifier，URI）是一个用于标识某一互联网资源名称的字符串。该种标识允许用户对任何（包括本地和互联网）的资源通过特定的协议进行交互操作。</p>
+<p>Web上可用的每种资源（HTML文档、图像、视频片段、程序等）由一个通用资源标识符（Uniform Resource Identifier, 简称”URI”）进行定位。</p>
+<h1 id="Java-阻塞队列"><a href="#Java-阻塞队列" class="headerlink" title="Java 阻塞队列"></a>Java 阻塞队列</h1><p>阻塞队列（BlockingQueue）是一个支持两个附加操作的队列。这两个附加的操作支持阻塞的插入和移除方法。</p>
+<ul>
+<li><p>支持阻塞的插入方法：意思是当队列满时，队列会阻塞插入元素的线程，直到队列不满。</p>
+</li>
+<li><p>支持阻塞的移除方法：意思是在队列为空时，获取元素的线程会等待队列变为非空</p>
+</li>
+</ul>
+<p>阻塞队列常用于生产者和消费者的场景，生产者是向队列里添加元素的线程，消费者是从队列里取元素的线程。阻塞队列就是生产者用来存放元素、消费者用来获取元素的容器。</p>
+<p>JDK7 提供了 7 个阻塞队列。分别是：</p>
+<ul>
+<li>ArrayBlockingQueue：一个由数组结构组成的有界阻塞队列。</li>
+<li>LinkedBlockingQueue：一个由链表结构组成的有界阻塞队列。</li>
+<li>PriorityBlockingQueue：一个支持优先级排序的无界阻塞队列。</li>
+<li>DelayQueue：一个使用优先级队列实现的无界阻塞队列。</li>
+<li>SynchronousQueue：一个不存储元素的阻塞队列。</li>
+<li>LinkedTransferQueue：一个由链表结构组成的无界阻塞队列。</li>
+<li>LinkedBlockingDeque：一个由链表结构组成的双向阻塞队列。</li>
+</ul>
+<h1 id="Java-泛型"><a href="#Java-泛型" class="headerlink" title="Java 泛型"></a>Java 泛型</h1><p>泛型就是定义一种模板，例如<code>ArrayList&lt;T&gt;</code>，然后在代码中为用到的类创建对应的<code>ArrayList&lt;类型&gt;</code>。</p>
+<p>泛型就是编写模板代码来适应任意类型。</p>
+<p>泛型的好处是使用时不必对类型进行强制转换，它通过编译器对类型进行检查。</p>
+<h1 id="Java-static-静态代码块"><a href="#Java-static-静态代码块" class="headerlink" title="Java static 静态代码块"></a>Java static 静态代码块</h1><ul>
+<li>格式：static{}</li>
+<li>用于初始化类，为类的属性初始化。</li>
+<li>随着类的加载而加载，并且只加载一次。</li>
+<li>静态代码块的执行优先于非静态代码块。</li>
+<li>静态代码块中不能调用非静态成员。</li>
+<li>静态代码块可以有多个，按依次向下的顺序执行。</li>
+</ul>
+<h1 id="Java-Properties-类"><a href="#Java-Properties-类" class="headerlink" title="Java Properties 类"></a>Java Properties 类</h1><p>Properties 继承于 Hashtable，表示一个持久的属性集，属性列表中每个键及其对应值都是一个字符串。</p>
+<h1 id="一些数字"><a href="#一些数字" class="headerlink" title="一些数字"></a>一些数字</h1><p>67108864：64M</p>
+<p>1048576：1M</p>
+<h1 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h1><p>做个简单的比喻：进程&#x3D;火车，线程&#x3D;车厢</p>
+<ul>
+<li>线程在进程下行进（单纯的车厢无法运行）</li>
+<li>一个进程可以包含多个线程（一辆火车可以有多个车厢）</li>
+<li>不同进程间数据很难共享（一辆火车上的乘客很难换到另外一辆火车，比如站点换乘）</li>
+<li>同一进程下不同线程间数据很易共享（A车厢换到B车厢很容易）</li>
+<li>进程要比线程消耗更多的计算机资源（采用多列火车相比多个车厢更耗资源）</li>
+<li>进程间不会相互影响，一个线程挂掉将导致整个进程挂掉（一列火车不会影响到另外一列火车，但是如果一列火车上中间的一节车厢着火了，将影响到所有车厢）</li>
+<li>进程可以拓展到多机，进程最多适合多核（不同火车可以开在多个轨道上，同一火车的车厢不能在行进的不同的轨道上）</li>
+<li>进程使用的内存地址可以上锁，即一个线程使用某些共享内存时，其他线程必须等它结束，才能使用这一块内存。（比如火车上的洗手间）－”互斥锁”</li>
+<li>进程使用的内存地址可以限定使用量（比如火车上的餐厅，最多只允许多少人进入，如果满了需要在门口等，等有人出来了才能进去）－“信号量”</li>
+</ul>
+<h1 id="Java-线程的优先级"><a href="#Java-线程的优先级" class="headerlink" title="Java 线程的优先级"></a>Java 线程的优先级</h1><p>每一个 Java 线程都有一个优先级，这样有助于操作系统确定线程的调度顺序。</p>
+<p>Java 线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。</p>
+<p>默认情况下，每一个线程都会分配一个优先级 NORM_PRIORITY（5）。</p>
+<p>具有较高优先级的线程对程序更重要，并且应该在低优先级的线程之前分配处理器资源。但是，线程优先级不能保证线程执行的顺序，而且非常依赖于平台。</p>
+<h1 id="Java-创建一个线程"><a href="#Java-创建一个线程" class="headerlink" title="Java 创建一个线程"></a>Java 创建一个线程</h1><p>Java 提供了三种创建线程的方法：</p>
+<ul>
+<li>通过实现 Runnable 接口；</li>
+<li>通过继承 Thread 类本身；</li>
+<li>通过 Callable 和 Future 创建线程。</li>
+</ul>
+<h2 id="通过继承Thread来创建线程"><a href="#通过继承Thread来创建线程" class="headerlink" title="通过继承Thread来创建线程"></a>通过继承Thread来创建线程</h2><p>创建一个线程的第二种方法是创建一个新的类，该类继承 Thread 类，然后创建一个该类的实例。</p>
+<p>继承类必须重写 run() 方法，该方法是新线程的入口点。它也必须调用 start() 方法才能执行。</p>
+<p>该方法尽管被列为一种多线程实现方式，但是本质上也是实现了 Runnable 接口的一个实例。</p>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><ul>
+<li>InterruptedException：一个线程被另一个线程中断，抛出该异常。</li>
+<li>public void printStackTrace()：打印toString()结果和栈层次到System.err，即错误输出流。</li>
+<li>NumberFormatException：当应用程序试图将字符串转换成一种数值类型，但该字符串不能转换为适当格式时，抛出该异常。</li>
+<li>UnknownHostException</li>
+<li>printStackTrace：在命令行中打印异常信息在程序中出错的位置及原因。</li>
+</ul>
+<h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><p>MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。</p>
+<p>在高负载的情况下，添加更多的节点，可以保证服务器性能。</p>
+<p>MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。</p>
+<p>MongoDB 将数据存储为一个文档，数据结构由键值(key&#x3D;&gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。</p>
+<h1 id="try、catch、finally"><a href="#try、catch、finally" class="headerlink" title="try、catch、finally"></a>try、catch、finally</h1><ul>
+<li>不管有没有异常，finally中的代码都会执行</li>
+<li>当try、catch中有return时，finally中的代码依然会继续执行</li>
+<li>finally是在return后面的表达式运算之后执行的，此时并没有返回运算之后的值，而是把值保存起来，不管finally对该值做任何的改变，返回的值都不会改变，依然返回保存起来的值。也就是说方法的返回值是在finally运算之前就确定了的。</li>
+<li>finally代码中最好不要包含return，程序会提前退出，也就是说返回的值不是try或catch中的值</li>
+</ul>
+<h1 id="Java-ArrayList"><a href="#Java-ArrayList" class="headerlink" title="Java ArrayList"></a>Java ArrayList</h1><p>ArrayList 类是一个可以动态修改的数组，与普通数组的区别就是它是没有固定大小的限制，我们可以添加或删除元素。</p>
+<h1 id="Java-Serializable-序列化"><a href="#Java-Serializable-序列化" class="headerlink" title="Java Serializable 序列化"></a>Java Serializable 序列化</h1><h2 id="什么是Serializable接口"><a href="#什么是Serializable接口" class="headerlink" title="什么是Serializable接口"></a>什么是Serializable接口</h2><p>一个对象序列化的接口，一个类只有实现了Serializable接口，它的对象才能被序列化。</p>
+<h2 id="什么是序列化"><a href="#什么是序列化" class="headerlink" title="什么是序列化"></a>什么是序列化</h2><ul>
+<li>把对象转换为字节序列的过程称为对象的序列化</li>
+<li>把字节序列恢复为对象的过程称为对象的反序列化</li>
+</ul>
+<h2 id="为什么要序列化对象"><a href="#为什么要序列化对象" class="headerlink" title="为什么要序列化对象"></a>为什么要序列化对象</h2><p>序列化是将对象状态转换为可保持或传输的格式的过程。与序列化相对的是反序列化，它将流转换为对象。这两个过程结合起来，可以轻松地存储和传输数据。</p>
+<h2 id="什么情况下需要序列化"><a href="#什么情况下需要序列化" class="headerlink" title="什么情况下需要序列化"></a>什么情况下需要序列化</h2><p>当我们需要把对象的状态信息通过网络进行传输，或者需要将对象的状态信息持久化，以便将来使用时都需要把对象进行序列化。</p>
+<h1 id="fastjson-新手指南"><a href="#fastjson-新手指南" class="headerlink" title="fastjson 新手指南"></a>fastjson 新手指南</h1><h2 id="什么是fastjson"><a href="#什么是fastjson" class="headerlink" title="什么是fastjson?"></a>什么是fastjson?</h2><p>fastjson是阿里巴巴的开源JSON解析库，它可以解析JSON格式的字符串，支持将Java Bean序列化为JSON字符串，也可以从JSON字符串反序列化到JavaBean。</p>
+<h2 id="fastjson的优点"><a href="#fastjson的优点" class="headerlink" title="fastjson的优点"></a>fastjson的优点</h2><h3 id="速度快"><a href="#速度快" class="headerlink" title="速度快"></a>速度快</h3><p>fastjson相对其他JSON库的特点是快，从2011年fastjson发布1.1.x版本之后，其性能从未被其他Java实现的JSON库超越。</p>
+<h3 id="使用广泛"><a href="#使用广泛" class="headerlink" title="使用广泛"></a>使用广泛</h3><p>fastjson在阿里巴巴大规模使用，在数万台服务器上部署，fastjson在业界被广泛接受。在2012年被开源中国评选为最受欢迎的国产开源软件之一。</p>
+<h3 id="测试完备"><a href="#测试完备" class="headerlink" title="测试完备"></a>测试完备</h3><p>fastjson有非常多的testcase，在1.2.11版本中，testcase超过3321个。每次发布都会进行回归测试，保证质量稳定。</p>
+<h3 id="使用简单"><a href="#使用简单" class="headerlink" title="使用简单"></a>使用简单</h3><p>fastjson的API十分简洁。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">text</span> <span class="operator">=</span> JSON.toJSONString(obj); <span class="comment">//序列化</span></span><br><span class="line"><span class="type">VO</span> <span class="variable">vo</span> <span class="operator">=</span> JSON.parseObject(<span class="string">&quot;&#123;...&#125;&quot;</span>, VO.class); <span class="comment">//反序列化</span></span><br></pre></td></tr></table></figure>
+<h3 id="功能完备"><a href="#功能完备" class="headerlink" title="功能完备"></a>功能完备</h3><p>支持泛型，支持流处理超大文本，支持枚举，支持序列化和反序列化扩展。</p>
+<h1 id="scala-字符串插值"><a href="#scala-字符串插值" class="headerlink" title="scala 字符串插值"></a>scala 字符串插值</h1><p>Scala 提供了一种新的机制来根据数据生成字符串：字符串插值。字符串插值允许使用者将变量引用直接插入处理过的字面字符中。</p>
+<p>Scala 提供了3种创新的字符串插值方法：s、f 和 raw。</p>
+<h2 id="s-字符串插值器"><a href="#s-字符串插值器" class="headerlink" title="s 字符串插值器"></a>s 字符串插值器</h2><p>在任何字符串前加上s，就可以直接在串中使用变量了。</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> name=<span class="string">&quot;James&quot;</span></span><br><span class="line">println(<span class="string">s&quot;Hello,<span class="subst">$name</span>&quot;</span>) <span class="comment">// Hello,James</span></span><br></pre></td></tr></table></figure>
+<p>字符串插值器也可以处理任意的表达式。</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">println(<span class="string">s&quot;1+1=<span class="subst">$&#123;1+1&#125;</span>&quot;</span>) <span class="comment">// 1+1=2</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="scala-trait-特质"><a href="#scala-trait-特质" class="headerlink" title="scala trait 特质"></a>scala trait 特质</h1><p>特质(Traits)用于在类(Class)之间共享程序接口(Interface)和字段(Fields)。它们类似于Java 8的接口。类和对象(Objects)可以扩展特质，但是特质不能被实例化，因此特质没有参数。</p>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><p>REmote DIctionary Server (Redis) 是一个由Salvatore Sanfilippo写的key-value存储系统。</p>
+<p>Redis是一个开源的使用ANSI C语言编写、遵守BSD协议、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。</p>
+<p>它通常被称为数据结构服务器，因为值（value）可以是 字符串(String), 哈希(Hash), 列表(list), 集合(sets) 和 有序集合(sorted sets)等类型。</p>
+<h1 id="spark（计算引擎）"><a href="#spark（计算引擎）" class="headerlink" title="spark（计算引擎）"></a>spark（计算引擎）</h1><p>Apache Spark 是专为大规模数据处理而设计的快速通用的计算引擎。Spark是UC Berkeley AMP lab (加州大学伯克利分校的AMP实验室)所开源的类Hadoop MapReduce的通用并行框架，Spark，拥有Hadoop MapReduce所具有的优点；但不同于MapReduce的是——Job中间输出结果可以保存在内存中，从而不再需要读写HDFS，因此Spark能更好地适用于数据挖掘与机器学习等需要迭代的MapReduce的算法。</p>
+<p>Spark 是在 Scala 语言中实现的，它将 Scala 用作其应用程序框架。与 Hadoop 不同，Spark 和 Scala 能够紧密集成，其中的 Scala 可以像操作本地集合对象一样轻松地操作分布式数据集。</p>
+<h1 id="SparkConf-和-SparkContext"><a href="#SparkConf-和-SparkContext" class="headerlink" title="SparkConf 和 SparkContext"></a>SparkConf 和 SparkContext</h1><p>任何Spark程序都是SparkContext开始的，SparkContext的初始化需要一个SparkConf对象，SparkConf包含了Spark集群配置的各种参数。</p>
+<p>初始化后，就可以使用SparkContext对象所包含的各种方法来创建和操作RDD和共享变量。</p>
+<p>通过创建SparkConf对象来配置应用，然后基于这个SparkConf创建一个SparkContext对象。驱动器程序通过SparkContext对象来访问Spark。</p>
+<p>这个对象代表对计算集群的一个连接。一旦有了SparkContext， 就可以用它来创建RDD。</p>
+<h1 id="hive"><a href="#hive" class="headerlink" title="hive"></a>hive</h1><p>hive是基于Hadoop的一个数据仓库工具，用来进行数据提取、转化、加载，这是一种可以存储、查询和分析存储在Hadoop中的大规模数据的机制。hive数据仓库工具能将结构化的数据文件映射为一张数据库表，并提供SQL查询功能，能将SQL语句转变成MapReduce任务来执行。Hive的优点是学习成本低，可以通过类似SQL语句实现快速MapReduce统计，使MapReduce变得更加简单，而不必开发专门的MapReduce应用程序。hive十分适合对数据仓库进行统计分析。</p>
+<h1 id="阿里巴巴-canal"><a href="#阿里巴巴-canal" class="headerlink" title="阿里巴巴 canal"></a>阿里巴巴 canal</h1><p>主要用途是基于 MySQL 数据库增量日志解析，提供增量数据订阅和消费。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://roachlin.github.io/project/2021/12/07/2021-12-07-practice-note/" data-id="cl83twh8g000z1snt9qifalo5" data-title="实习笔记" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/project/2021/12/08/2021-12-08-self-learn-cpp/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C++ 自学笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/project/2021/12/06/2021-12-06-hospital-arrange/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">医院排班</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2020/12/">December 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/project/2022/09/16/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/project/2021/12/21/2021-12-21-skyeysnow-auto-reply/">天雪论坛自动回复水楼赚金币油猴脚本（会被封号，仅研究用）</a>
+          </li>
+        
+          <li>
+            <a href="/project/2021/12/11/2021-12-11-self-learn-sql/">SQL 自学笔记</a>
+          </li>
+        
+          <li>
+            <a href="/project/2021/12/10/2021-12-10-self-learn-python/">Python 自学笔记</a>
+          </li>
+        
+          <li>
+            <a href="/project/2021/12/09/2021-12-09-self-learn-java/">Java 自学笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/project/" class="mobile-nav-link">Home</a>
+  
+    <a href="/project/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/project/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/project/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/project/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

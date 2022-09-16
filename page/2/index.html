@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://roachlin.github.io/project/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/project/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/project/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/project/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/project/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/project/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/project/">Home</a>
+        
+          <a class="main-nav-link" href="/project/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/project/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://roachlin.github.io/project"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2021-12-03-face-recognition" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2021/12/03/2021-12-03-face-recognition/" class="article-date">
+  <time class="dt-published" datetime="2021-12-02T16:00:00.000Z" itemprop="datePublished">2021-12-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2021/12/03/2021-12-03-face-recognition/">初中电脑课本 人脸识别</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&amp;emsp;</p>
+<p><img src="/project/img/2021-12-03-face-recognition/1.jpg"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment">#  导入人脸检测分类器，创建检测对象face</span></span><br><span class="line">face = cv2.CascadeClassifier(<span class="string">&quot;./haarcascades/haarcascade_frontalface_default.xml&quot;</span>)</span><br><span class="line">eye = cv2.CascadeClassifier(<span class="string">&quot;./haarcascades/haarcascade_eye.xml&quot;</span>)  <span class="comment">###</span></span><br><span class="line">img = cv2.imread(<span class="string">&quot;./photo.jpg&quot;</span>)</span><br><span class="line"><span class="comment">#  使用检测对象face启动detectMultiScale函数进行人脸检测。</span></span><br><span class="line">faceRects = face.detectMultiScale(</span><br><span class="line">    img,</span><br><span class="line">    scaleFactor=<span class="number">1.1</span>,  <span class="comment"># 在特征比对中，每次图片缩小的比例，</span></span><br><span class="line">    minNeighbors=<span class="number">5</span>,  <span class="comment"># 设定达到的特征数，</span></span><br><span class="line">    minSize=(<span class="number">100</span>, <span class="number">100</span>),  <span class="comment"># 允许得到目标区域的最小范围，</span></span><br><span class="line">    maxSize=(<span class="number">200</span>, <span class="number">200</span>)  <span class="comment"># 允许得到目标区域的最大范围。</span></span><br><span class="line">)</span><br><span class="line">eyeRects = eye.detectMultiScale(  <span class="comment">###</span></span><br><span class="line">    img,</span><br><span class="line">    scaleFactor=<span class="number">1.1</span>,</span><br><span class="line">    minNeighbors=<span class="number">5</span>,</span><br><span class="line">    minSize=(<span class="number">25</span>, <span class="number">25</span>),  <span class="comment"># 因为眼睛比脸小，所以这里要调小，一开始调成10，会识别到错误的区域，加到25就没问题了</span></span><br><span class="line">    maxSize=(<span class="number">200</span>, <span class="number">200</span>)</span><br><span class="line">)</span><br><span class="line"><span class="built_in">print</span>(faceRects, <span class="built_in">type</span>(faceRects))  <span class="comment"># 输出faceRects的值和数据类型</span></span><br><span class="line"><span class="built_in">print</span>(eyeRects, <span class="built_in">type</span>(eyeRects))</span><br><span class="line">cv2.rectangle(img, (<span class="number">0</span>, <span class="number">0</span>), (<span class="number">140</span>, <span class="number">40</span>), (<span class="number">0</span>, <span class="number">255</span>, <span class="number">255</span>), -<span class="number">1</span>)  <span class="comment"># 20改成40，扩展黄色面积的长度</span></span><br><span class="line"><span class="comment">#  标注找到多少的人脸</span></span><br><span class="line">cv2.putText(img, <span class="string">&quot;Finding &quot;</span> + <span class="built_in">str</span>(<span class="built_in">len</span>(faceRects)) + <span class="string">&quot; face&quot;</span>, (<span class="number">3</span>, <span class="number">15</span>),</span><br><span class="line">            cv2.FONT_HERSHEY_COMPLEX, <span class="number">0.5</span>, (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">1</span>)</span><br><span class="line">cv2.putText(img, <span class="string">&quot;Finding &quot;</span> + <span class="built_in">str</span>(<span class="built_in">len</span>(eyeRects)) + <span class="string">&quot; eye&quot;</span>, (<span class="number">3</span>, <span class="number">30</span>),  <span class="comment"># 15改成30，在下面加多一行</span></span><br><span class="line">            cv2.FONT_HERSHEY_COMPLEX, <span class="number">0.5</span>, (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">1</span>)</span><br><span class="line"><span class="comment">#  由于有可能检测到多张人脸，所以要用循环将人脸逐个框出来</span></span><br><span class="line"><span class="keyword">for</span> x, y, w, h <span class="keyword">in</span> faceRects:  <span class="comment"># 循环获取每张人脸的数据</span></span><br><span class="line">    cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">1</span>)  <span class="comment"># 框出人脸</span></span><br><span class="line"><span class="keyword">for</span> x, y, w, h <span class="keyword">in</span> eyeRects:</span><br><span class="line">    cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">1</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;image&quot;</span>, img)</span><br><span class="line">cv2.waitKey()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<p>xml 文件下载地址：<a target="_blank" rel="noopener" href="https://qcym.lanzout.com/iA36oy29o9i">https://qcym.lanzout.com/iA36oy29o9i</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://roachlin.github.io/project/2021/12/03/2021-12-03-face-recognition/" data-id="cl83twh8e000v1snt3c6wd5va" data-title="初中电脑课本 人脸识别" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2021-12-02-json-deal" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2021/12/02/2021-12-02-json-deal/" class="article-date">
+  <time class="dt-published" datetime="2021-12-01T16:00:00.000Z" itemprop="datePublished">2021-12-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2021/12/02/2021-12-02-json-deal/">json 文件预处理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&amp;emsp;</p>
+<p><code>join_publishers.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># publisher总去重排序</span></span><br><span class="line"><span class="comment"># 4_publishers文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">path = <span class="string">&quot;D:/Open Academic Graph v2/mag_papers/papers/4_publishers/&quot;</span></span><br><span class="line">files = os.listdir(path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;publishers.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f1:</span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">        start = time.perf_counter()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path + f, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">            lines = file_object.readlines()</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">                f1.write(line)</span><br><span class="line"></span><br><span class="line">        end = time.perf_counter()</span><br><span class="line">        <span class="built_in">print</span>(f, end - start)</span><br><span class="line"></span><br><span class="line">start = time.perf_counter()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;publishers.txt&quot;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f1:</span><br><span class="line">    publishers = f1.readlines()</span><br><span class="line">    publishers = <span class="built_in">list</span>(<span class="built_in">set</span>(publishers))  <span class="comment"># 去重</span></span><br><span class="line">    publishers.sort()  <span class="comment"># 排序</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;1_publishers.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f2:</span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> publishers:</span><br><span class="line">            f2.write(v)</span><br><span class="line"></span><br><span class="line">end = time.perf_counter()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;final&quot;</span>, end - start)</span><br></pre></td></tr></table></figure>
+
+<p>&amp;emsp;</p>
+<p><code>join_venues.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># venue总去重排序</span></span><br><span class="line"><span class="comment"># 4_venues</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">path = <span class="string">&quot;D:/Open Academic Graph v2/mag_papers/papers/4_venues/&quot;</span></span><br><span class="line">files = os.listdir(path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;venues.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f1:</span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">        start = time.perf_counter()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path + f, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">            lines = file_object.readlines()</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">                f1.write(line)</span><br><span class="line"></span><br><span class="line">        end = time.perf_counter()</span><br><span class="line">        <span class="built_in">print</span>(f, end - start)</span><br><span class="line"></span><br><span class="line">start = time.perf_counter()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;venues.txt&quot;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f1:</span><br><span class="line">    venues = f1.readlines()</span><br><span class="line">    venues = <span class="built_in">list</span>(<span class="built_in">set</span>(venues))  <span class="comment"># 去重</span></span><br><span class="line">    venues.sort()  <span class="comment"># 排序</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;1_venues.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f2:</span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> venues:</span><br><span class="line">            f2.write(v)</span><br><span class="line"></span><br><span class="line">end = time.perf_counter()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;final&quot;</span>, end - start)</span><br></pre></td></tr></table></figure>
+
+<p>&amp;emsp;</p>
+<p><code>lines.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 统计文件行数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">path = <span class="string">&quot;D:/Open Academic Graph v2/mag_papers/papers/3_publish/&quot;</span></span><br><span class="line">files = os.listdir(path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">    start = time.perf_counter()</span><br><span class="line"></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path + f, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="keyword">for</span> index, line <span class="keyword">in</span> <span class="built_in">enumerate</span>(file):</span><br><span class="line">            count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    end = time.perf_counter()</span><br><span class="line">    <span class="built_in">print</span>(f, count, end - start, <span class="string">&quot;s&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>&amp;emsp;</p>
+<p><code>publish.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 去除venue和publisher都没有的项</span></span><br><span class="line"><span class="comment"># 3_publish文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">path = <span class="string">&quot;D:/Open Academic Graph v2/mag_papers/papers/2_year/&quot;</span></span><br><span class="line">files = os.listdir(path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">    start = time.perf_counter()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path + f, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">        lines = file_object.readlines()</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;publish_&quot;</span> + f, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f1, \</span><br><span class="line">                <span class="built_in">open</span>(path + <span class="string">&quot;no_&quot;</span> + f, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f2:</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">                line = <span class="built_in">eval</span>(line)  <span class="comment"># str转dict</span></span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    <span class="keyword">if</span> line[<span class="string">&quot;venue&quot;</span>]:</span><br><span class="line">                        f1.write(json.dumps(line))  <span class="comment"># dict转str</span></span><br><span class="line">                        f1.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                <span class="keyword">except</span> KeyError:</span><br><span class="line">                    <span class="keyword">try</span>:</span><br><span class="line">                        <span class="keyword">if</span> line[<span class="string">&quot;publisher&quot;</span>] == <span class="string">&quot;&quot;</span>:</span><br><span class="line">                            f2.write(json.dumps(line))</span><br><span class="line">                            f2.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                        <span class="keyword">else</span>:</span><br><span class="line">                            f1.write(json.dumps(line))</span><br><span class="line">                            f1.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                    <span class="keyword">except</span> KeyError:</span><br><span class="line">                        f2.write(json.dumps(line))</span><br><span class="line">                        f2.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    end = time.perf_counter()</span><br><span class="line">    <span class="built_in">print</span>(f, end - start)</span><br></pre></td></tr></table></figure>
+
+<p>&amp;emsp;</p>
+<p><code>txt2json.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># txt转json</span></span><br><span class="line"><span class="comment"># 在navicat mongodb中使用</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">txt2json</span>(<span class="params">s, name</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(s + name + <span class="string">&quot;.txt&quot;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">        lines = file_object.readlines()</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(s + name + <span class="string">&quot;_json.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">            file.write(<span class="string">&#x27;[\n&#x27;</span>)</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">                file.write(line.rstrip() + <span class="string">&#x27;,\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 删掉最后一个空行和逗号</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(s + name + <span class="string">&quot;_json.txt&quot;</span>, <span class="string">&#x27;rb+&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.seek(-<span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line">        file.truncate()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(s + name + <span class="string">&quot;_json.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.write(<span class="string">&#x27;\n]&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">path = <span class="string">&quot;C:/Users/Lin/Desktop/&quot;</span></span><br><span class="line">lists = [<span class="string">&quot;publish_1950_mag_papers_10&quot;</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> lists:</span><br><span class="line">    start = time.perf_counter()</span><br><span class="line">    txt2json(path, i)</span><br><span class="line">    end = time.perf_counter()</span><br><span class="line">    <span class="built_in">print</span>(i, end - start)</span><br></pre></td></tr></table></figure>
+
+<p>&amp;emsp;</p>
+<p><code>venues_publishers.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 统计venue和publisher的所有类型，并去重排序</span></span><br><span class="line"><span class="comment"># 3_publish文件夹</span></span><br><span class="line"><span class="comment"># 4_publishers文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">path = <span class="string">&quot;D:/Open Academic Graph v2/mag_papers/papers/3_publish/&quot;</span></span><br><span class="line">files = os.listdir(path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">    start = time.perf_counter()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path + f, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">        lines = file_object.readlines()</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;venues_&quot;</span> + f, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f1, \</span><br><span class="line">                <span class="built_in">open</span>(path + <span class="string">&quot;publishers_&quot;</span> + f, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f2:</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">                line = <span class="built_in">eval</span>(line)  <span class="comment"># str转dict</span></span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    <span class="keyword">if</span> line[<span class="string">&quot;venue&quot;</span>] != <span class="string">&quot;&quot;</span>:</span><br><span class="line">                        f1.write(json.dumps(line[<span class="string">&quot;venue&quot;</span>][<span class="string">&quot;raw&quot;</span>]))</span><br><span class="line">                        f1.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                <span class="keyword">except</span> KeyError:</span><br><span class="line">                    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    <span class="keyword">if</span> line[<span class="string">&quot;publisher&quot;</span>] != <span class="string">&quot;&quot;</span>:</span><br><span class="line">                        f2.write(json.dumps(line[<span class="string">&quot;publisher&quot;</span>]))</span><br><span class="line">                        f2.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                <span class="keyword">except</span> KeyError:</span><br><span class="line">                    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    end = time.perf_counter()</span><br><span class="line">    <span class="built_in">print</span>(f, end - start)</span><br></pre></td></tr></table></figure>
+
+<p>&amp;emsp;</p>
+<p><code>year.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 筛选出1950年后的，1950年前的，没有年份的</span></span><br><span class="line"><span class="comment"># 2_year文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">path = <span class="string">&quot;D:/Open Academic Graph v2/papers/&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">11</span>):</span><br><span class="line">    start = time.perf_counter()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;mag_papers_&quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot;.txt&quot;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">        lines = file_object.readlines()</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;year/1950_mag_papers_&quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot;.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f1, \</span><br><span class="line">                <span class="built_in">open</span>(path + <span class="string">&quot;year/other_mag_papers_&quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot;.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f2, \</span><br><span class="line">                <span class="built_in">open</span>(path + <span class="string">&quot;year/no_mag_papers_&quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot;.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f3:</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">                line = <span class="built_in">eval</span>(line)  <span class="comment"># str转dict</span></span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    <span class="keyword">if</span> line[<span class="string">&quot;year&quot;</span>] &gt;= <span class="number">1950</span>:</span><br><span class="line">                        f1.write(json.dumps(line))  <span class="comment"># dict转str</span></span><br><span class="line">                        f1.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        f2.write(json.dumps(line))</span><br><span class="line">                        f2.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                <span class="keyword">except</span> KeyError:</span><br><span class="line">                    f3.write(json.dumps(line))</span><br><span class="line">                    f3.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    end = time.perf_counter()</span><br><span class="line">    <span class="built_in">print</span>(i, end - start)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://roachlin.github.io/project/2021/12/02/2021-12-02-json-deal/" data-id="cl83twh8d000t1snt8h8r4d3p" data-title="json 文件预处理" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2021-12-01-detective-solution" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2021/12/01/2021-12-01-detective-solution/" class="article-date">
+  <time class="dt-published" datetime="2021-11-30T16:00:00.000Z" itemprop="datePublished">2021-12-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2021/12/01/2021-12-01-detective-solution/">2018年刑侦科推理题——代码解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&amp;emsp;</p>
+<p><img src="/project/img/2021-12-01-detective-solution/1.jpg"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2018年刑侦科推理试题</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//总思路：</span></span><br><span class="line"><span class="comment">//array[0]-array[9]代表1-10题,1-4代表选项A-D</span></span><br><span class="line"><span class="comment">//main里逐步筛选所有题目所有选项的可能性，即分别代入function2-function10函数里检查，合适的就留下</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function2</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>])</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function3</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>])</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function4</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>])</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function5</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>])</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function6</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>])</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function7</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>], <span class="type">int</span> A, <span class="type">int</span> B, <span class="type">int</span> C, <span class="type">int</span> D)</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function8</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>])</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function9</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>])</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function10</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>], <span class="type">int</span> A, <span class="type">int</span> B, <span class="type">int</span> C, <span class="type">int</span> D)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> array[<span class="number">10</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (array[<span class="number">1</span>] = <span class="number">1</span>; array[<span class="number">1</span>] &lt;= <span class="number">4</span>; ++array[<span class="number">1</span>])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (array[<span class="number">4</span>] = <span class="number">1</span>; array[<span class="number">4</span>] &lt;= <span class="number">4</span>; ++array[<span class="number">4</span>])</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">function2</span>(array) != <span class="number">0</span>)   <span class="comment">//function2：第2、5题联动</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span> (array[<span class="number">2</span>] = <span class="number">1</span>; array[<span class="number">2</span>] &lt;= <span class="number">4</span>; ++array[<span class="number">2</span>])</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">for</span> (array[<span class="number">3</span>] = <span class="number">1</span>; array[<span class="number">3</span>] &lt;= <span class="number">4</span>; ++array[<span class="number">3</span>])</span><br><span class="line">					&#123;</span><br><span class="line">						<span class="keyword">for</span> (array[<span class="number">5</span>] = <span class="number">1</span>; array[<span class="number">5</span>] &lt;= <span class="number">4</span>; ++array[<span class="number">5</span>])</span><br><span class="line">						&#123;</span><br><span class="line">							<span class="keyword">if</span> (<span class="built_in">function3</span>(array) != <span class="number">0</span>)   <span class="comment">//function3：第2、3、4、6题联动（只动第3、4、6题）</span></span><br><span class="line">							&#123;</span><br><span class="line">								<span class="keyword">for</span> (array[<span class="number">6</span>] = <span class="number">1</span>; array[<span class="number">6</span>] &lt;= <span class="number">4</span>; ++array[<span class="number">6</span>])</span><br><span class="line">								&#123;</span><br><span class="line">									<span class="keyword">for</span> (array[<span class="number">7</span>] = <span class="number">1</span>; array[<span class="number">7</span>] &lt;= <span class="number">4</span>; ++array[<span class="number">7</span>])</span><br><span class="line">									&#123;</span><br><span class="line">										<span class="keyword">for</span> (array[<span class="number">8</span>] = <span class="number">1</span>; array[<span class="number">8</span>] &lt;= <span class="number">4</span>; ++array[<span class="number">8</span>])</span><br><span class="line">										&#123;</span><br><span class="line">											<span class="keyword">if</span> (<span class="built_in">function5</span>(array) != <span class="number">0</span>)   <span class="comment">//function5：第4、5、7、8、9题联动（只动第7、8、9题）</span></span><br><span class="line">											&#123;</span><br><span class="line">												<span class="keyword">for</span> (array[<span class="number">0</span>] = <span class="number">1</span>; array[<span class="number">0</span>] &lt;= <span class="number">4</span>; ++array[<span class="number">0</span>])</span><br><span class="line">												&#123;</span><br><span class="line">													<span class="keyword">for</span> (array[<span class="number">9</span>] = <span class="number">1</span>; array[<span class="number">9</span>] &lt;= <span class="number">4</span>; ++array[<span class="number">9</span>])</span><br><span class="line">													&#123;</span><br><span class="line">														<span class="keyword">if</span> (<span class="built_in">function9</span>(array) != <span class="number">0</span>)   <span class="comment">//function9：第1、2、5、6、9、10题联动（只动第1、10题）</span></span><br><span class="line">														&#123;</span><br><span class="line">															<span class="keyword">if</span> (<span class="built_in">function4</span>(array) != <span class="number">0</span>)</span><br><span class="line">															&#123;</span><br><span class="line">																<span class="keyword">if</span> (<span class="built_in">function6</span>(array) != <span class="number">0</span>)</span><br><span class="line">																&#123;</span><br><span class="line">																	<span class="keyword">if</span> (<span class="built_in">function8</span>(array) != <span class="number">0</span>)</span><br><span class="line">																	&#123;</span><br><span class="line">																		<span class="comment">//先统计1-10题中A-D的个数</span></span><br><span class="line">																		<span class="comment">//为什么把这个功能放在主函数，因为它在第10题中也会用到！</span></span><br><span class="line"></span><br><span class="line">																		<span class="type">int</span> A = <span class="number">0</span>, B = <span class="number">0</span>, C = <span class="number">0</span>, D = <span class="number">0</span>;   <span class="comment">//变量A-D是指选项A-D各自的个数</span></span><br><span class="line">																		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i)</span><br><span class="line">																		&#123;</span><br><span class="line">																			<span class="keyword">switch</span> (array[i])</span><br><span class="line">																			&#123;</span><br><span class="line">																			<span class="keyword">case</span> <span class="number">1</span>: A = A + <span class="number">1</span>; <span class="keyword">break</span>;</span><br><span class="line">																			<span class="keyword">case</span> <span class="number">2</span>: B = B + <span class="number">1</span>; <span class="keyword">break</span>;</span><br><span class="line">																			<span class="keyword">case</span> <span class="number">3</span>: C = C + <span class="number">1</span>; <span class="keyword">break</span>;</span><br><span class="line">																			<span class="keyword">case</span> <span class="number">4</span>: D = D + <span class="number">1</span>; <span class="keyword">break</span>;</span><br><span class="line">																			&#125;</span><br><span class="line">																		&#125;</span><br><span class="line">																		<span class="keyword">if</span> (<span class="built_in">function7</span>(array, A, B, C, D) != <span class="number">0</span>)</span><br><span class="line">																		&#123;</span><br><span class="line">																			<span class="keyword">if</span> (<span class="built_in">function10</span>(array, A, B, C, D) != <span class="number">0</span>)</span><br><span class="line">																			&#123;</span><br><span class="line">																				cout &lt;&lt; <span class="string">&quot;----------2018年刑侦科推理试题答案----------&quot;</span> &lt;&lt; endl &lt;&lt; endl;</span><br><span class="line">																				<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i)</span><br><span class="line">																				&#123;</span><br><span class="line">																					<span class="keyword">switch</span> (array[i])</span><br><span class="line">																					&#123;</span><br><span class="line">																					<span class="keyword">case</span> <span class="number">1</span>: cout &lt;&lt; <span class="string">&quot;第&quot;</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">&quot;题的答案是 &quot;</span> &lt;&lt; <span class="string">&quot;A&quot;</span> &lt;&lt; endl; <span class="keyword">break</span>;</span><br><span class="line">																					<span class="keyword">case</span> <span class="number">2</span>: cout &lt;&lt; <span class="string">&quot;第&quot;</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">&quot;题的答案是 &quot;</span> &lt;&lt; <span class="string">&quot;B&quot;</span> &lt;&lt; endl; <span class="keyword">break</span>;</span><br><span class="line">																					<span class="keyword">case</span> <span class="number">3</span>: cout &lt;&lt; <span class="string">&quot;第&quot;</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">&quot;题的答案是 &quot;</span> &lt;&lt; <span class="string">&quot;C&quot;</span> &lt;&lt; endl; <span class="keyword">break</span>;</span><br><span class="line">																					<span class="keyword">case</span> <span class="number">4</span>: cout &lt;&lt; <span class="string">&quot;第&quot;</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">&quot;题的答案是 &quot;</span> &lt;&lt; <span class="string">&quot;D&quot;</span> &lt;&lt; endl; <span class="keyword">break</span>;</span><br><span class="line">																					&#125;</span><br><span class="line">																				&#125;</span><br><span class="line">																				cout &lt;&lt; endl;</span><br><span class="line">																			&#125;</span><br><span class="line">																		&#125;</span><br><span class="line">																	&#125;</span><br><span class="line">																&#125;</span><br><span class="line">															&#125;</span><br><span class="line">														&#125;</span><br><span class="line">													&#125;</span><br><span class="line">												&#125;</span><br><span class="line">											&#125;</span><br><span class="line">										&#125;</span><br><span class="line">									&#125;</span><br><span class="line">								&#125;</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function2</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">switch</span> (array[<span class="number">1</span>])</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">4</span>] == <span class="number">3</span>) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">4</span>] == <span class="number">4</span>) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">4</span>] == <span class="number">1</span>) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">4</span>] == <span class="number">2</span>) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function3</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">switch</span> (array[<span class="number">2</span>])</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((array[<span class="number">2</span>] != array[<span class="number">5</span>])&amp;(array[<span class="number">2</span>] != array[<span class="number">1</span>])&amp;(array[<span class="number">2</span>] != array[<span class="number">3</span>])) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((array[<span class="number">5</span>] != array[<span class="number">2</span>])&amp;(array[<span class="number">5</span>] != array[<span class="number">1</span>])&amp;(array[<span class="number">5</span>] != array[<span class="number">3</span>])) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((array[<span class="number">1</span>] != array[<span class="number">2</span>])&amp;(array[<span class="number">1</span>] != array[<span class="number">5</span>])&amp;(array[<span class="number">1</span>] != array[<span class="number">3</span>])) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((array[<span class="number">3</span>] != array[<span class="number">2</span>])&amp;(array[<span class="number">3</span>] != array[<span class="number">5</span>])&amp;(array[<span class="number">3</span>] != array[<span class="number">1</span>])) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function5</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">switch</span> (array[<span class="number">4</span>])</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">7</span>] == array[<span class="number">4</span>]) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">3</span>] == array[<span class="number">4</span>]) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">8</span>] == array[<span class="number">4</span>]) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">6</span>] == array[<span class="number">4</span>]) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function9</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">bool</span> judge1, judge2;</span><br><span class="line">	<span class="keyword">if</span> (array[<span class="number">0</span>] == array[<span class="number">5</span>]) judge1 = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span> judge1 = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">switch</span> (array[<span class="number">8</span>])</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">5</span>] == array[<span class="number">4</span>]) judge2 = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">else</span> judge2 = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (judge1 != judge2) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">9</span>] == array[<span class="number">4</span>]) judge2 = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">else</span> judge2 = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (judge1 != judge2) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">1</span>] == array[<span class="number">4</span>]) judge2 = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">else</span> judge2 = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (judge1 != judge2) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">8</span>] == array[<span class="number">4</span>]) judge2 = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">else</span> judge2 = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (judge1 != judge2) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function4</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">switch</span> (array[<span class="number">3</span>])</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">0</span>] == array[<span class="number">4</span>]) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">1</span>] == array[<span class="number">6</span>]) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">0</span>] == array[<span class="number">8</span>]) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (array[<span class="number">5</span>] == array[<span class="number">9</span>]) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function6</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">switch</span> (array[<span class="number">5</span>])</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((array[<span class="number">1</span>] == array[<span class="number">7</span>])&amp;(array[<span class="number">3</span>] == array[<span class="number">7</span>])) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((array[<span class="number">0</span>] == array[<span class="number">7</span>])&amp;(array[<span class="number">5</span>] == array[<span class="number">7</span>])) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((array[<span class="number">2</span>] == array[<span class="number">7</span>])&amp;(array[<span class="number">9</span>] == array[<span class="number">7</span>])) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((array[<span class="number">4</span>] == array[<span class="number">7</span>])&amp;(array[<span class="number">8</span>] == array[<span class="number">7</span>])) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function8</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//在字母表中相邻，选项A和D是特殊情况,只有一边</span></span><br><span class="line">	<span class="keyword">switch</span> (array[<span class="number">7</span>])</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">switch</span> (array[<span class="number">0</span>])</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>: <span class="keyword">if</span> (array[<span class="number">6</span>] == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>: <span class="keyword">if</span> (array[<span class="number">6</span>] == <span class="number">3</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> ((array[<span class="number">6</span>] != array[<span class="number">0</span>] - <span class="number">1</span>)&amp;(array[<span class="number">6</span>] != array[<span class="number">0</span>] + <span class="number">1</span>)) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">switch</span> (array[<span class="number">0</span>])</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>: <span class="keyword">if</span> (array[<span class="number">4</span>] == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>: <span class="keyword">if</span> (array[<span class="number">4</span>] == <span class="number">3</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> ((array[<span class="number">4</span>] != array[<span class="number">0</span>] - <span class="number">1</span>)&amp;(array[<span class="number">4</span>] != array[<span class="number">0</span>] + <span class="number">1</span>)) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">switch</span> (array[<span class="number">0</span>])</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>: <span class="keyword">if</span> (array[<span class="number">1</span>] == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>: <span class="keyword">if</span> (array[<span class="number">1</span>] == <span class="number">3</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> ((array[<span class="number">1</span>] != array[<span class="number">0</span>] - <span class="number">1</span>)&amp;(array[<span class="number">1</span>] != array[<span class="number">0</span>] + <span class="number">1</span>)) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">switch</span> (array[<span class="number">0</span>])</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>: <span class="keyword">if</span> (array[<span class="number">9</span>] == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>: <span class="keyword">if</span> (array[<span class="number">9</span>] == <span class="number">3</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> ((array[<span class="number">9</span>] != array[<span class="number">0</span>] - <span class="number">1</span>)&amp;(array[<span class="number">9</span>] != array[<span class="number">0</span>] + <span class="number">1</span>)) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function7</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>], <span class="type">int</span> A, <span class="type">int</span> B, <span class="type">int</span> C, <span class="type">int</span> D)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">switch</span> (array[<span class="number">6</span>])</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((C &lt;= A)&amp;(C &lt;= B)&amp;(C &lt;= D)) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((B &lt;= A)&amp;(B &lt;= C)&amp;(B &lt;= D)) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((A &lt;= B)&amp;(A &lt;= C)&amp;(A &lt;= D)) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((D &lt;= A)&amp;(D &lt;= B)&amp;(D &lt;= C)) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">function10</span><span class="params">(<span class="type">int</span> array[<span class="number">10</span>], <span class="type">int</span> A, <span class="type">int</span> B, <span class="type">int</span> C, <span class="type">int</span> D)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//承接第7题的变量A-D，把它们按从小到大排序</span></span><br><span class="line">	<span class="type">int</span> a[<span class="number">4</span>] = &#123; A, B, C, D &#125;, tmp;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">4</span>; ++j)   <span class="comment">//j控制内层循环,共4轮</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; ++i)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (a[i] &gt;= a[i + <span class="number">1</span>])</span><br><span class="line">			&#123;</span><br><span class="line">				tmp = a[i];</span><br><span class="line">				a[i] = a[i + <span class="number">1</span>];</span><br><span class="line">				a[i + <span class="number">1</span>] = tmp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> difference = a[<span class="number">3</span>] - a[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">switch</span> (array[<span class="number">9</span>])</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (difference == <span class="number">3</span>) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (difference == <span class="number">2</span>) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (difference == <span class="number">4</span>) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (difference == <span class="number">1</span>) <span class="keyword">return</span> array[<span class="number">10</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/project/img/2021-12-01-detective-solution/2.jpg"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://roachlin.github.io/project/2021/12/01/2021-12-01-detective-solution/" data-id="cl83twh8e000w1snt30mc9xn1" data-title="2018年刑侦科推理题——代码解" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2021-06-21-magisk-install" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2021/06/21/2021-06-21-magisk-install/" class="article-date">
+  <time class="dt-published" datetime="2021-06-20T16:00:00.000Z" itemprop="datePublished">2021-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2021/06/21/2021-06-21-magisk-install/">Magisk 安装教程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&amp;emsp;</p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk">https://github.com/topjohnwu/Magisk</a></p>
+<p>下载完先安装 <code>apk</code>，再把 <code>apk</code> 后缀改为 <code>zip</code>，放到手机中在恢复模式刷入。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://roachlin.github.io/project/2021/06/21/2021-06-21-magisk-install/" data-id="cl83twh8c000q1snt9swp3dj7" data-title="Magisk 安装教程" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2021-06-20-html-middle" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2021/06/20/2021-06-20-html-middle/" class="article-date">
+  <time class="dt-published" datetime="2021-06-19T16:00:00.000Z" itemprop="datePublished">2021-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2021/06/20/2021-06-20-html-middle/">html 图片文字全部居中</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&amp;emsp;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.vcenter</span> &#123;</span></span><br><span class="line"><span class="language-css">	    <span class="attribute">position</span>:absolute;</span></span><br><span class="line"><span class="language-css">	    <span class="attribute">left</span>:<span class="number">50%</span>;</span></span><br><span class="line"><span class="language-css">	    <span class="attribute">top</span>:<span class="number">50%</span>;</span></span><br><span class="line"><span class="language-css">	    translateX(-<span class="number">50%</span>);</span></span><br><span class="line"><span class="language-css">	    translateY(-<span class="number">50%</span>);</span></span><br><span class="line"><span class="language-css">		<span class="attribute">border</span>: <span class="number">3px</span> solid black; </span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">&quot;middle&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;../Images/2.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;2.jpg&quot;</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;vcenter&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span>多行文字1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span>多行文字2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://roachlin.github.io/project/2021/06/20/2021-06-20-html-middle/" data-id="cl83twh8c000r1snt62dn0pr3" data-title="html 图片文字全部居中" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2021-06-19-top-button" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2021/06/19/2021-06-19-top-button/" class="article-date">
+  <time class="dt-published" datetime="2021-06-18T16:00:00.000Z" itemprop="datePublished">2021-06-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2021/06/19/2021-06-19-top-button/">在页面添加返回顶部按钮</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&amp;emsp;</p>
+<p>原文：<a target="_blank" rel="noopener" href="https://blog.csdn.net/insgo/article/details/113799700">https://blog.csdn.net/insgo/article/details/113799700</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ==UserScript==</span></span><br><span class="line"><span class="comment">// @name         totop</span></span><br><span class="line"><span class="comment">// @namespace    http://unamerrr.net/</span></span><br><span class="line"><span class="comment">// @version      0.1</span></span><br><span class="line"><span class="comment">// @match        *://*/*</span></span><br><span class="line"><span class="comment">// @description  返回顶部</span></span><br><span class="line"><span class="comment">// @author       unamerrr</span></span><br><span class="line"><span class="comment">// @grant        none</span></span><br><span class="line"><span class="comment">// ==/UserScript==</span></span><br><span class="line">(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="string">&#x27;use strict&#x27;</span>;</span><br><span class="line">    <span class="keyword">var</span> toTopBtn = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;button&#x27;</span>) toTopBtn.<span class="property">innerHTML</span> = <span class="string">&quot;返回顶部&quot;</span>toTopBtn.<span class="property">className</span> = <span class="string">&quot;a-b-c-d-toTop&quot;</span>toTopBtn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">        <span class="title function_">scrollTo</span>(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> body = <span class="variable language_">document</span>.<span class="property">body</span></span><br><span class="line">    <span class="keyword">var</span> style = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;style&#x27;</span>) style.<span class="property">id</span> = <span class="string">&quot;a-b-c-d-style&quot;</span></span><br><span class="line">    <span class="keyword">var</span> css = <span class="string">`.a - b - c - d - toTop &#123;</span></span><br><span class="line"><span class="string">        position: fixed;</span></span><br><span class="line"><span class="string">        bottom: 10 % ;</span></span><br><span class="line"><span class="string">        right: 5 % ;</span></span><br><span class="line"><span class="string">        width: 50px;</span></span><br><span class="line"><span class="string">        height: 50px;</span></span><br><span class="line"><span class="string">        border - radius: 50 % ;</span></span><br><span class="line"><span class="string">        font - size: 15px;</span></span><br><span class="line"><span class="string">        z - index: 999;</span></span><br><span class="line"><span class="string">        cursor: pointer;</span></span><br><span class="line"><span class="string">        font - size: 12px;</span></span><br><span class="line"><span class="string">        overflow: hidden;</span></span><br><span class="line"><span class="string">    &#125;`</span></span><br><span class="line">    <span class="keyword">if</span> (style.<span class="property">styleSheet</span>) &#123;</span><br><span class="line">        style.<span class="property">styleSheet</span>.<span class="property">cssText</span> = css;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        style.<span class="title function_">appendChild</span>(<span class="variable language_">document</span>.<span class="title function_">createTextNode</span>(css));</span><br><span class="line">    &#125;</span><br><span class="line">    body.<span class="title function_">appendChild</span>(toTopBtn) body.<span class="title function_">appendChild</span>(style)</span><br><span class="line">    <span class="comment">// Your code here...</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://roachlin.github.io/project/2021/06/19/2021-06-19-top-button/" data-id="cl83twh8b000o1snt0ozsbxdo" data-title="在页面添加返回顶部按钮" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2021-06-18-baidu-netdisk" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2021/06/18/2021-06-18-baidu-netdisk/" class="article-date">
+  <time class="dt-published" datetime="2021-06-17T16:00:00.000Z" itemprop="datePublished">2021-06-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2021/06/18/2021-06-18-baidu-netdisk/">百度网盘显示网络连接失败，WiFi 和流量都没用怎么办？</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&amp;emsp;</p>
+<p>把 ip 改为静态，再改回自动就行了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://roachlin.github.io/project/2021/06/18/2021-06-18-baidu-netdisk/" data-id="cl83twh89000n1sntay8rfjqr" data-title="百度网盘显示网络连接失败，WiFi 和流量都没用怎么办？" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2021-06-17-txt-add" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2021/06/17/2021-06-17-txt-add/" class="article-date">
+  <time class="dt-published" datetime="2021-06-16T16:00:00.000Z" itemprop="datePublished">2021-06-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2021/06/17/2021-06-17-txt-add/">在 txt 的每行首尾加上内容</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&amp;emsp;</p>
+<p>在 <code>替换</code> 处选择 <code>正则表达式</code>, 首：<code>^</code>，尾：<code>$</code>。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://roachlin.github.io/project/2021/06/17/2021-06-17-txt-add/" data-id="cl83twh88000l1sntdr454pry" data-title="在 txt 的每行首尾加上内容" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2021-06-16-adb-shell" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2021/06/16/2021-06-16-adb-shell/" class="article-date">
+  <time class="dt-published" datetime="2021-06-15T16:00:00.000Z" itemprop="datePublished">2021-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2021/06/16/2021-06-16-adb-shell/">adb 常用命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&amp;emsp;</p>
+<ol>
+<li>查看所有包：<code>abd shell pm list packages</code></li>
+<li>查看禁用的包：<code>adb shell pm list packages -d</code></li>
+<li>查看启用的包：<code>adb shell pm list packages -e</code></li>
+<li>禁用某个包：<code>adb shell pm disable-user 包名</code></li>
+<li>启用某个包：<code>adb shell pm enable 包名</code></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://roachlin.github.io/project/2021/06/16/2021-06-16-adb-shell/" data-id="cl83twh8d000s1snt5urjgwhh" data-title="adb 常用命令" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2021-06-15-explorer-reboot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2021/06/15/2021-06-15-explorer-reboot/" class="article-date">
+  <time class="dt-published" datetime="2021-06-14T16:00:00.000Z" itemprop="datePublished">2021-06-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2021/06/15/2021-06-15-explorer-reboot/">Win10 重启 Windows 资源管理器 explorer.exe</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&amp;emsp;</p>
+<p><img src="/project/img/2021-06-15-explorer-reboot/1.jpeg"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://roachlin.github.io/project/2021/06/15/2021-06-15-explorer-reboot/" data-id="cl83twh88000m1sntanoq34a5" data-title="Win10 重启 Windows 资源管理器 explorer.exe" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/project/">&laquo; Prev</a><a class="page-number" href="/project/">1</a><span class="page-number current">2</span><a class="page-number" href="/project/page/3/">3</a><a class="page-number" href="/project/page/4/">4</a><a class="page-number" href="/project/page/5/">5</a><a class="extend next" rel="next" href="/project/page/3/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2020/12/">December 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/project/2022/09/16/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/project/2021/12/21/2021-12-21-skyeysnow-auto-reply/">天雪论坛自动回复水楼赚金币油猴脚本（会被封号，仅研究用）</a>
+          </li>
+        
+          <li>
+            <a href="/project/2021/12/11/2021-12-11-self-learn-sql/">SQL 自学笔记</a>
+          </li>
+        
+          <li>
+            <a href="/project/2021/12/10/2021-12-10-self-learn-python/">Python 自学笔记</a>
+          </li>
+        
+          <li>
+            <a href="/project/2021/12/09/2021-12-09-self-learn-java/">Java 自学笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/project/" class="mobile-nav-link">Home</a>
+  
+    <a href="/project/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/project/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/project/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/project/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

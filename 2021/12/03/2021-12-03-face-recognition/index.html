@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>初中电脑课本 人脸识别 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="&amp;emsp;  12345678910111213141516171819202122232425262728293031323334353637import cv2#  导入人脸检测分类器，创建检测对象faceface &#x3D; cv2.CascadeClassifier(&quot;.&#x2F;haarcascades&#x2F;haarcascade_frontalface_default.xml&amp;quot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初中电脑课本 人脸识别">
+<meta property="og:url" content="https://roachlin.github.io/project/2021/12/03/2021-12-03-face-recognition/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="&amp;emsp;  12345678910111213141516171819202122232425262728293031323334353637import cv2#  导入人脸检测分类器，创建检测对象faceface &#x3D; cv2.CascadeClassifier(&quot;.&#x2F;haarcascades&#x2F;haarcascade_frontalface_default.xml&amp;quot">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://roachlin.github.io/project/img/2021-12-03-face-recognition/1.jpg">
+<meta property="article:published_time" content="2021-12-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-28T08:14:28.372Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://roachlin.github.io/project/img/2021-12-03-face-recognition/1.jpg">
+  
+    <link rel="alternate" href="/project/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/project/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/project/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/project/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/project/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/project/">Home</a>
+        
+          <a class="main-nav-link" href="/project/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/project/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://roachlin.github.io/project"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2021-12-03-face-recognition" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2021/12/03/2021-12-03-face-recognition/" class="article-date">
+  <time class="dt-published" datetime="2021-12-02T16:00:00.000Z" itemprop="datePublished">2021-12-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      初中电脑课本 人脸识别
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&amp;emsp;</p>
+<p><img src="/project/img/2021-12-03-face-recognition/1.jpg"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment">#  导入人脸检测分类器，创建检测对象face</span></span><br><span class="line">face = cv2.CascadeClassifier(<span class="string">&quot;./haarcascades/haarcascade_frontalface_default.xml&quot;</span>)</span><br><span class="line">eye = cv2.CascadeClassifier(<span class="string">&quot;./haarcascades/haarcascade_eye.xml&quot;</span>)  <span class="comment">###</span></span><br><span class="line">img = cv2.imread(<span class="string">&quot;./photo.jpg&quot;</span>)</span><br><span class="line"><span class="comment">#  使用检测对象face启动detectMultiScale函数进行人脸检测。</span></span><br><span class="line">faceRects = face.detectMultiScale(</span><br><span class="line">    img,</span><br><span class="line">    scaleFactor=<span class="number">1.1</span>,  <span class="comment"># 在特征比对中，每次图片缩小的比例，</span></span><br><span class="line">    minNeighbors=<span class="number">5</span>,  <span class="comment"># 设定达到的特征数，</span></span><br><span class="line">    minSize=(<span class="number">100</span>, <span class="number">100</span>),  <span class="comment"># 允许得到目标区域的最小范围，</span></span><br><span class="line">    maxSize=(<span class="number">200</span>, <span class="number">200</span>)  <span class="comment"># 允许得到目标区域的最大范围。</span></span><br><span class="line">)</span><br><span class="line">eyeRects = eye.detectMultiScale(  <span class="comment">###</span></span><br><span class="line">    img,</span><br><span class="line">    scaleFactor=<span class="number">1.1</span>,</span><br><span class="line">    minNeighbors=<span class="number">5</span>,</span><br><span class="line">    minSize=(<span class="number">25</span>, <span class="number">25</span>),  <span class="comment"># 因为眼睛比脸小，所以这里要调小，一开始调成10，会识别到错误的区域，加到25就没问题了</span></span><br><span class="line">    maxSize=(<span class="number">200</span>, <span class="number">200</span>)</span><br><span class="line">)</span><br><span class="line"><span class="built_in">print</span>(faceRects, <span class="built_in">type</span>(faceRects))  <span class="comment"># 输出faceRects的值和数据类型</span></span><br><span class="line"><span class="built_in">print</span>(eyeRects, <span class="built_in">type</span>(eyeRects))</span><br><span class="line">cv2.rectangle(img, (<span class="number">0</span>, <span class="number">0</span>), (<span class="number">140</span>, <span class="number">40</span>), (<span class="number">0</span>, <span class="number">255</span>, <span class="number">255</span>), -<span class="number">1</span>)  <span class="comment"># 20改成40，扩展黄色面积的长度</span></span><br><span class="line"><span class="comment">#  标注找到多少的人脸</span></span><br><span class="line">cv2.putText(img, <span class="string">&quot;Finding &quot;</span> + <span class="built_in">str</span>(<span class="built_in">len</span>(faceRects)) + <span class="string">&quot; face&quot;</span>, (<span class="number">3</span>, <span class="number">15</span>),</span><br><span class="line">            cv2.FONT_HERSHEY_COMPLEX, <span class="number">0.5</span>, (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">1</span>)</span><br><span class="line">cv2.putText(img, <span class="string">&quot;Finding &quot;</span> + <span class="built_in">str</span>(<span class="built_in">len</span>(eyeRects)) + <span class="string">&quot; eye&quot;</span>, (<span class="number">3</span>, <span class="number">30</span>),  <span class="comment"># 15改成30，在下面加多一行</span></span><br><span class="line">            cv2.FONT_HERSHEY_COMPLEX, <span class="number">0.5</span>, (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">1</span>)</span><br><span class="line"><span class="comment">#  由于有可能检测到多张人脸，所以要用循环将人脸逐个框出来</span></span><br><span class="line"><span class="keyword">for</span> x, y, w, h <span class="keyword">in</span> faceRects:  <span class="comment"># 循环获取每张人脸的数据</span></span><br><span class="line">    cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">1</span>)  <span class="comment"># 框出人脸</span></span><br><span class="line"><span class="keyword">for</span> x, y, w, h <span class="keyword">in</span> eyeRects:</span><br><span class="line">    cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">1</span>)</span><br><span class="line">cv2.imshow(<span class="string">&quot;image&quot;</span>, img)</span><br><span class="line">cv2.waitKey()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<p>xml 文件下载地址：<a target="_blank" rel="noopener" href="https://qcym.lanzout.com/iA36oy29o9i">https://qcym.lanzout.com/iA36oy29o9i</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://roachlin.github.io/project/2021/12/03/2021-12-03-face-recognition/" data-id="cl83twh8e000v1snt3c6wd5va" data-title="初中电脑课本 人脸识别" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/project/2021/12/04/2021-12-04-prime-number/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          求素数程序（不断修改）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/project/2021/12/02/2021-12-02-json-deal/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">json 文件预处理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2020/12/">December 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/project/2022/09/16/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/project/2021/12/21/2021-12-21-skyeysnow-auto-reply/">天雪论坛自动回复水楼赚金币油猴脚本（会被封号，仅研究用）</a>
+          </li>
+        
+          <li>
+            <a href="/project/2021/12/11/2021-12-11-self-learn-sql/">SQL 自学笔记</a>
+          </li>
+        
+          <li>
+            <a href="/project/2021/12/10/2021-12-10-self-learn-python/">Python 自学笔记</a>
+          </li>
+        
+          <li>
+            <a href="/project/2021/12/09/2021-12-09-self-learn-java/">Java 自学笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/project/" class="mobile-nav-link">Home</a>
+  
+    <a href="/project/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/project/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/project/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/project/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
