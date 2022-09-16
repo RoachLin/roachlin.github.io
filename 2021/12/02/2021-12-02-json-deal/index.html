@@ -1,256 +1,625 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/project/img/fluid.png">
+  <link rel="icon" href="/project/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="RoachLin">
+  <meta name="keywords" content="">
   
-  <title>json 文件预处理 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="&amp;emsp; join_publishers.py 123456789101112131415161718192021222324252627282930313233# publisher总去重排序# 4_publishers文件夹import osimport timepath &#x3D; &quot;D:&#x2F;Open Academic Graph v2&#x2F;mag_papers&#x2F;papers&#x2F;4_p">
+    <meta name="description" content="&amp;emsp; join_publishers.py 123456789101112131415161718192021222324252627282930313233# publisher总去重排序# 4_publishers文件夹import osimport timepath &#x3D; &quot;D:&#x2F;Open Academic Graph v2&#x2F;mag_papers&#x2F;papers&#x2F;4_p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="json 文件预处理">
 <meta property="og:url" content="https://roachlin.github.io/project/2021/12/02/2021-12-02-json-deal/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="RoachLin&#39;s blog">
 <meta property="og:description" content="&amp;emsp; join_publishers.py 123456789101112131415161718192021222324252627282930313233# publisher总去重排序# 4_publishers文件夹import osimport timepath &#x3D; &quot;D:&#x2F;Open Academic Graph v2&#x2F;mag_papers&#x2F;papers&#x2F;4_p">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-01T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-12-28T08:12:17.908Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/project/atom.xml" title="Hexo" type="application/atom+xml">
+<meta property="article:author" content="RoachLin">
+<meta name="twitter:card" content="summary_large_image">
   
   
-    <link rel="shortcut icon" href="/project/favicon.png">
   
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <title>json 文件预处理 - RoachLin&#39;s blog</title>
 
-  
-  
-<link rel="stylesheet" href="/project/css/style.css">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/project/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/project/css/highlight.css" />
   
-    
-<link rel="stylesheet" href="/project/fancybox/jquery.fancybox.min.css">
+    <link id="highlight-css-dark" rel="stylesheet" href="/project/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"roachlin.github.io","root":"/project/","version":"1.9.3","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/project/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/project/js/utils.js" ></script>
+  <script  src="/project/js/color-schema.js" ></script>
+  
+
 
   
 <meta name="generator" content="Hexo 6.3.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/project/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/project/">Home</a>
-        
-          <a class="main-nav-link" href="/project/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/project/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://roachlin.github.io/project"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-2021-12-02-json-deal" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/project/2021/12/02/2021-12-02-json-deal/" class="article-date">
-  <time class="dt-published" datetime="2021-12-01T16:00:00.000Z" itemprop="datePublished">2021-12-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      json 文件预处理
-    </h1>
   
 
-      </header>
+  <header>
     
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>&amp;emsp;</p>
-<p><code>join_publishers.py</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># publisher总去重排序</span></span><br><span class="line"><span class="comment"># 4_publishers文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">path = <span class="string">&quot;D:/Open Academic Graph v2/mag_papers/papers/4_publishers/&quot;</span></span><br><span class="line">files = os.listdir(path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;publishers.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f1:</span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">        start = time.perf_counter()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path + f, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">            lines = file_object.readlines()</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">                f1.write(line)</span><br><span class="line"></span><br><span class="line">        end = time.perf_counter()</span><br><span class="line">        <span class="built_in">print</span>(f, end - start)</span><br><span class="line"></span><br><span class="line">start = time.perf_counter()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;publishers.txt&quot;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f1:</span><br><span class="line">    publishers = f1.readlines()</span><br><span class="line">    publishers = <span class="built_in">list</span>(<span class="built_in">set</span>(publishers))  <span class="comment"># 去重</span></span><br><span class="line">    publishers.sort()  <span class="comment"># 排序</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;1_publishers.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f2:</span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> publishers:</span><br><span class="line">            f2.write(v)</span><br><span class="line"></span><br><span class="line">end = time.perf_counter()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;final&quot;</span>, end - start)</span><br></pre></td></tr></table></figure>
 
-<p>&amp;emsp;</p>
-<p><code>join_venues.py</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># venue总去重排序</span></span><br><span class="line"><span class="comment"># 4_venues</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">path = <span class="string">&quot;D:/Open Academic Graph v2/mag_papers/papers/4_venues/&quot;</span></span><br><span class="line">files = os.listdir(path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;venues.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f1:</span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">        start = time.perf_counter()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path + f, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">            lines = file_object.readlines()</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">                f1.write(line)</span><br><span class="line"></span><br><span class="line">        end = time.perf_counter()</span><br><span class="line">        <span class="built_in">print</span>(f, end - start)</span><br><span class="line"></span><br><span class="line">start = time.perf_counter()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;venues.txt&quot;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f1:</span><br><span class="line">    venues = f1.readlines()</span><br><span class="line">    venues = <span class="built_in">list</span>(<span class="built_in">set</span>(venues))  <span class="comment"># 去重</span></span><br><span class="line">    venues.sort()  <span class="comment"># 排序</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;1_venues.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f2:</span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> venues:</span><br><span class="line">            f2.write(v)</span><br><span class="line"></span><br><span class="line">end = time.perf_counter()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;final&quot;</span>, end - start)</span><br></pre></td></tr></table></figure>
-
-<p>&amp;emsp;</p>
-<p><code>lines.py</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 统计文件行数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">path = <span class="string">&quot;D:/Open Academic Graph v2/mag_papers/papers/3_publish/&quot;</span></span><br><span class="line">files = os.listdir(path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">    start = time.perf_counter()</span><br><span class="line"></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path + f, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="keyword">for</span> index, line <span class="keyword">in</span> <span class="built_in">enumerate</span>(file):</span><br><span class="line">            count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    end = time.perf_counter()</span><br><span class="line">    <span class="built_in">print</span>(f, count, end - start, <span class="string">&quot;s&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>&amp;emsp;</p>
-<p><code>publish.py</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 去除venue和publisher都没有的项</span></span><br><span class="line"><span class="comment"># 3_publish文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">path = <span class="string">&quot;D:/Open Academic Graph v2/mag_papers/papers/2_year/&quot;</span></span><br><span class="line">files = os.listdir(path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">    start = time.perf_counter()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path + f, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">        lines = file_object.readlines()</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;publish_&quot;</span> + f, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f1, \</span><br><span class="line">                <span class="built_in">open</span>(path + <span class="string">&quot;no_&quot;</span> + f, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f2:</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">                line = <span class="built_in">eval</span>(line)  <span class="comment"># str转dict</span></span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    <span class="keyword">if</span> line[<span class="string">&quot;venue&quot;</span>]:</span><br><span class="line">                        f1.write(json.dumps(line))  <span class="comment"># dict转str</span></span><br><span class="line">                        f1.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                <span class="keyword">except</span> KeyError:</span><br><span class="line">                    <span class="keyword">try</span>:</span><br><span class="line">                        <span class="keyword">if</span> line[<span class="string">&quot;publisher&quot;</span>] == <span class="string">&quot;&quot;</span>:</span><br><span class="line">                            f2.write(json.dumps(line))</span><br><span class="line">                            f2.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                        <span class="keyword">else</span>:</span><br><span class="line">                            f1.write(json.dumps(line))</span><br><span class="line">                            f1.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                    <span class="keyword">except</span> KeyError:</span><br><span class="line">                        f2.write(json.dumps(line))</span><br><span class="line">                        f2.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    end = time.perf_counter()</span><br><span class="line">    <span class="built_in">print</span>(f, end - start)</span><br></pre></td></tr></table></figure>
-
-<p>&amp;emsp;</p>
-<p><code>txt2json.py</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># txt转json</span></span><br><span class="line"><span class="comment"># 在navicat mongodb中使用</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">txt2json</span>(<span class="params">s, name</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(s + name + <span class="string">&quot;.txt&quot;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">        lines = file_object.readlines()</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(s + name + <span class="string">&quot;_json.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">            file.write(<span class="string">&#x27;[\n&#x27;</span>)</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">                file.write(line.rstrip() + <span class="string">&#x27;,\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 删掉最后一个空行和逗号</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(s + name + <span class="string">&quot;_json.txt&quot;</span>, <span class="string">&#x27;rb+&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.seek(-<span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line">        file.truncate()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(s + name + <span class="string">&quot;_json.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.write(<span class="string">&#x27;\n]&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">path = <span class="string">&quot;C:/Users/Lin/Desktop/&quot;</span></span><br><span class="line">lists = [<span class="string">&quot;publish_1950_mag_papers_10&quot;</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> lists:</span><br><span class="line">    start = time.perf_counter()</span><br><span class="line">    txt2json(path, i)</span><br><span class="line">    end = time.perf_counter()</span><br><span class="line">    <span class="built_in">print</span>(i, end - start)</span><br></pre></td></tr></table></figure>
-
-<p>&amp;emsp;</p>
-<p><code>venues_publishers.py</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 统计venue和publisher的所有类型，并去重排序</span></span><br><span class="line"><span class="comment"># 3_publish文件夹</span></span><br><span class="line"><span class="comment"># 4_publishers文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">path = <span class="string">&quot;D:/Open Academic Graph v2/mag_papers/papers/3_publish/&quot;</span></span><br><span class="line">files = os.listdir(path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">    start = time.perf_counter()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path + f, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">        lines = file_object.readlines()</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;venues_&quot;</span> + f, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f1, \</span><br><span class="line">                <span class="built_in">open</span>(path + <span class="string">&quot;publishers_&quot;</span> + f, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f2:</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">                line = <span class="built_in">eval</span>(line)  <span class="comment"># str转dict</span></span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    <span class="keyword">if</span> line[<span class="string">&quot;venue&quot;</span>] != <span class="string">&quot;&quot;</span>:</span><br><span class="line">                        f1.write(json.dumps(line[<span class="string">&quot;venue&quot;</span>][<span class="string">&quot;raw&quot;</span>]))</span><br><span class="line">                        f1.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                <span class="keyword">except</span> KeyError:</span><br><span class="line">                    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    <span class="keyword">if</span> line[<span class="string">&quot;publisher&quot;</span>] != <span class="string">&quot;&quot;</span>:</span><br><span class="line">                        f2.write(json.dumps(line[<span class="string">&quot;publisher&quot;</span>]))</span><br><span class="line">                        f2.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                <span class="keyword">except</span> KeyError:</span><br><span class="line">                    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    end = time.perf_counter()</span><br><span class="line">    <span class="built_in">print</span>(f, end - start)</span><br></pre></td></tr></table></figure>
-
-<p>&amp;emsp;</p>
-<p><code>year.py</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 筛选出1950年后的，1950年前的，没有年份的</span></span><br><span class="line"><span class="comment"># 2_year文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">path = <span class="string">&quot;D:/Open Academic Graph v2/papers/&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">11</span>):</span><br><span class="line">    start = time.perf_counter()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;mag_papers_&quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot;.txt&quot;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">        lines = file_object.readlines()</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path + <span class="string">&quot;year/1950_mag_papers_&quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot;.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f1, \</span><br><span class="line">                <span class="built_in">open</span>(path + <span class="string">&quot;year/other_mag_papers_&quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot;.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f2, \</span><br><span class="line">                <span class="built_in">open</span>(path + <span class="string">&quot;year/no_mag_papers_&quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot;.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f3:</span><br><span class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">                line = <span class="built_in">eval</span>(line)  <span class="comment"># str转dict</span></span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    <span class="keyword">if</span> line[<span class="string">&quot;year&quot;</span>] &gt;= <span class="number">1950</span>:</span><br><span class="line">                        f1.write(json.dumps(line))  <span class="comment"># dict转str</span></span><br><span class="line">                        f1.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        f2.write(json.dumps(line))</span><br><span class="line">                        f2.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                <span class="keyword">except</span> KeyError:</span><br><span class="line">                    f3.write(json.dumps(line))</span><br><span class="line">                    f3.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    end = time.perf_counter()</span><br><span class="line">    <span class="built_in">print</span>(i, end - start)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://roachlin.github.io/project/2021/12/02/2021-12-02-json-deal/" data-id="cl83twh8d000t1snt8h8r4d3p" data-title="json 文件预处理" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/project/2021/12/03/2021-12-03-face-recognition/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          初中电脑课本 人脸识别
-        
-      </div>
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/project/">
+      <strong>RoachLin&#39;s blog</strong>
     </a>
-  
-  
-    <a href="/project/2021/12/01/2021-12-01-detective-solution/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">2018年刑侦科推理题——代码解</div>
-    </a>
-  
-</nav>
 
-  
-</article>
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
 
-
-</section>
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2020/12/">December 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
         
-          <li>
-            <a href="/project/2022/09/16/hello-world/">Hello World</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
+          
         
-          <li>
-            <a href="/project/2021/12/21/2021-12-21-skyeysnow-auto-reply/">天雪论坛自动回复水楼赚金币油猴脚本（会被封号，仅研究用）</a>
-          </li>
         
-          <li>
-            <a href="/project/2021/12/11/2021-12-11-self-learn-sql/">SQL 自学笔记</a>
-          </li>
-        
-          <li>
-            <a href="/project/2021/12/10/2021-12-10-self-learn-python/">Python 自学笔记</a>
-          </li>
-        
-          <li>
-            <a href="/project/2021/12/09/2021-12-09-self-learn-java/">Java 自学笔记</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
       </ul>
     </div>
   </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/project/" class="mobile-nav-link">Home</a>
-  
-    <a href="/project/archives" class="mobile-nav-link">Archives</a>
-  
 </nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/project/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">json 文件预处理</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-12-02 00:00" pubdate>
+          2021年12月2日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.8k 字
+        
+      </span>
     
 
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          49 分钟
+        
+      </span>
+    
 
-<script src="/project/js/jquery-3.4.1.min.js"></script>
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">json 文件预处理</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>&amp;emsp;</p>
+<p><code>join_publishers.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># publisher总去重排序</span><br><span class="hljs-comment"># 4_publishers文件夹</span><br><br><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> time<br><br>path = <span class="hljs-string">&quot;D:/Open Academic Graph v2/mag_papers/papers/4_publishers/&quot;</span><br>files = os.listdir(path)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;publishers.txt&quot;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> f1:<br>    <span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> files:<br>        start = time.perf_counter()<br><br>        <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + f, <span class="hljs-string">&#x27;r&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> file_object:<br>            lines = file_object.readlines()<br>            <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> lines:<br>                f1.write(line)<br><br>        end = time.perf_counter()<br>        <span class="hljs-built_in">print</span>(f, end - start)<br><br>start = time.perf_counter()<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;publishers.txt&quot;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> f1:<br>    publishers = f1.readlines()<br>    publishers = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">set</span>(publishers))  <span class="hljs-comment"># 去重</span><br>    publishers.sort()  <span class="hljs-comment"># 排序</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;1_publishers.txt&quot;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> f2:<br>        <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> publishers:<br>            f2.write(v)<br><br>end = time.perf_counter()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;final&quot;</span>, end - start)<br></code></pre></td></tr></table></figure>
+
+<p>&amp;emsp;</p>
+<p><code>join_venues.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># venue总去重排序</span><br><span class="hljs-comment"># 4_venues</span><br><br><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> time<br><br>path = <span class="hljs-string">&quot;D:/Open Academic Graph v2/mag_papers/papers/4_venues/&quot;</span><br>files = os.listdir(path)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;venues.txt&quot;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> f1:<br>    <span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> files:<br>        start = time.perf_counter()<br><br>        <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + f, <span class="hljs-string">&#x27;r&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> file_object:<br>            lines = file_object.readlines()<br>            <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> lines:<br>                f1.write(line)<br><br>        end = time.perf_counter()<br>        <span class="hljs-built_in">print</span>(f, end - start)<br><br>start = time.perf_counter()<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;venues.txt&quot;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> f1:<br>    venues = f1.readlines()<br>    venues = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">set</span>(venues))  <span class="hljs-comment"># 去重</span><br>    venues.sort()  <span class="hljs-comment"># 排序</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;1_venues.txt&quot;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> f2:<br>        <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> venues:<br>            f2.write(v)<br><br>end = time.perf_counter()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;final&quot;</span>, end - start)<br></code></pre></td></tr></table></figure>
+
+<p>&amp;emsp;</p>
+<p><code>lines.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 统计文件行数</span><br><br><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> time<br><br>path = <span class="hljs-string">&quot;D:/Open Academic Graph v2/mag_papers/papers/3_publish/&quot;</span><br>files = os.listdir(path)<br><br><span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> files:<br>    start = time.perf_counter()<br><br>    count = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + f, <span class="hljs-string">&#x27;r&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> file:<br>        <span class="hljs-keyword">for</span> index, line <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(file):<br>            count += <span class="hljs-number">1</span><br><br>    end = time.perf_counter()<br>    <span class="hljs-built_in">print</span>(f, count, end - start, <span class="hljs-string">&quot;s&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>&amp;emsp;</p>
+<p><code>publish.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 去除venue和publisher都没有的项</span><br><span class="hljs-comment"># 3_publish文件夹</span><br><br><span class="hljs-keyword">import</span> json<br><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> time<br><br>path = <span class="hljs-string">&quot;D:/Open Academic Graph v2/mag_papers/papers/2_year/&quot;</span><br>files = os.listdir(path)<br><br><span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> files:<br>    start = time.perf_counter()<br><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + f, <span class="hljs-string">&#x27;r&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> file_object:<br>        lines = file_object.readlines()<br>        <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;publish_&quot;</span> + f, <span class="hljs-string">&#x27;a&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> f1, \<br>                <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;no_&quot;</span> + f, <span class="hljs-string">&#x27;a&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> f2:<br>            <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> lines:<br>                line = <span class="hljs-built_in">eval</span>(line)  <span class="hljs-comment"># str转dict</span><br>                <span class="hljs-keyword">try</span>:<br>                    <span class="hljs-keyword">if</span> line[<span class="hljs-string">&quot;venue&quot;</span>]:<br>                        f1.write(json.dumps(line))  <span class="hljs-comment"># dict转str</span><br>                        f1.write(<span class="hljs-string">&#x27;\n&#x27;</span>)<br>                <span class="hljs-keyword">except</span> KeyError:<br>                    <span class="hljs-keyword">try</span>:<br>                        <span class="hljs-keyword">if</span> line[<span class="hljs-string">&quot;publisher&quot;</span>] == <span class="hljs-string">&quot;&quot;</span>:<br>                            f2.write(json.dumps(line))<br>                            f2.write(<span class="hljs-string">&#x27;\n&#x27;</span>)<br>                        <span class="hljs-keyword">else</span>:<br>                            f1.write(json.dumps(line))<br>                            f1.write(<span class="hljs-string">&#x27;\n&#x27;</span>)<br>                    <span class="hljs-keyword">except</span> KeyError:<br>                        f2.write(json.dumps(line))<br>                        f2.write(<span class="hljs-string">&#x27;\n&#x27;</span>)<br><br>    end = time.perf_counter()<br>    <span class="hljs-built_in">print</span>(f, end - start)<br></code></pre></td></tr></table></figure>
+
+<p>&amp;emsp;</p>
+<p><code>txt2json.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># txt转json</span><br><span class="hljs-comment"># 在navicat mongodb中使用</span><br><br><span class="hljs-keyword">import</span> time<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">txt2json</span>(<span class="hljs-params">s, name</span>):<br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(s + name + <span class="hljs-string">&quot;.txt&quot;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> file_object:<br>        lines = file_object.readlines()<br>        <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(s + name + <span class="hljs-string">&quot;_json.txt&quot;</span>, <span class="hljs-string">&#x27;w&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> file:<br>            file.write(<span class="hljs-string">&#x27;[\n&#x27;</span>)<br>            <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> lines:<br>                file.write(line.rstrip() + <span class="hljs-string">&#x27;,\n&#x27;</span>)<br><br>    <span class="hljs-comment"># 删掉最后一个空行和逗号</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(s + name + <span class="hljs-string">&quot;_json.txt&quot;</span>, <span class="hljs-string">&#x27;rb+&#x27;</span>) <span class="hljs-keyword">as</span> file:<br>        file.seek(-<span class="hljs-number">3</span>, <span class="hljs-number">2</span>)<br>        file.truncate()<br><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(s + name + <span class="hljs-string">&quot;_json.txt&quot;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> file:<br>        file.write(<span class="hljs-string">&#x27;\n]&#x27;</span>)<br><br><br>path = <span class="hljs-string">&quot;C:/Users/Lin/Desktop/&quot;</span><br>lists = [<span class="hljs-string">&quot;publish_1950_mag_papers_10&quot;</span>]<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> lists:<br>    start = time.perf_counter()<br>    txt2json(path, i)<br>    end = time.perf_counter()<br>    <span class="hljs-built_in">print</span>(i, end - start)<br></code></pre></td></tr></table></figure>
+
+<p>&amp;emsp;</p>
+<p><code>venues_publishers.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 统计venue和publisher的所有类型，并去重排序</span><br><span class="hljs-comment"># 3_publish文件夹</span><br><span class="hljs-comment"># 4_publishers文件夹</span><br><br><span class="hljs-keyword">import</span> json<br><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> time<br><br>path = <span class="hljs-string">&quot;D:/Open Academic Graph v2/mag_papers/papers/3_publish/&quot;</span><br>files = os.listdir(path)<br><br><span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> files:<br>    start = time.perf_counter()<br><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + f, <span class="hljs-string">&#x27;r&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> file_object:<br>        lines = file_object.readlines()<br>        <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;venues_&quot;</span> + f, <span class="hljs-string">&#x27;a&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> f1, \<br>                <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;publishers_&quot;</span> + f, <span class="hljs-string">&#x27;a&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> f2:<br>            <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> lines:<br>                line = <span class="hljs-built_in">eval</span>(line)  <span class="hljs-comment"># str转dict</span><br>                <span class="hljs-keyword">try</span>:<br>                    <span class="hljs-keyword">if</span> line[<span class="hljs-string">&quot;venue&quot;</span>] != <span class="hljs-string">&quot;&quot;</span>:<br>                        f1.write(json.dumps(line[<span class="hljs-string">&quot;venue&quot;</span>][<span class="hljs-string">&quot;raw&quot;</span>]))<br>                        f1.write(<span class="hljs-string">&#x27;\n&#x27;</span>)<br>                <span class="hljs-keyword">except</span> KeyError:<br>                    <span class="hljs-keyword">pass</span><br><br>                <span class="hljs-keyword">try</span>:<br>                    <span class="hljs-keyword">if</span> line[<span class="hljs-string">&quot;publisher&quot;</span>] != <span class="hljs-string">&quot;&quot;</span>:<br>                        f2.write(json.dumps(line[<span class="hljs-string">&quot;publisher&quot;</span>]))<br>                        f2.write(<span class="hljs-string">&#x27;\n&#x27;</span>)<br>                <span class="hljs-keyword">except</span> KeyError:<br>                    <span class="hljs-keyword">pass</span><br><br>    end = time.perf_counter()<br>    <span class="hljs-built_in">print</span>(f, end - start)<br></code></pre></td></tr></table></figure>
+
+<p>&amp;emsp;</p>
+<p><code>year.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 筛选出1950年后的，1950年前的，没有年份的</span><br><span class="hljs-comment"># 2_year文件夹</span><br><br><span class="hljs-keyword">import</span> json<br><span class="hljs-keyword">import</span> time<br><br>path = <span class="hljs-string">&quot;D:/Open Academic Graph v2/papers/&quot;</span><br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">11</span>):<br>    start = time.perf_counter()<br><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;mag_papers_&quot;</span> + <span class="hljs-built_in">str</span>(i) + <span class="hljs-string">&quot;.txt&quot;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> file_object:<br>        lines = file_object.readlines()<br>        <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;year/1950_mag_papers_&quot;</span> + <span class="hljs-built_in">str</span>(i) + <span class="hljs-string">&quot;.txt&quot;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> f1, \<br>                <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;year/other_mag_papers_&quot;</span> + <span class="hljs-built_in">str</span>(i) + <span class="hljs-string">&quot;.txt&quot;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> f2, \<br>                <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;year/no_mag_papers_&quot;</span> + <span class="hljs-built_in">str</span>(i) + <span class="hljs-string">&quot;.txt&quot;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> f3:<br>            <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> lines:<br>                line = <span class="hljs-built_in">eval</span>(line)  <span class="hljs-comment"># str转dict</span><br>                <span class="hljs-keyword">try</span>:<br>                    <span class="hljs-keyword">if</span> line[<span class="hljs-string">&quot;year&quot;</span>] &gt;= <span class="hljs-number">1950</span>:<br>                        f1.write(json.dumps(line))  <span class="hljs-comment"># dict转str</span><br>                        f1.write(<span class="hljs-string">&#x27;\n&#x27;</span>)<br>                    <span class="hljs-keyword">else</span>:<br>                        f2.write(json.dumps(line))<br>                        f2.write(<span class="hljs-string">&#x27;\n&#x27;</span>)<br>                <span class="hljs-keyword">except</span> KeyError:<br>                    f3.write(json.dumps(line))<br>                    f3.write(<span class="hljs-string">&#x27;\n&#x27;</span>)<br><br>    end = time.perf_counter()<br>    <span class="hljs-built_in">print</span>(i, end - start)<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>json 文件预处理</div>
+      <div>https://roachlin.github.io/project/2021/12/02/2021-12-02-json-deal/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>RoachLin</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年12月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/project/2021/12/03/2021-12-03-face-recognition/" title="初中电脑课本 人脸识别">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">初中电脑课本 人脸识别</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/project/2021/12/01/2021-12-01-detective-solution/" title="2018年刑侦科推理题——代码解">
+                        <span class="hidden-mobile">2018年刑侦科推理题——代码解</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
 
 
 
   
-<script src="/project/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
 
 
 
 
-<script src="/project/js/script.js"></script>
 
 
 
+    
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
   </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/project/js/events.js" ></script>
+<script  src="/project/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/project/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/project/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/project/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

@@ -1,104 +1,281 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/project/img/fluid.png">
+  <link rel="icon" href="/project/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="RoachLin">
+  <meta name="keywords" content="">
   
-  <title>SQL 自学笔记 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="&amp;emsp; 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849set character set gbk;-- 如果test数据库不存在，就创建test数据库：CREATE DATABASE IF NOT EXISTS test;-- 切换到test数据库USE">
+    <meta name="description" content="&amp;emsp; 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849set character set gbk;-- 如果test数据库不存在，就创建test数据库：CREATE DATABASE IF NOT EXISTS test;-- 切换到test数据库USE">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL 自学笔记">
 <meta property="og:url" content="https://roachlin.github.io/project/2021/12/11/2021-12-11-self-learn-sql/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="RoachLin&#39;s blog">
 <meta property="og:description" content="&amp;emsp; 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849set character set gbk;-- 如果test数据库不存在，就创建test数据库：CREATE DATABASE IF NOT EXISTS test;-- 切换到test数据库USE">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://roachlin.github.io/project/img/2021-12-11-self-learn-sql/1.png">
 <meta property="article:published_time" content="2021-12-10T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-12-28T08:07:51.797Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+<meta property="article:author" content="RoachLin">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://roachlin.github.io/project/img/2021-12-11-self-learn-sql/1.png">
   
-    <link rel="alternate" href="/project/atom.xml" title="Hexo" type="application/atom+xml">
   
   
-    <link rel="shortcut icon" href="/project/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <title>SQL 自学笔记 - RoachLin&#39;s blog</title>
 
-  
-  
-<link rel="stylesheet" href="/project/css/style.css">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/project/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/project/css/highlight.css" />
   
-    
-<link rel="stylesheet" href="/project/fancybox/jquery.fancybox.min.css">
+    <link id="highlight-css-dark" rel="stylesheet" href="/project/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"roachlin.github.io","root":"/project/","version":"1.9.3","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/project/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/project/js/utils.js" ></script>
+  <script  src="/project/js/color-schema.js" ></script>
+  
+
 
   
 <meta name="generator" content="Hexo 6.3.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/project/" id="logo">Hexo</a>
-      </h1>
-      
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/project/">
+      <strong>RoachLin&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/project/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">SQL 自学笔记</span>
+          
+        </div>
+
         
-          <a class="main-nav-link" href="/project/">Home</a>
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-12-11 00:00" pubdate>
+          2021年12月11日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
         
-          <a class="main-nav-link" href="/project/archives">Archives</a>
+          19k 字
         
-      </nav>
-      <nav id="sub-nav">
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
         
-          <a id="nav-rss-link" class="nav-icon" href="/project/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://roachlin.github.io/project"></form>
+        
+          160 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
   </div>
-</header>
+</div>
 
-      <div class="outer">
-        <section id="main"><article id="post-2021-12-11-self-learn-sql" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/project/2021/12/11/2021-12-11-self-learn-sql/" class="article-date">
-  <time class="dt-published" datetime="2021-12-10T16:00:00.000Z" itemprop="datePublished">2021-12-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      SQL 自学笔记
-    </h1>
-  
+</div>
 
-      </header>
+  </header>
+
+  <main>
     
-    <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>&amp;emsp;</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="type">character</span> <span class="keyword">set</span> gbk;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果test数据库不存在，就创建test数据库：</span></span><br><span class="line"><span class="keyword">CREATE</span> DATABASE IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> test;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 切换到test数据库</span></span><br><span class="line">USE test;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除classes表和students表（如果存在）：</span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> classes;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> students;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建classes表：</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> classes (</span><br><span class="line">    id <span class="type">BIGINT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建students表：</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> students (</span><br><span class="line">    id <span class="type">BIGINT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">    class_id <span class="type">BIGINT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    gender <span class="type">VARCHAR</span>(<span class="number">1</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    score <span class="type">INT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 插入classes记录：</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> classes(id, name) <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">&#x27;一班&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> classes(id, name) <span class="keyword">VALUES</span> (<span class="number">2</span>, <span class="string">&#x27;二班&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> classes(id, name) <span class="keyword">VALUES</span> (<span class="number">3</span>, <span class="string">&#x27;三班&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> classes(id, name) <span class="keyword">VALUES</span> (<span class="number">4</span>, <span class="string">&#x27;四班&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 插入students记录：</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> students (id, class_id, name, gender, score) <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="number">1</span>, <span class="string">&#x27;小明&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="number">90</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> students (id, class_id, name, gender, score) <span class="keyword">VALUES</span> (<span class="number">2</span>, <span class="number">1</span>, <span class="string">&#x27;小红&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="number">95</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> students (id, class_id, name, gender, score) <span class="keyword">VALUES</span> (<span class="number">3</span>, <span class="number">1</span>, <span class="string">&#x27;小军&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="number">88</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> students (id, class_id, name, gender, score) <span class="keyword">VALUES</span> (<span class="number">4</span>, <span class="number">1</span>, <span class="string">&#x27;小米&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="number">73</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> students (id, class_id, name, gender, score) <span class="keyword">VALUES</span> (<span class="number">5</span>, <span class="number">2</span>, <span class="string">&#x27;小白&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="number">81</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> students (id, class_id, name, gender, score) <span class="keyword">VALUES</span> (<span class="number">6</span>, <span class="number">2</span>, <span class="string">&#x27;小兵&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="number">55</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> students (id, class_id, name, gender, score) <span class="keyword">VALUES</span> (<span class="number">7</span>, <span class="number">2</span>, <span class="string">&#x27;小林&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="number">85</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> students (id, class_id, name, gender, score) <span class="keyword">VALUES</span> (<span class="number">8</span>, <span class="number">3</span>, <span class="string">&#x27;小新&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="number">91</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> students (id, class_id, name, gender, score) <span class="keyword">VALUES</span> (<span class="number">9</span>, <span class="number">3</span>, <span class="string">&#x27;小王&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="number">89</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> students (id, class_id, name, gender, score) <span class="keyword">VALUES</span> (<span class="number">10</span>, <span class="number">3</span>, <span class="string">&#x27;小丽&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="number">85</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- OK:</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="string">&#x27;ok&#x27;</span> <span class="keyword">as</span> <span class="string">&#x27;result:&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">SQL 自学笔记</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>&amp;emsp;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">set</span> <span class="hljs-type">character</span> <span class="hljs-keyword">set</span> gbk;<br><br><span class="hljs-comment">-- 如果test数据库不存在，就创建test数据库：</span><br><span class="hljs-keyword">CREATE</span> DATABASE IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> test;<br><br><span class="hljs-comment">-- 切换到test数据库</span><br>USE test;<br><br><span class="hljs-comment">-- 删除classes表和students表（如果存在）：</span><br><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">EXISTS</span> classes;<br><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">EXISTS</span> students;<br><br><span class="hljs-comment">-- 创建classes表：</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> classes (<br>    id <span class="hljs-type">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>    name <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>    <span class="hljs-keyword">PRIMARY</span> KEY (id)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8;<br><br><span class="hljs-comment">-- 创建students表：</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> students (<br>    id <span class="hljs-type">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>    class_id <span class="hljs-type">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>    name <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>    gender <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>    score <span class="hljs-type">INT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>    <span class="hljs-keyword">PRIMARY</span> KEY (id)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8;<br><br><span class="hljs-comment">-- 插入classes记录：</span><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> classes(id, name) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">1</span>, <span class="hljs-string">&#x27;一班&#x27;</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> classes(id, name) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">2</span>, <span class="hljs-string">&#x27;二班&#x27;</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> classes(id, name) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">3</span>, <span class="hljs-string">&#x27;三班&#x27;</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> classes(id, name) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">4</span>, <span class="hljs-string">&#x27;四班&#x27;</span>);<br><br><span class="hljs-comment">-- 插入students记录：</span><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;小明&#x27;</span>, <span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-number">90</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;小红&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-number">95</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;小军&#x27;</span>, <span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-number">88</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;小米&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-number">73</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;小白&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-number">81</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">6</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;小兵&#x27;</span>, <span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-number">55</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;小林&#x27;</span>, <span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-number">85</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">8</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;小新&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-number">91</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">9</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;小王&#x27;</span>, <span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-number">89</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">10</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;小丽&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-number">85</span>);<br><br><span class="hljs-comment">-- OK:</span><br><span class="hljs-keyword">SELECT</span> <span class="hljs-string">&#x27;ok&#x27;</span> <span class="hljs-keyword">as</span> <span class="hljs-string">&#x27;result:&#x27;</span>;<br></code></pre></td></tr></table></figure>
 
 <h1 id="GUID（全局唯一标识符）"><a href="#GUID（全局唯一标识符）" class="headerlink" title="GUID（全局唯一标识符）"></a>GUID（全局唯一标识符）</h1><p>全局唯一标识符（GUID，Globally Unique Identifier）是一种由算法生成的二进制长度为128位的数字标识符。GUID主要用于在拥有多个节点、多台计算机的网络或系统中。在理想情况下，任何计算机和计算机集群都不会生成两个相同的GUID。GUID的总数达到了2^128（3.4×10^38）个，所以随机生成两个相同GUID的可能性非常小，但并不为0。所以，用于生成GUID的算法通常都加入了非随机的参数（如时间），以保证这种重复的情况不会发生。</p>
 <p>GUID的格式为“xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx”，其中每个 x 是 0-9 或 a-f 范围内的一个十六进制数。例如：6F9619FF-8B86-D011-B42D-00C04FC964FF 即为有效的 GUID 值。</p>
@@ -108,7 +285,7 @@
 </ul>
 <h1 id="主键"><a href="#主键" class="headerlink" title="主键"></a>主键</h1><p>主键的选取非常重要：主键不要带有业务含义，而应该使用BIGINT自增或者GUID类型。</p>
 <h1 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h1><h2 id="基本查询"><a href="#基本查询" class="headerlink" title="基本查询"></a>基本查询</h2><p>基本步骤：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd 到 SQL 文件目录</span><br><span class="line">mysql -u root -p</span><br><span class="line">输入密码</span><br><span class="line">\. 加文件名（中间有空格）</span><br><span class="line">show databases;</span><br><span class="line">use 加数据库名;</span><br><span class="line">开始输入语句</span><br></pre></td></tr></table></figure>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs abnf">cd 到 SQL 文件目录<br>mysql -u root -p<br>输入密码<br>\. 加文件名（中间有空格）<br>show databases<span class="hljs-comment">;</span><br>use 加数据库名<span class="hljs-comment">;</span><br>开始输入语句<br></code></pre></td></tr></table></figure>
 
 <p>如果出现乱码，Windows 系统下 SQL 文件格式保存为 ANSI，在文件开头加上 <code>set character set gbk;</code></p>
 <p><code>SELECT * FROM students;</code></p>
@@ -282,7 +459,7 @@
 <p>对于这么多种JOIN查询，到底什么使用应该用哪种呢？其实我们用图来表示结果集就一目了然了。</p>
 <p>假设查询语句是：</p>
 <p><code>SELECT ... FROM tableA ??? JOIN tableB ON tableA.column1 = tableB.column2;</code></p>
-<p><img src="/project/img/2021-12-11-self-learn-sql/1.png"></p>
+<p><img src="/project/img/2021-12-11-self-learn-sql/1.png" srcset="/project/img/loading.gif" lazyload></p>
 <p>小结：</p>
 <ul>
 <li>JOIN查询需要先确定主表，然后把另一个表的数据“附加”到结果集上；</li>
@@ -341,11 +518,11 @@
 <p>这时，整个表的所有记录都会被更新。所以，在执行UPDATE语句时要非常小心，最好先用SELECT语句来测试WHERE条件是否筛选出了期望的记录集，然后再用UPDATE更新。</p>
 <p>在使用MySQL这类真正的关系数据库时，UPDATE语句会返回更新的行数以及WHERE条件匹配的行数。</p>
 <p>例如，更新id&#x3D;1的记录时：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; UPDATE students SET name=&#x27;大宝&#x27; WHERE id=1;</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line">Rows matched: 1  Changed: 1  Warnings: 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">mysql</span>&gt; UPDATE students SET name=&#x27;大宝&#x27; WHERE id=<span class="hljs-number">1</span>;<br><span class="hljs-attribute">Query</span> OK, <span class="hljs-number">1</span> row affected (<span class="hljs-number">0</span>.<span class="hljs-number">00</span> sec)<br><span class="hljs-attribute">Rows</span> matched: <span class="hljs-number">1</span>  Changed: <span class="hljs-number">1</span>  Warnings: <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
 
 <p>MySQL会返回1，可以从打印的结果Rows matched: 1 Changed: 1看到。</p>
 <p>当更新id&#x3D;999的记录时：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; UPDATE students SET name=&#x27;大宝&#x27; WHERE id=999;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line">Rows matched: 0  Changed: 0  Warnings: 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">mysql</span>&gt; UPDATE students SET name=&#x27;大宝&#x27; WHERE id=<span class="hljs-number">999</span>;<br><span class="hljs-attribute">Query</span> OK, <span class="hljs-number">0</span> rows affected (<span class="hljs-number">0</span>.<span class="hljs-number">00</span> sec)<br><span class="hljs-attribute">Rows</span> matched: <span class="hljs-number">0</span>  Changed: <span class="hljs-number">0</span>  Warnings: <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
 
 <p>MySQL会返回0，可以从打印的结果Rows matched: 0 Changed: 0看到。</p>
 <p>小结：使用UPDATE，我们就可以一次更新表中的一条或多条记录。</p>
@@ -372,7 +549,7 @@
 <p>这时，整个表的所有记录都会被删除。所以，在执行DELETE语句时也要非常小心，最好先用SELECT语句来测试WHERE条件是否筛选出了期望的记录集，然后再用DELETE删除。</p>
 <p>在使用MySQL这类真正的关系数据库时，DELETE语句也会返回删除的行数以及WHERE条件匹配的行数。</p>
 <p>例如，分别执行删除id&#x3D;1和id&#x3D;999的记录：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; DELETE FROM students WHERE id=1;</span><br><span class="line">Query OK, 1 row affected (0.01 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; DELETE FROM students WHERE id=999;</span><br><span class="line">Query OK, 0 rows affected (0.01 sec)</span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">mysql</span>&gt; DELETE FROM students WHERE id=<span class="hljs-number">1</span>;<br><span class="hljs-attribute">Query</span> OK, <span class="hljs-number">1</span> row affected (<span class="hljs-number">0</span>.<span class="hljs-number">01</span> sec)<br><br><span class="hljs-attribute">mysql</span>&gt; DELETE FROM students WHERE id=<span class="hljs-number">999</span>;<br><span class="hljs-attribute">Query</span> OK, <span class="hljs-number">0</span> rows affected (<span class="hljs-number">0</span>.<span class="hljs-number">01</span> sec)<br></code></pre></td></tr></table></figure>
 
 <p>小结：使用DELETE，我们就可以一次删除表中的一条或多条记录。</p>
 <h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p>安装完MySQL后，除了MySQL Server，即真正的MySQL服务器外，还附赠一个MySQL Client程序。MySQL Client是一个命令行客户端，可以通过MySQL Client登录MySQL，然后，输入SQL语句并执行。</p>
@@ -418,7 +595,7 @@
 <p><code>INSERT IGNORE INTO students (id, class_id, name, gender, score) VALUES (1, 1, &#39;小明&#39;, &#39;F&#39;, 99);</code></p>
 <p>若id&#x3D;1的记录不存在，INSERT语句将插入新记录，否则，不执行任何操作。</p>
 <h3 id="快照"><a href="#快照" class="headerlink" title="快照"></a>快照</h3><p>如果想要对一个表进行快照，即复制一份当前表的数据到一个新表，可以结合CREATE TABLE和SELECT：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-- 对class_id=1的记录进行快照，并存储为新表students_of_class1:</span><br><span class="line">CREATE TABLE students_of_class1 SELECT * FROM students WHERE class_id=1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 对class_id=1的记录进行快照，并存储为新表students_of_class1:</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> students_of_class1 <span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> students <span class="hljs-keyword">WHERE</span> class_id<span class="hljs-operator">=</span><span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
 
 <p>新创建的表结构和SELECT使用的表结构完全一致。</p>
 <h3 id="写入查询结果集"><a href="#写入查询结果集" class="headerlink" title="写入查询结果集"></a>写入查询结果集</h3><p>如果查询结果集需要写入到表中，可以结合INSERT和SELECT，将SELECT语句的结果集直接插入到指定表中。</p>
@@ -432,7 +609,7 @@
 <p><code>SELECT * FROM students FORCE INDEX (idx_class_id) WHERE class_id = 1 ORDER BY id DESC;</code></p>
 <p>指定索引的前提是索引idx_class_id必须存在。</p>
 <h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>在执行SQL语句的时候，某些业务要求，一系列操作必须全部执行，而不能仅执行一部分。例如，一个转账操作：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-- 从id=1的账户给id=2的账户转账100元</span><br><span class="line">-- 第一步：将id=1的A账户余额减去100</span><br><span class="line">UPDATE accounts SET balance = balance - 100 WHERE id = 1;</span><br><span class="line">-- 第二步：将id=2的B账户余额加上100</span><br><span class="line">UPDATE accounts SET balance = balance + 100 WHERE id = 2;</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs routeros">-- 从<span class="hljs-attribute">id</span>=1的账户给id=2的账户转账100元<br>-- 第一步：将<span class="hljs-attribute">id</span>=1的A账户余额减去100<br>UPDATE accounts <span class="hljs-built_in">SET</span> balance = balance - 100 WHERE id = 1;<br>-- 第二步：将<span class="hljs-attribute">id</span>=2的B账户余额加上100<br>UPDATE accounts <span class="hljs-built_in">SET</span> balance = balance + 100 WHERE id = 2;<br></code></pre></td></tr></table></figure>
 
 <p>这两条SQL语句必须全部执行，或者，由于某些原因，如果第一条语句成功，第二条语句失败，就必须全部撤销。</p>
 <p>这种把多条语句作为一个整体进行操作的功能，被称为数据库事务。数据库事务可以确保该事务范围内的所有操作都可以全部成功或者全部失败。如果事务失败，那么效果就和没有执行这些SQL一样，不会对数据库数据有任何改动。</p>
@@ -445,12 +622,12 @@
 </ul>
 <p>对于单条SQL语句，数据库系统自动将其作为一个事务执行，这种事务被称为隐式事务。</p>
 <p>要手动把多条SQL语句作为一个事务执行，使用BEGIN开启一个事务，使用COMMIT提交一个事务，这种事务被称为显式事务，例如，把上述的转账操作作为一个显式事务：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BEGIN;</span><br><span class="line">UPDATE accounts SET balance = balance - 100 WHERE id = 1;</span><br><span class="line">UPDATE accounts SET balance = balance + 100 WHERE id = 2;</span><br><span class="line">COMMIT;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">BEGIN</span>;<br><span class="hljs-keyword">UPDATE</span> accounts <span class="hljs-keyword">SET</span> balance <span class="hljs-operator">=</span> balance <span class="hljs-operator">-</span> <span class="hljs-number">100</span> <span class="hljs-keyword">WHERE</span> id <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br><span class="hljs-keyword">UPDATE</span> accounts <span class="hljs-keyword">SET</span> balance <span class="hljs-operator">=</span> balance <span class="hljs-operator">+</span> <span class="hljs-number">100</span> <span class="hljs-keyword">WHERE</span> id <span class="hljs-operator">=</span> <span class="hljs-number">2</span>;<br><span class="hljs-keyword">COMMIT</span>;<br></code></pre></td></tr></table></figure>
 
 <p>很显然多条SQL语句要想作为一个事务执行，就必须使用显式事务。</p>
 <p>COMMIT是指提交事务，即试图把事务内的所有SQL所做的修改永久保存。如果COMMIT语句执行失败了，整个事务也会失败。</p>
 <p>有些时候，我们希望主动让事务失败，这时，可以用ROLLBACK回滚事务，整个事务会失败：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BEGIN;</span><br><span class="line">UPDATE accounts SET balance = balance - 100 WHERE id = 1;</span><br><span class="line">UPDATE accounts SET balance = balance + 100 WHERE id = 2;</span><br><span class="line">ROLLBACK;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">BEGIN</span>;<br><span class="hljs-keyword">UPDATE</span> accounts <span class="hljs-keyword">SET</span> balance <span class="hljs-operator">=</span> balance <span class="hljs-operator">-</span> <span class="hljs-number">100</span> <span class="hljs-keyword">WHERE</span> id <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br><span class="hljs-keyword">UPDATE</span> accounts <span class="hljs-keyword">SET</span> balance <span class="hljs-operator">=</span> balance <span class="hljs-operator">+</span> <span class="hljs-number">100</span> <span class="hljs-keyword">WHERE</span> id <span class="hljs-operator">=</span> <span class="hljs-number">2</span>;<br><span class="hljs-keyword">ROLLBACK</span>;<br></code></pre></td></tr></table></figure>
 
 <p>数据库事务是由数据库系统保证的，我们只需要根据业务逻辑使用它就可以。</p>
 <h2 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h2><p>对于两个并发执行的事务，如果涉及到操作同一条记录的时候，可能会发生问题。因为并发操作会带来数据的不一致性，包括脏读、不可重复读、幻读等。数据库系统提供了隔离级别来让我们有针对性地选择事务的隔离级别，避免数据不一致的问题。</p>
@@ -478,134 +655,326 @@
 <p>虽然Serializable隔离级别下的事务具有最高的安全性，但是，由于事务是串行执行，所以效率会大大下降，应用程序的性能会急剧降低。如果没有特别重要的情景，一般都不会使用Serializable隔离级别。</p>
 <h3 id="默认隔离级别"><a href="#默认隔离级别" class="headerlink" title="默认隔离级别"></a>默认隔离级别</h3><p>如果没有指定隔离级别，数据库就会使用默认的隔离级别。在MySQL中，如果使用InnoDB，默认的隔离级别是Repeatable Read。</p>
 <h1 id="开发集成"><a href="#开发集成" class="headerlink" title="开发集成"></a>开发集成</h1><h1 id="期末总结"><a href="#期末总结" class="headerlink" title="期末总结"></a>期末总结</h1>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>SQL 自学笔记</div>
+      <div>https://roachlin.github.io/project/2021/12/11/2021-12-11-self-learn-sql/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>RoachLin</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年12月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://roachlin.github.io/project/2021/12/11/2021-12-11-self-learn-sql/" data-id="cl83twh8g00101sntaslj8fpn" data-title="SQL 自学笔记" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
+    <div class="license-icon iconfont"></div>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/project/2021/12/21/2021-12-21-skyeysnow-auto-reply/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          天雪论坛自动回复水楼赚金币油猴脚本（会被封号，仅研究用）
-        
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/project/2021/12/21/2021-12-21-skyeysnow-auto-reply/" title="天雪论坛自动回复水楼赚金币油猴脚本（会被封号，仅研究用）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">天雪论坛自动回复水楼赚金币油猴脚本（会被封号，仅研究用）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/project/2021/12/10/2021-12-10-self-learn-python/" title="Python 自学笔记">
+                        <span class="hidden-mobile">Python 自学笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
       </div>
-    </a>
-  
-  
-    <a href="/project/2021/12/10/2021-12-10-self-learn-python/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Python 自学笔记</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2020/12/">December 2020</a></li></ul>
     </div>
-  </div>
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/project/2022/09/16/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/project/2021/12/21/2021-12-21-skyeysnow-auto-reply/">天雪论坛自动回复水楼赚金币油猴脚本（会被封号，仅研究用）</a>
-          </li>
-        
-          <li>
-            <a href="/project/2021/12/11/2021-12-11-self-learn-sql/">SQL 自学笔记</a>
-          </li>
-        
-          <li>
-            <a href="/project/2021/12/10/2021-12-10-self-learn-python/">Python 自学笔记</a>
-          </li>
-        
-          <li>
-            <a href="/project/2021/12/09/2021-12-09-self-learn-java/">Java 自学笔记</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
+    <div class="side-col d-none d-lg-block col-lg-2">
       
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
 
     </div>
-    <nav id="mobile-nav">
+  </div>
+</div>
+
+
+
+
+
   
-    <a href="/project/" class="mobile-nav-link">Home</a>
+
+
+
   
-    <a href="/project/archives" class="mobile-nav-link">Archives</a>
+
+
+
   
-</nav>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/project/js/jquery-3.4.1.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/project/js/events.js" ></script>
+<script  src="/project/js/plugins.js" ></script>
+
+
 
 
 
   
-<script src="/project/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/project/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/project/js/script.js"></script>
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/project/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/project/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

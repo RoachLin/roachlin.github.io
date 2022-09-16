@@ -1,101 +1,278 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/project/img/fluid.png">
+  <link rel="icon" href="/project/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="RoachLin">
+  <meta name="keywords" content="">
   
-  <title>Steam 探索队列控制台版（无视锁区游戏） | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="&amp;emsp; 参考网址：https:&#x2F;&#x2F;keylol.com&#x2F;t157861-1-1 适用情况：活动期间，Steam 可能会有的每天 3 轮探索队列任务。 先打开任意 Steam 页面并登录，然后打开浏览器控制台，把下面的代码复制到浏览器控制台运行即可。 Tips：  支持所有浏览器，也不会遇到游戏锁区的问题。 在控制台输入的地方，按键盘的上箭头(↑)可快速输入上次运行过的命令。  代码如">
+    <meta name="description" content="&amp;emsp; 参考网址：https:&#x2F;&#x2F;keylol.com&#x2F;t157861-1-1 适用情况：活动期间，Steam 可能会有的每天 3 轮探索队列任务。 先打开任意 Steam 页面并登录，然后打开浏览器控制台，把下面的代码复制到浏览器控制台运行即可。 Tips：  支持所有浏览器，也不会遇到游戏锁区的问题。 在控制台输入的地方，按键盘的上箭头(↑)可快速输入上次运行过的命令。  代码如">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Steam 探索队列控制台版（无视锁区游戏）">
 <meta property="og:url" content="https://roachlin.github.io/project/2021/01/12/2021-01-12-steam-explore/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="RoachLin&#39;s blog">
 <meta property="og:description" content="&amp;emsp; 参考网址：https:&#x2F;&#x2F;keylol.com&#x2F;t157861-1-1 适用情况：活动期间，Steam 可能会有的每天 3 轮探索队列任务。 先打开任意 Steam 页面并登录，然后打开浏览器控制台，把下面的代码复制到浏览器控制台运行即可。 Tips：  支持所有浏览器，也不会遇到游戏锁区的问题。 在控制台输入的地方，按键盘的上箭头(↑)可快速输入上次运行过的命令。  代码如">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-11T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-05-20T12:53:00.247Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/project/atom.xml" title="Hexo" type="application/atom+xml">
+<meta property="article:author" content="RoachLin">
+<meta name="twitter:card" content="summary_large_image">
   
   
-    <link rel="shortcut icon" href="/project/favicon.png">
   
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <title>Steam 探索队列控制台版（无视锁区游戏） - RoachLin&#39;s blog</title>
 
-  
-  
-<link rel="stylesheet" href="/project/css/style.css">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/project/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/project/css/highlight.css" />
   
-    
-<link rel="stylesheet" href="/project/fancybox/jquery.fancybox.min.css">
+    <link id="highlight-css-dark" rel="stylesheet" href="/project/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"roachlin.github.io","root":"/project/","version":"1.9.3","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/project/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/project/js/utils.js" ></script>
+  <script  src="/project/js/color-schema.js" ></script>
+  
+
 
   
 <meta name="generator" content="Hexo 6.3.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/project/" id="logo">Hexo</a>
-      </h1>
-      
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/project/">
+      <strong>RoachLin&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/project/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">Steam 探索队列控制台版（无视锁区游戏）</span>
+          
+        </div>
+
         
-          <a class="main-nav-link" href="/project/">Home</a>
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-01-12 00:00" pubdate>
+          2021年1月12日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
         
-          <a class="main-nav-link" href="/project/archives">Archives</a>
+          2k 字
         
-      </nav>
-      <nav id="sub-nav">
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
         
-          <a id="nav-rss-link" class="nav-icon" href="/project/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://roachlin.github.io/project"></form>
+        
+          17 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
   </div>
-</header>
+</div>
 
-      <div class="outer">
-        <section id="main"><article id="post-2021-01-12-steam-explore" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/project/2021/01/12/2021-01-12-steam-explore/" class="article-date">
-  <time class="dt-published" datetime="2021-01-11T16:00:00.000Z" itemprop="datePublished">2021-01-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      Steam 探索队列控制台版（无视锁区游戏）
-    </h1>
-  
+</div>
 
-      </header>
+  </header>
+
+  <main>
     
-    <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>&amp;emsp;</p>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Steam 探索队列控制台版（无视锁区游戏）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>&amp;emsp;</p>
 <p>参考网址：<a target="_blank" rel="noopener" href="https://keylol.com/t157861-1-1">https://keylol.com/t157861-1-1</a></p>
 <p>适用情况：活动期间，Steam 可能会有的每天 3 轮探索队列任务。</p>
 <p>先打开任意 Steam 页面并登录，然后打开浏览器控制台，把下面的代码复制到浏览器控制台运行即可。</p>
@@ -105,136 +282,328 @@
 <li>在控制台输入的地方，按键盘的上箭头(↑)可快速输入上次运行过的命令。</li>
 </ul>
 <p>代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> <span class="title function_">_exec</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> appids, running = <span class="literal">true</span>,</span><br><span class="line">    queueNumber, progressDialog = <span class="title class_">ShowAlertDialog</span>(<span class="string">&#x27;探索中&#x27;</span>, $J(<span class="string">&#x27;&lt;div/&gt;&#x27;</span>).<span class="title function_">append</span>($J(<span class="string">&#x27;&lt;div/&gt;&#x27;</span>, &#123;</span><br><span class="line">        <span class="string">&#x27;class&#x27;</span>: <span class="string">&#x27;waiting_dialog_throbber&#x27;</span></span><br><span class="line">    &#125;)).<span class="title function_">append</span>($J(<span class="string">&#x27;&lt;div/&gt;&#x27;</span>, &#123;</span><br><span class="line">        <span class="string">&#x27;id&#x27;</span>: <span class="string">&#x27;progressContainer&#x27;</span></span><br><span class="line">    &#125;).<span class="title function_">text</span>(<span class="string">&#x27;获取进度...&#x27;</span>)), <span class="string">&#x27;停止&#x27;</span>).<span class="title function_">done</span>(abort);</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">abort</span>(<span class="params"></span>) &#123;</span><br><span class="line">        running = <span class="literal">false</span>;</span><br><span class="line">        progressDialog.<span class="title class_">Dismiss</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">retry</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="title function_">abort</span>();</span><br><span class="line">        <span class="title class_">ShowConfirmDialog</span>(<span class="string">&#x27;错误&#x27;</span>, <span class="string">&#x27;是否重试?&#x27;</span>, <span class="string">&#x27;重试&#x27;</span>, <span class="string">&#x27;放弃&#x27;</span>).<span class="title function_">done</span>(_exec)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">clearApp</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!running) <span class="keyword">return</span>;</span><br><span class="line">        <span class="title function_">showProgress</span>();</span><br><span class="line">        <span class="keyword">var</span> appid = appids.<span class="title function_">shift</span>(); ! appid ? <span class="title function_">generateQueue</span>() : $J.<span class="title function_">post</span>(appids.<span class="property">length</span> ? <span class="string">&#x27;/app/&#x27;</span> + <span class="attr">appid</span>: <span class="string">&#x27;/explore/next/&#x27;</span>, &#123;</span><br><span class="line">            <span class="attr">sessionid</span>: g_sessionID,</span><br><span class="line">            <span class="attr">appid_to_clear_from_queue</span>: appid</span><br><span class="line">        &#125;).<span class="title function_">done</span>(clearApp).<span class="title function_">fail</span>(retry);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">generateQueue</span>(<span class="params"></span>) &#123;</span><br><span class="line">        running &amp;&amp; $J.<span class="title function_">post</span>(<span class="string">&#x27;/explore/generatenewdiscoveryqueue&#x27;</span>, &#123;</span><br><span class="line">            <span class="attr">sessionid</span>: g_sessionID,</span><br><span class="line">            <span class="attr">queuetype</span>: <span class="number">0</span></span><br><span class="line">        &#125;).<span class="title function_">done</span>(beginQueue).<span class="title function_">fail</span>(retry);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">beginQueue</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!running) <span class="keyword">return</span>;</span><br><span class="line">        $J.<span class="title function_">get</span>(<span class="string">&#x27;/explore/&#x27;</span>).<span class="title function_">done</span>(<span class="keyword">function</span>(<span class="params">htmlText</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> cardInfo = htmlText.<span class="title function_">match</span>(<span class="regexp">/&lt;div class=&quot;subtext&quot;&gt;\D+(\d)\D+&lt;\/div&gt;/</span>);</span><br><span class="line">            <span class="keyword">if</span> (!cardInfo) &#123;</span><br><span class="line">                <span class="title function_">abort</span>();</span><br><span class="line">                <span class="title class_">ShowAlertDialog</span>(<span class="string">&#x27;完成&#x27;</span>, <span class="string">&#x27;已完成全部3轮探索队列&#x27;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> matchedAppids = htmlText.<span class="title function_">match</span>(<span class="regexp">/0,\s+(\[.*\])/</span>);</span><br><span class="line">            <span class="keyword">if</span> (!matchedAppids) &#123;</span><br><span class="line">                <span class="title function_">retry</span>();</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            appids = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(matchedAppids[<span class="number">1</span>]);</span><br><span class="line">            queueNumber = cardInfo[<span class="number">1</span>];</span><br><span class="line">            appids.<span class="property">length</span> == <span class="number">0</span> ? <span class="title function_">generateQueue</span>() : <span class="title function_">clearApp</span>();</span><br><span class="line">            <span class="title function_">showProgress</span>();</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">showProgress</span>(<span class="params"></span>) &#123;</span><br><span class="line">        $J(<span class="string">&#x27;#progressContainer&#x27;</span>).<span class="title function_">html</span>(<span class="string">&#x27;&lt;br&gt;剩余&#x27;</span> + queueNumber + <span class="string">&#x27;个待探索队列, 当前队列剩余&#x27;</span> + appids.<span class="property">length</span> + <span class="string">&#x27;个待探索游戏&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">beginQueue</span>();</span><br><span class="line">&#125; ())</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs javascript">(<span class="hljs-keyword">function</span> <span class="hljs-title function_">_exec</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">var</span> appids, running = <span class="hljs-literal">true</span>,<br>    queueNumber, progressDialog = <span class="hljs-title class_">ShowAlertDialog</span>(<span class="hljs-string">&#x27;探索中&#x27;</span>, $J(<span class="hljs-string">&#x27;&lt;div/&gt;&#x27;</span>).<span class="hljs-title function_">append</span>($J(<span class="hljs-string">&#x27;&lt;div/&gt;&#x27;</span>, &#123;<br>        <span class="hljs-string">&#x27;class&#x27;</span>: <span class="hljs-string">&#x27;waiting_dialog_throbber&#x27;</span><br>    &#125;)).<span class="hljs-title function_">append</span>($J(<span class="hljs-string">&#x27;&lt;div/&gt;&#x27;</span>, &#123;<br>        <span class="hljs-string">&#x27;id&#x27;</span>: <span class="hljs-string">&#x27;progressContainer&#x27;</span><br>    &#125;).<span class="hljs-title function_">text</span>(<span class="hljs-string">&#x27;获取进度...&#x27;</span>)), <span class="hljs-string">&#x27;停止&#x27;</span>).<span class="hljs-title function_">done</span>(abort);<br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">abort</span>(<span class="hljs-params"></span>) &#123;<br>        running = <span class="hljs-literal">false</span>;<br>        progressDialog.<span class="hljs-title class_">Dismiss</span>();<br>    &#125;<br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">retry</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-title function_">abort</span>();<br>        <span class="hljs-title class_">ShowConfirmDialog</span>(<span class="hljs-string">&#x27;错误&#x27;</span>, <span class="hljs-string">&#x27;是否重试?&#x27;</span>, <span class="hljs-string">&#x27;重试&#x27;</span>, <span class="hljs-string">&#x27;放弃&#x27;</span>).<span class="hljs-title function_">done</span>(_exec)<br>    &#125;<br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">clearApp</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-keyword">if</span> (!running) <span class="hljs-keyword">return</span>;<br>        <span class="hljs-title function_">showProgress</span>();<br>        <span class="hljs-keyword">var</span> appid = appids.<span class="hljs-title function_">shift</span>(); ! appid ? <span class="hljs-title function_">generateQueue</span>() : $J.<span class="hljs-title function_">post</span>(appids.<span class="hljs-property">length</span> ? <span class="hljs-string">&#x27;/app/&#x27;</span> + <span class="hljs-attr">appid</span>: <span class="hljs-string">&#x27;/explore/next/&#x27;</span>, &#123;<br>            <span class="hljs-attr">sessionid</span>: g_sessionID,<br>            <span class="hljs-attr">appid_to_clear_from_queue</span>: appid<br>        &#125;).<span class="hljs-title function_">done</span>(clearApp).<span class="hljs-title function_">fail</span>(retry);<br>    &#125;<br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">generateQueue</span>(<span class="hljs-params"></span>) &#123;<br>        running &amp;&amp; $J.<span class="hljs-title function_">post</span>(<span class="hljs-string">&#x27;/explore/generatenewdiscoveryqueue&#x27;</span>, &#123;<br>            <span class="hljs-attr">sessionid</span>: g_sessionID,<br>            <span class="hljs-attr">queuetype</span>: <span class="hljs-number">0</span><br>        &#125;).<span class="hljs-title function_">done</span>(beginQueue).<span class="hljs-title function_">fail</span>(retry);<br>    &#125;<br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">beginQueue</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-keyword">if</span> (!running) <span class="hljs-keyword">return</span>;<br>        $J.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;/explore/&#x27;</span>).<span class="hljs-title function_">done</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">htmlText</span>) &#123;<br>            <span class="hljs-keyword">var</span> cardInfo = htmlText.<span class="hljs-title function_">match</span>(<span class="hljs-regexp">/&lt;div class=&quot;subtext&quot;&gt;\D+(\d)\D+&lt;\/div&gt;/</span>);<br>            <span class="hljs-keyword">if</span> (!cardInfo) &#123;<br>                <span class="hljs-title function_">abort</span>();<br>                <span class="hljs-title class_">ShowAlertDialog</span>(<span class="hljs-string">&#x27;完成&#x27;</span>, <span class="hljs-string">&#x27;已完成全部3轮探索队列&#x27;</span>);<br>                <span class="hljs-keyword">return</span>;<br>            &#125;<br>            <span class="hljs-keyword">var</span> matchedAppids = htmlText.<span class="hljs-title function_">match</span>(<span class="hljs-regexp">/0,\s+(\[.*\])/</span>);<br>            <span class="hljs-keyword">if</span> (!matchedAppids) &#123;<br>                <span class="hljs-title function_">retry</span>();<br>                <span class="hljs-keyword">return</span>;<br>            &#125;<br>            appids = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(matchedAppids[<span class="hljs-number">1</span>]);<br>            queueNumber = cardInfo[<span class="hljs-number">1</span>];<br>            appids.<span class="hljs-property">length</span> == <span class="hljs-number">0</span> ? <span class="hljs-title function_">generateQueue</span>() : <span class="hljs-title function_">clearApp</span>();<br>            <span class="hljs-title function_">showProgress</span>();<br>        &#125;)<br>    &#125;<br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">showProgress</span>(<span class="hljs-params"></span>) &#123;<br>        $J(<span class="hljs-string">&#x27;#progressContainer&#x27;</span>).<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;&lt;br&gt;剩余&#x27;</span> + queueNumber + <span class="hljs-string">&#x27;个待探索队列, 当前队列剩余&#x27;</span> + appids.<span class="hljs-property">length</span> + <span class="hljs-string">&#x27;个待探索游戏&#x27;</span>);<br>    &#125;<br>    <span class="hljs-title function_">beginQueue</span>();<br>&#125; ())<br></code></pre></td></tr></table></figure>
 
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Steam 探索队列控制台版（无视锁区游戏）</div>
+      <div>https://roachlin.github.io/project/2021/01/12/2021-01-12-steam-explore/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>RoachLin</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年1月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://roachlin.github.io/project/2021/01/12/2021-01-12-steam-explore/" data-id="cl83twh86000i1snt0dv1a395" data-title="Steam 探索队列控制台版（无视锁区游戏）" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
+    <div class="license-icon iconfont"></div>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/project/2021/01/13/2021-01-13-wechat-ad/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          关闭微信朋友圈广告（QQ类似）
-        
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/project/2021/01/13/2021-01-13-wechat-ad/" title="关闭微信朋友圈广告（QQ类似）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">关闭微信朋友圈广告（QQ类似）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/project/2021/01/11/2021-01-11-code-beautify/" title="代码美化的两种方法">
+                        <span class="hidden-mobile">代码美化的两种方法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
       </div>
-    </a>
-  
-  
-    <a href="/project/2021/01/11/2021-01-11-code-beautify/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">代码美化的两种方法</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2020/12/">December 2020</a></li></ul>
     </div>
-  </div>
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/project/2022/09/16/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/project/2021/12/21/2021-12-21-skyeysnow-auto-reply/">天雪论坛自动回复水楼赚金币油猴脚本（会被封号，仅研究用）</a>
-          </li>
-        
-          <li>
-            <a href="/project/2021/12/11/2021-12-11-self-learn-sql/">SQL 自学笔记</a>
-          </li>
-        
-          <li>
-            <a href="/project/2021/12/10/2021-12-10-self-learn-python/">Python 自学笔记</a>
-          </li>
-        
-          <li>
-            <a href="/project/2021/12/09/2021-12-09-self-learn-java/">Java 自学笔记</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
+    <div class="side-col d-none d-lg-block col-lg-2">
       
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
 
     </div>
-    <nav id="mobile-nav">
+  </div>
+</div>
+
+
+
+
+
   
-    <a href="/project/" class="mobile-nav-link">Home</a>
+
+
+
   
-    <a href="/project/archives" class="mobile-nav-link">Archives</a>
+
+
+
   
-</nav>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/project/js/jquery-3.4.1.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/project/js/events.js" ></script>
+<script  src="/project/js/plugins.js" ></script>
+
+
 
 
 
   
-<script src="/project/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/project/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/project/js/script.js"></script>
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/project/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/project/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
