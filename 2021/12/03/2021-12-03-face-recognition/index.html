@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/project/img/fluid.png">
-  <link rel="icon" href="/project/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,16 +19,16 @@
     <meta name="description" content="&amp;emsp;  12345678910111213141516171819202122232425262728293031323334353637import cv2#  导入人脸检测分类器，创建检测对象faceface &#x3D; cv2.CascadeClassifier(&quot;.&#x2F;haarcascades&#x2F;haarcascade_frontalface_default.xml&amp;quot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初中电脑课本 人脸识别">
-<meta property="og:url" content="https://roachlin.github.io/project/2021/12/03/2021-12-03-face-recognition/index.html">
+<meta property="og:url" content="https://roachlin.github.io/2021/12/03/2021-12-03-face-recognition/index.html">
 <meta property="og:site_name" content="RoachLin&#39;s blog">
 <meta property="og:description" content="&amp;emsp;  12345678910111213141516171819202122232425262728293031323334353637import cv2#  导入人脸检测分类器，创建检测对象faceface &#x3D; cv2.CascadeClassifier(&quot;.&#x2F;haarcascades&#x2F;haarcascade_frontalface_default.xml&amp;quot">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://roachlin.github.io/project/img/2021-12-03-face-recognition/1.jpg">
+<meta property="og:image" content="https://roachlin.github.io/img/2021-12-03-face-recognition/1.jpg">
 <meta property="article:published_time" content="2021-12-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-12-28T08:14:28.372Z">
 <meta property="article:author" content="RoachLin">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://roachlin.github.io/project/img/2021-12-03-face-recognition/1.jpg">
+<meta name="twitter:image" content="https://roachlin.github.io/img/2021-12-03-face-recognition/1.jpg">
   
   
   
@@ -56,12 +56,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/project/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/project/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/project/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
@@ -70,15 +70,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"roachlin.github.io","root":"/project/","version":"1.9.3","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/project/local-search.xml"};
+    var CONFIG = {"hostname":"roachlin.github.io","root":"/","version":"1.9.3","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/project/js/utils.js" ></script>
-  <script  src="/project/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
 
 
@@ -95,7 +95,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/project/">
+    <a class="navbar-brand" href="/">
       <strong>RoachLin&#39;s blog</strong>
     </a>
 
@@ -114,7 +114,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/">
+              <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
                 首页
               </a>
@@ -126,7 +126,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/archives/">
+              <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -138,7 +138,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/categories/">
+              <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -150,7 +150,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/tags/">
+              <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -162,7 +162,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/about/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -191,7 +191,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/project/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -275,7 +275,7 @@
               <div class="markdown-body">
                 
                 <p>&amp;emsp;</p>
-<p><img src="/project/img/2021-12-03-face-recognition/1.jpg" srcset="/project/img/loading.gif" lazyload></p>
+<p><img src="/img/2021-12-03-face-recognition/1.jpg" srcset="/img/loading.gif" lazyload></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br><br><span class="hljs-comment">#  导入人脸检测分类器，创建检测对象face</span><br>face = cv2.CascadeClassifier(<span class="hljs-string">&quot;./haarcascades/haarcascade_frontalface_default.xml&quot;</span>)<br>eye = cv2.CascadeClassifier(<span class="hljs-string">&quot;./haarcascades/haarcascade_eye.xml&quot;</span>)  <span class="hljs-comment">###</span><br>img = cv2.imread(<span class="hljs-string">&quot;./photo.jpg&quot;</span>)<br><span class="hljs-comment">#  使用检测对象face启动detectMultiScale函数进行人脸检测。</span><br>faceRects = face.detectMultiScale(<br>    img,<br>    scaleFactor=<span class="hljs-number">1.1</span>,  <span class="hljs-comment"># 在特征比对中，每次图片缩小的比例，</span><br>    minNeighbors=<span class="hljs-number">5</span>,  <span class="hljs-comment"># 设定达到的特征数，</span><br>    minSize=(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>),  <span class="hljs-comment"># 允许得到目标区域的最小范围，</span><br>    maxSize=(<span class="hljs-number">200</span>, <span class="hljs-number">200</span>)  <span class="hljs-comment"># 允许得到目标区域的最大范围。</span><br>)<br>eyeRects = eye.detectMultiScale(  <span class="hljs-comment">###</span><br>    img,<br>    scaleFactor=<span class="hljs-number">1.1</span>,<br>    minNeighbors=<span class="hljs-number">5</span>,<br>    minSize=(<span class="hljs-number">25</span>, <span class="hljs-number">25</span>),  <span class="hljs-comment"># 因为眼睛比脸小，所以这里要调小，一开始调成10，会识别到错误的区域，加到25就没问题了</span><br>    maxSize=(<span class="hljs-number">200</span>, <span class="hljs-number">200</span>)<br>)<br><span class="hljs-built_in">print</span>(faceRects, <span class="hljs-built_in">type</span>(faceRects))  <span class="hljs-comment"># 输出faceRects的值和数据类型</span><br><span class="hljs-built_in">print</span>(eyeRects, <span class="hljs-built_in">type</span>(eyeRects))<br>cv2.rectangle(img, (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>), (<span class="hljs-number">140</span>, <span class="hljs-number">40</span>), (<span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>), -<span class="hljs-number">1</span>)  <span class="hljs-comment"># 20改成40，扩展黄色面积的长度</span><br><span class="hljs-comment">#  标注找到多少的人脸</span><br>cv2.putText(img, <span class="hljs-string">&quot;Finding &quot;</span> + <span class="hljs-built_in">str</span>(<span class="hljs-built_in">len</span>(faceRects)) + <span class="hljs-string">&quot; face&quot;</span>, (<span class="hljs-number">3</span>, <span class="hljs-number">15</span>),<br>            cv2.FONT_HERSHEY_COMPLEX, <span class="hljs-number">0.5</span>, (<span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>), <span class="hljs-number">1</span>)<br>cv2.putText(img, <span class="hljs-string">&quot;Finding &quot;</span> + <span class="hljs-built_in">str</span>(<span class="hljs-built_in">len</span>(eyeRects)) + <span class="hljs-string">&quot; eye&quot;</span>, (<span class="hljs-number">3</span>, <span class="hljs-number">30</span>),  <span class="hljs-comment"># 15改成30，在下面加多一行</span><br>            cv2.FONT_HERSHEY_COMPLEX, <span class="hljs-number">0.5</span>, (<span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>), <span class="hljs-number">1</span>)<br><span class="hljs-comment">#  由于有可能检测到多张人脸，所以要用循环将人脸逐个框出来</span><br><span class="hljs-keyword">for</span> x, y, w, h <span class="hljs-keyword">in</span> faceRects:  <span class="hljs-comment"># 循环获取每张人脸的数据</span><br>    cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>), <span class="hljs-number">1</span>)  <span class="hljs-comment"># 框出人脸</span><br><span class="hljs-keyword">for</span> x, y, w, h <span class="hljs-keyword">in</span> eyeRects:<br>    cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>), <span class="hljs-number">1</span>)<br>cv2.imshow(<span class="hljs-string">&quot;image&quot;</span>, img)<br>cv2.waitKey()<br>cv2.destroyAllWindows()<br></code></pre></td></tr></table></figure>
 
 <p>xml 文件下载地址：<a target="_blank" rel="noopener" href="https://qcym.lanzout.com/iA36oy29o9i">https://qcym.lanzout.com/iA36oy29o9i</a></p>
@@ -297,7 +297,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>初中电脑课本 人脸识别</div>
-      <div>https://roachlin.github.io/project/2021/12/03/2021-12-03-face-recognition/</div>
+      <div>https://roachlin.github.io/2021/12/03/2021-12-03-face-recognition/</div>
     </div>
     <div class="license-meta">
       
@@ -341,7 +341,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/project/2021/12/04/2021-12-04-prime-number/" title="求素数程序（不断修改）">
+                      <a href="/2021/12/04/2021-12-04-prime-number/" title="求素数程序（不断修改）">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">求素数程序（不断修改）</span>
                         <span class="visible-mobile">上一篇</span>
@@ -351,7 +351,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/project/2021/12/02/2021-12-02-json-deal/" title="json 文件预处理">
+                      <a href="/2021/12/02/2021-12-02-json-deal/" title="json 文件预处理">
                         <span class="hidden-mobile">json 文件预处理</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -478,15 +478,15 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/project/js/events.js" ></script>
-<script  src="/project/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 
 
 
 
   
-    <script  src="/project/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -585,7 +585,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/project/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
@@ -593,7 +593,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/project/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
   
