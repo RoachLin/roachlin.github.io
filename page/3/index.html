@@ -1,31 +1,24 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
+<html lang="zh-CN" data-default-color-scheme=dark>
 
 
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.png">
+  <link rel="icon" href="/img/icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="RoachLin">
   <meta name="keywords" content="blog">
   
     <meta name="description" content="RoachLin&#39;s blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="RoachLin&#39;s blog">
-<meta property="og:url" content="https://roachlin.github.io/page/3/index.html">
-<meta property="og:site_name" content="RoachLin&#39;s blog">
-<meta property="og:description" content="RoachLin&#39;s blog">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="RoachLin">
-<meta property="article:tag" content="blog">
-<meta name="twitter:card" content="summary_large_image">
   
   
   
@@ -61,7 +54,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"roachlin.github.io","root":"/","version":"1.9.3","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"roachlin.github.io","root":"/","version":"1.9.3","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":9},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -160,6 +153,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -182,7 +187,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -226,15 +231,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/06/14/2021-06-14-cmd-more/" target="_self">
+        <a href="/2021-06-14-cmd-more/" target="_self">
           CMD 一次执行多条命令
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/14/2021-06-14-cmd-more/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-06-14-cmd-more/" target="_self">
         <div>
-          test.bat 每行填入一个命令： 123command 1command 2command 3
+          
         </div>
       </a>
 
@@ -259,15 +264,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/06/12/2021-06-12-txt-merge/" target="_self">
+        <a href="/2021-06-12-txt-merge/" target="_self">
           如何批量合并 txt 文件
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/12/2021-06-12-txt-merge/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-06-12-txt-merge/" target="_self">
         <div>
-          copy *.txt 合并文件.txt 保存为 bat 文件。
+          
         </div>
       </a>
 
@@ -292,15 +297,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/06/08/2021-06-08-writing-guidelines/" target="_self">
+        <a href="/2021-06-08-writing-guidelines/" target="_self">
           中文文案排版指北（转载）
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/08/2021-06-08-writing-guidelines/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-06-08-writing-guidelines/" target="_self">
         <div>
-          统一中文文案、排版的相关用法，降低团队成员之间的沟通成本，增强网站气质。 其他语言：  英语 繁体中文 简体中文 简体中文（外部链接）   目录{:.no_toc}  TOC {:toc}  空格「有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。
+          
         </div>
       </a>
 
@@ -325,15 +330,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/15/2021-01-15-latex/" target="_self">
+        <a href="/2021-01-15-latex/" target="_self">
           LaTeX 合集
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/15/2021-01-15-latex/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-01-15-latex/" target="_self">
         <div>
-          1、TeX Live 换为清华源： 打开命令行，进入 TeX Live 安装目录，比如 C:\texlive\2020，在命令行中执行 tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet 即可永久更改镜像源。 （本人已换用 MiKTeX，更为轻便） 2、TeXstudio 主
+          
         </div>
       </a>
 
@@ -358,15 +363,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/14/2021-01-14-bili-img/" target="_self">
+        <a href="/2021-01-14-bili-img/" target="_self">
           Python 爬取 B 站 UP 主相册所有图片
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/14/2021-01-14-bili-img/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-01-14-bili-img/" target="_self">
         <div>
-          参考网址： https://www.52pojie.cn/thread-1202155-1-1.html https://www.52pojie.cn/thread-1202189-1-1.html 源代码如下： 123456789101112131415161718192021222324252627282930313233343536import jsonimport osimport req
+          
         </div>
       </a>
 
@@ -391,15 +396,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/12/2021-01-12-steam-explore/" target="_self">
+        <a href="/2021-01-12-steam-explore/" target="_self">
           Steam 探索队列控制台版（无视锁区游戏）
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/12/2021-01-12-steam-explore/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-01-12-steam-explore/" target="_self">
         <div>
-          参考网址：https://keylol.com/t157861-1-1 适用情况：活动期间，Steam 可能会有每天 3 轮的探索队列任务。 先打开任意 Steam 页面并登录，然后打开浏览器控制台，把下面的代码复制到浏览器控制台运行即可。 Tips：  支持所有浏览器，也不会遇到游戏锁区的问题。 在控制台输入的地方，按键盘的上箭头(↑)可快速输入上次运行过的命令。  代码如下： 12345678
+          
         </div>
       </a>
 
@@ -424,15 +429,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/11/2021-01-11-code-beautify/" target="_self">
+        <a href="/2021-01-11-code-beautify/" target="_self">
           代码美化的两种方法
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/11/2021-01-11-code-beautify/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-01-11-code-beautify/" target="_self">
         <div>
-          一、使用 carbon 生成图片： 网址：https://carbon.now.sh 你可以自行调整代码显示效果，或者直接 Import 我的配置文件，在设置里找一下 Import config 选项即可。 效果图如下：  配置文件内容如下，文件名为 carbon-config.json： 1234567891011121314151617181920212223242526&#123;	&quo
+          
         </div>
       </a>
 
@@ -457,15 +462,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/10/2021-01-10-ffmpeg-convert/" target="_self">
+        <a href="/2021-01-10-ffmpeg-convert/" target="_self">
           FFmpeg 把 FLV 转为 MP4
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/10/2021-01-10-ffmpeg-convert/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-01-10-ffmpeg-convert/" target="_self">
         <div>
-          FFmpeg 下载地址：https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z 下载完后，解压到一个合适的位置，把 \ffmpeg-4.2.3-win64-static\bin 文件夹加入环境变量中的系统变量 Path。这步的意义是为了可以在命令行中使用 ffmpeg 命令。 打开命令行，进入 FLV 文件所在的文件夹，输入 ffmpeg
+          
         </div>
       </a>
 
@@ -490,15 +495,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/09/2021-01-09-pyinstaller/" target="_self">
+        <a href="/2021-01-09-pyinstaller/" target="_self">
           PyInstaller 把 py 打包为 exe
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/09/2021-01-09-pyinstaller/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-01-09-pyinstaller/" target="_self">
         <div>
-          PyInstaller 安装：命令行输入 pip install pyinstaller 再新开一个命令行进入 py 文件夹，输入 pyinstaller -F -w xxx.py 即可。 其中，-F 的作用是只生成一个单独的 exe ，-w 的作用是生成的 exe 在运行过程中不显示命令行窗口。
+          
         </div>
       </a>
 
@@ -523,15 +528,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/07/2021-01-07-excel-time/" target="_self">
+        <a href="/2021-01-07-excel-time/" target="_self">
           Excel 把 Unix 时间戳转为北京时间
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/07/2021-01-07-excel-time/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-01-07-excel-time/" target="_self">
         <div>
-          对 北京时间 这一列 设置单元格格式 ，选择你想要的 日期 格式。  输入公式 =(A2+8*3600)/86400+70*365+19 即可。
+          
         </div>
       </a>
 
@@ -604,7 +609,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love" style="color:red"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
     </div>
   
   

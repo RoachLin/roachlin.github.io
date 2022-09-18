@@ -1,31 +1,24 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
+<html lang="zh-CN" data-default-color-scheme=dark>
 
 
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.png">
+  <link rel="icon" href="/img/icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="RoachLin">
   <meta name="keywords" content="blog">
   
     <meta name="description" content="RoachLin&#39;s blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="RoachLin&#39;s blog">
-<meta property="og:url" content="https://roachlin.github.io/page/2/index.html">
-<meta property="og:site_name" content="RoachLin&#39;s blog">
-<meta property="og:description" content="RoachLin&#39;s blog">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="RoachLin">
-<meta property="article:tag" content="blog">
-<meta name="twitter:card" content="summary_large_image">
   
   
   
@@ -61,7 +54,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"roachlin.github.io","root":"/","version":"1.9.3","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"roachlin.github.io","root":"/","version":"1.9.3","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":9},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -160,6 +153,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -182,7 +187,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -226,15 +231,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/12/03/2021-12-03-face-recognition/" target="_self">
+        <a href="/2021-12-03-face-recognition/" target="_self">
           初中电脑课本 人脸识别
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/12/03/2021-12-03-face-recognition/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-12-03-face-recognition/" target="_self">
         <div>
-          12345678910111213141516171819202122232425262728293031323334353637import cv2#  导入人脸检测分类器，创建检测对象faceface = cv2.CascadeClassifier(&quot;./haarcascades/haarcascade_frontalface_default.xml&quot;)eye = cv2
+          
         </div>
       </a>
 
@@ -259,15 +264,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/12/02/2021-12-02-json-deal/" target="_self">
+        <a href="/2021-12-02-json-deal/" target="_self">
           json 文件预处理
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/12/02/2021-12-02-json-deal/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-12-02-json-deal/" target="_self">
         <div>
-          join_publishers.py 123456789101112131415161718192021222324252627282930313233# publisher总去重排序# 4_publishers文件夹import osimport timepath = &quot;D:/Open Academic Graph v2/mag_papers/papers/4_publishers/&
+          
         </div>
       </a>
 
@@ -292,15 +297,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/12/01/2021-12-01-detective-solution/" target="_self">
+        <a href="/2021-12-01-detective-solution/" target="_self">
           2018年刑侦科推理题——代码解
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/12/01/2021-12-01-detective-solution/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-12-01-detective-solution/" target="_self">
         <div>
-          1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021
+          
         </div>
       </a>
 
@@ -325,15 +330,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/06/21/2021-06-21-magisk-install/" target="_self">
+        <a href="/2021-06-21-magisk-install/" target="_self">
           Magisk 安装教程
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/21/2021-06-21-magisk-install/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-06-21-magisk-install/" target="_self">
         <div>
-          下载地址：https://github.com/topjohnwu/Magisk 下载完先安装 apk，再把 apk 后缀改为 zip，放到手机中再从 Magisk App 刷入。
+          
         </div>
       </a>
 
@@ -358,15 +363,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/06/20/2021-06-20-html-middle/" target="_self">
+        <a href="/2021-06-20-html-middle/" target="_self">
           html 图片文字全部居中
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/20/2021-06-20-html-middle/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-06-20-html-middle/" target="_self">
         <div>
-          12345678910111213141516171819202122&lt;head&gt;    &lt;style&gt;    .vcenter &#123;	    position:absolute;	    left:50%;	    top:50%;	    translateX(-50%);	    translateY(-50%);		border: 3px solid bla
+          
         </div>
       </a>
 
@@ -391,15 +396,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/06/19/2021-06-19-top-button/" target="_self">
+        <a href="/2021-06-19-top-button/" target="_self">
           在页面添加返回顶部按钮
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/19/2021-06-19-top-button/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-06-19-top-button/" target="_self">
         <div>
-          原文：https://blog.csdn.net/insgo/article/details/113799700 12345678910111213141516171819202122232425262728293031323334353637// ==UserScript==// @name         totop// @namespace    http://unamerrr.net///
+          
         </div>
       </a>
 
@@ -424,15 +429,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/06/18/2021-06-18-baidu-netdisk/" target="_self">
+        <a href="/2021-06-18-baidu-netdisk/" target="_self">
           百度网盘显示网络连接失败，WiFi 和流量都没用怎么办？
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/18/2021-06-18-baidu-netdisk/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-06-18-baidu-netdisk/" target="_self">
         <div>
-          把 ip 改为静态，再改回自动就行了。
+          
         </div>
       </a>
 
@@ -457,15 +462,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/06/17/2021-06-17-txt-add/" target="_self">
+        <a href="/2021-06-17-txt-add/" target="_self">
           在 txt 的每行首尾加上内容
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/17/2021-06-17-txt-add/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-06-17-txt-add/" target="_self">
         <div>
-          在 替换 处选择 正则表达式，首：^，尾：$。
+          
         </div>
       </a>
 
@@ -490,15 +495,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/06/16/2021-06-16-adb-shell/" target="_self">
+        <a href="/2021-06-16-adb-shell/" target="_self">
           adb 常用命令
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/16/2021-06-16-adb-shell/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-06-16-adb-shell/" target="_self">
         <div>
-          查看所有包：abd shell pm list packages 查看所有禁用的包：adb shell pm list packages -d 查看所有启用的包：adb shell pm list packages -e 禁用某个包：adb shell pm disable-user 包名 启用某个包：adb shell pm enable 包名
+          
         </div>
       </a>
 
@@ -523,13 +528,13 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/06/15/2021-06-15-explorer-reboot/" target="_self">
+        <a href="/2021-06-15-explorer-reboot/" target="_self">
           Win10 重启 Windows 资源管理器 explorer.exe
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/15/2021-06-15-explorer-reboot/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-06-15-explorer-reboot/" target="_self">
         <div>
           
         </div>
@@ -604,7 +609,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love" style="color:red"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
     </div>
   
   

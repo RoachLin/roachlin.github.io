@@ -1,0 +1,1100 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.png">
+  <link rel="icon" href="/img/icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="RoachLin">
+  <meta name="keywords" content="blog">
+  
+    <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849set character set gbk;-- 如果test数据库不存在，就创建test数据库：CREATE DATABASE IF NOT EXISTS test;-- 切换到test数据库USE test;-- 删除">
+  
+  
+  
+  <title>SQL 自学笔记 - RoachLin&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"roachlin.github.io","root":"/","version":"1.9.3","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":9},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>RoachLin&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">SQL 自学笔记</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-12-11 00:00" pubdate>
+          2021年12月11日
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          19k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          160 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="编程语言"
+        id="heading-3bf8a523aea21a3a0f6c53b0f43429bb" role="tab" data-toggle="collapse" href="#collapse-3bf8a523aea21a3a0f6c53b0f43429bb"
+        aria-expanded="true"
+      >
+        编程语言
+        <span class="list-group-count">(4)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-3bf8a523aea21a3a0f6c53b0f43429bb"
+           role="tabpanel" aria-labelledby="heading-3bf8a523aea21a3a0f6c53b0f43429bb">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2021-12-08-self-learn-cpp/" title="C++ 自学笔记"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">C++ 自学笔记</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2021-12-09-self-learn-java/" title="Java 自学笔记"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Java 自学笔记</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2021-12-10-self-learn-python/" title="Python 自学笔记"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Python 自学笔记</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2021-12-11-self-learn-sql/" title="SQL 自学笔记"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">SQL 自学笔记</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">SQL 自学笔记</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">set</span> <span class="hljs-type">character</span> <span class="hljs-keyword">set</span> gbk;<br><br><span class="hljs-comment">-- 如果test数据库不存在，就创建test数据库：</span><br><span class="hljs-keyword">CREATE</span> DATABASE IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> test;<br><br><span class="hljs-comment">-- 切换到test数据库</span><br>USE test;<br><br><span class="hljs-comment">-- 删除classes表和students表（如果存在）：</span><br><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">EXISTS</span> classes;<br><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">EXISTS</span> students;<br><br><span class="hljs-comment">-- 创建classes表：</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> classes (<br>    id <span class="hljs-type">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>    name <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>    <span class="hljs-keyword">PRIMARY</span> KEY (id)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8;<br><br><span class="hljs-comment">-- 创建students表：</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> students (<br>    id <span class="hljs-type">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>    class_id <span class="hljs-type">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>    name <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>    gender <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>    score <span class="hljs-type">INT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>    <span class="hljs-keyword">PRIMARY</span> KEY (id)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8;<br><br><span class="hljs-comment">-- 插入classes记录：</span><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> classes(id, name) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">1</span>, <span class="hljs-string">&#x27;一班&#x27;</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> classes(id, name) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">2</span>, <span class="hljs-string">&#x27;二班&#x27;</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> classes(id, name) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">3</span>, <span class="hljs-string">&#x27;三班&#x27;</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> classes(id, name) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">4</span>, <span class="hljs-string">&#x27;四班&#x27;</span>);<br><br><span class="hljs-comment">-- 插入students记录：</span><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;小明&#x27;</span>, <span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-number">90</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;小红&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-number">95</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;小军&#x27;</span>, <span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-number">88</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;小米&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-number">73</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;小白&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-number">81</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">6</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;小兵&#x27;</span>, <span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-number">55</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;小林&#x27;</span>, <span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-number">85</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">8</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;小新&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-number">91</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">9</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;小王&#x27;</span>, <span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-number">89</span>);<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (id, class_id, name, gender, score) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">10</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;小丽&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-number">85</span>);<br><br><span class="hljs-comment">-- OK:</span><br><span class="hljs-keyword">SELECT</span> <span class="hljs-string">&#x27;ok&#x27;</span> <span class="hljs-keyword">as</span> <span class="hljs-string">&#x27;result:&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<h1 id="GUID（全局唯一标识符）"><a href="#GUID（全局唯一标识符）" class="headerlink" title="GUID（全局唯一标识符）"></a>GUID（全局唯一标识符）</h1><p>全局唯一标识符（GUID，Globally Unique Identifier）是一种由算法生成的二进制长度为128位的数字标识符。GUID主要用于在拥有多个节点、多台计算机的网络或系统中。在理想情况下，任何计算机和计算机集群都不会生成两个相同的GUID。GUID的总数达到了2^128（3.4×10^38）个，所以随机生成两个相同GUID的可能性非常小，但并不为0。所以，用于生成GUID的算法通常都加入了非随机的参数（如时间），以保证这种重复的情况不会发生。</p>
+<p>GUID的格式为“xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx”，其中每个 x 是 0-9 或 a-f 范围内的一个十六进制数。例如：6F9619FF-8B86-D011-B42D-00C04FC964FF 即为有效的 GUID 值。</p>
+<ul>
+<li>需要GUID的时候，可以完全由算法自动生成，不需要一个权威机构来管理。</li>
+<li>GUID理论上能产生全宇宙唯一的值，对于以后的数据导入很方便。</li>
+</ul>
+<h1 id="主键"><a href="#主键" class="headerlink" title="主键"></a>主键</h1><p>主键的选取非常重要：主键不要带有业务含义，而应该使用BIGINT自增或者GUID类型。</p>
+<h1 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h1><h2 id="基本查询"><a href="#基本查询" class="headerlink" title="基本查询"></a>基本查询</h2><p>基本步骤：</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs abnf">cd 到 SQL 文件目录<br>mysql -u root -p<br>输入密码<br>\. 加文件名（中间有空格）<br>show databases<span class="hljs-comment">;</span><br>use 加数据库名<span class="hljs-comment">;</span><br>开始输入语句<br></code></pre></td></tr></table></figure>
+
+<p>如果出现乱码，Windows 系统下 SQL 文件格式保存为 ANSI，在文件开头加上 <code>set character set gbk;</code></p>
+<p><code>SELECT * FROM students;</code></p>
+<p><code>SELECT * FROM &lt;表名&gt;</code></p>
+<p>SELECT 是关键字，表示将要执行一个查询，* 表示“所有列”，FROM表示将要从哪个表查询。</p>
+<h2 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h2><p>SELECT 语句可以通过 WHERE 条件来设定查询条件。</p>
+<p><code>SELECT * FROM students WHERE score &gt;= 80</code></p>
+<p><code>SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;</code></p>
+<p>条件表达式如下：</p>
+<h3 id="AND"><a href="#AND" class="headerlink" title="AND"></a>AND</h3><p><code>SELECT * FROM students WHERE score &gt;= 80 AND gender = &#39;M&#39;;</code></p>
+<h3 id="OR"><a href="#OR" class="headerlink" title="OR"></a>OR</h3><p><code>SELECT * FROM students WHERE score &gt;= 80 OR gender = &#39;M&#39;;</code></p>
+<h3 id="NOT"><a href="#NOT" class="headerlink" title="NOT"></a>NOT</h3><p><code>SELECT * FROM students WHERE NOT class_id = 2;</code></p>
+<p>上述 NOT class_id &#x3D; 2 其实等价于 class_id &lt;&gt; 2，因此，NOT 查询不是很常用。</p>
+<h3 id="组合多个条件"><a href="#组合多个条件" class="headerlink" title="组合多个条件"></a>组合多个条件</h3><p><code>SELECT * FROM students WHERE (score &lt; 80 OR score &gt; 90) AND gender = &#39;M&#39;;</code></p>
+<p>如果不加括号，条件运算按照 NOT、AND、OR 的优先级进行。</p>
+<h3 id="常用的条件表达式"><a href="#常用的条件表达式" class="headerlink" title="常用的条件表达式"></a>常用的条件表达式</h3><table>
+<thead>
+<tr><th>条件</th><th>表达式举例1</th><th>表达式举例2</th><th>说明</th></tr>
+</thead>
+<tbody>
+<tr><td>使用=判断相等</td><td>score = 80</td><td>name = 'abc'</td><td>字符串需要用单引号括起来</td></tr>
+<tr><td>使用&gt;判断大于</td><td>score &gt; 80</td><td>name &gt; 'abc'</td><td>字符串比较根据ASCII码，中文字符比较根据数据库设置</td></tr>
+<tr><td>使用&gt;=判断大于或相等</td><td>score &gt;= 80</td><td>name &gt;= 'abc'</td><td></td></tr>
+<tr><td>使用&lt;判断小于</td><td>score &lt; 80</td><td>name &lt;= 'abc'</td><td></td></tr>
+<tr><td>使用&lt;=判断小于或相等</td><td>score &lt;= 80</td><td>name &lt;= 'abc'</td><td></td></tr>
+<tr><td>使用&lt;&gt;判断不相等</td><td>score &lt;&gt; 80</td><td>name &lt;&gt; 'abc'</td><td></td></tr>
+<tr><td>使用LIKE判断相似</td><td>name LIKE 'ab%'</td><td>name LIKE '%bc%'</td><td>%表示任意字符，例如'ab%'将匹配'ab'，'abc'，'abcd'</td></tr>
+</tbody>
+</table>
+
+<h3 id="举例：查询分数在60分-含-～90分-含-之间的学生可以使用的WHERE语句"><a href="#举例：查询分数在60分-含-～90分-含-之间的学生可以使用的WHERE语句" class="headerlink" title="举例：查询分数在60分(含)～90分(含)之间的学生可以使用的WHERE语句"></a>举例：查询分数在60分(含)～90分(含)之间的学生可以使用的WHERE语句</h3><p>正确的：</p>
+<ul>
+<li><code>WHERE score &gt;= 60 AND score &lt;= 90</code></li>
+<li><code>WHERE score BETWEEN 60 AND 90</code></li>
+</ul>
+<p>错误的：</p>
+<ul>
+<li><code>WHERE score &gt;= 60 OR score &lt;= 90</code>（“或”不符合题意）</li>
+<li><code>WHERE score IN (60, 90)</code>（in是取60或90，不是范围）</li>
+<li><code>WHERE 60 &lt;= score &lt;= 90</code>（语法错误）</li>
+</ul>
+<h2 id="投影查询"><a href="#投影查询" class="headerlink" title="投影查询"></a>投影查询</h2><p>我们可以用投影查询让结果集仅包含指定列，并且，结果集的列的顺序和原表可以不一样。</p>
+<p><code>SELECT id, score, name FROM students;</code></p>
+<p><code>SELECT 列1, 列2, 列3, ... FROM &lt;表名&gt;</code></p>
+<p>还可以给每一列起个别名，这样，结果集的列名就可以与原表的列名不同。</p>
+<p><code>SELECT id, score points, name FROM students;</code></p>
+<p><code>SELECT 列1 别名1, 列2 别名2, 列3 别名3, ... FROM &lt;表名&gt;</code></p>
+<p>投影查询同样可以接 WHERE 条件，实现复杂的查询。</p>
+<p><code>SELECT id, score points, name FROM students WHERE gender = &#39;M&#39;;</code></p>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>使用 SELECT 查询时，查询结果集通常是按照 id 排序的，也就是根据主键排序。这也是大部分数据库的做法。如果要根据其他条件排序，可以加上 ORDER BY 子句。</p>
+<p><code>SELECT id, name, gender, score FROM students ORDER BY score;</code></p>
+<p>默认的排序规则是 ASC：“升序”，即从小到大，ASC可以省略。如果要反过来，按照从高到底排序，可以加上 DESC 表示“倒序”。</p>
+<p><code>SELECT id, name, gender, score FROM students ORDER BY score DESC;</code></p>
+<p>如果 score 列有相同的数据，要进一步排序，可以继续添加列名。例如，使用 ORDER BY score DESC, gender 表示先按 score 列倒序，如果有相同分数的，再按 gender 列排序。</p>
+<p><code>SELECT id, name, gender, score FROM students ORDER BY score DESC, gender;</code></p>
+<p>如果有 WHERE 子句，那么 ORDER BY 子句要放到 WHERE 子句后面。</p>
+<p><code>SELECT id, name, gender, score FROM students WHERE class_id = 1 ORDER BY score DESC;</code></p>
+<h2 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h2><p>使用 SELECT 查询时，如果结果集数据量很大，比如几万行数据，放在一个页面显示的话数据量太大，不如分页显示，每次显示100条。</p>
+<p>要实现分页功能，实际上就是从结果集中显示第1<del>100条记录作为第1页，显示第101</del>200条记录作为第2页，以此类推。</p>
+<p>因此，分页实际上就是从结果集中“截取”出第M~N条记录。这个查询可以通过 <code>LIMIT &lt;M&gt; OFFSET &lt;N&gt;</code> 子句实现。</p>
+<p>先把所有学生按照成绩从高到低进行排序：</p>
+<p><code>SELECT id, name, gender, score FROM students ORDER BY score DESC, gender;</code></p>
+<p>现在，我们把结果集分页，每页3条记录。要获取第1页的记录，可以使用<code>LIMIT 3 OFFSET 0</code>：</p>
+<p><code>SELECT id, name, gender, score FROM students ORDER BY score DESC, gender LIMIT 3 OFFSET 0;</code></p>
+<p>上述查询<code>LIMIT 3 OFFSET 0</code>表示，对结果集从0号记录开始，最多取3条。注意SQL记录集的索引从0开始。</p>
+<p>如果要查询第2页，那么我们只需要“跳过”头3条记录，也就是对结果集从3号记录开始查询，把OFFSET设定为3。</p>
+<p><code>SELECT id, name, gender, score FROM students ORDER BY score DESC, gender LIMIT 3 OFFSET 3;</code></p>
+<p>由于第4页只有1条记录，因此最终结果集按实际数量1显示。LIMIT 3表示的意思是“最多3条记录”。</p>
+<p>可见，分页查询的关键在于，首先要确定每页需要显示的结果数量pageSize（这里是3），然后根据当前页的索引pageIndex（从1开始），确定LIMIT和OFFSET应该设定的值：</p>
+<ul>
+<li>LIMIT总是设定为pageSize；</li>
+<li>OFFSET计算公式为pageSize * (pageIndex - 1)。</li>
+</ul>
+<p>如果原本记录集一共就10条记录，但我们把OFFSET设置为20,OFFSET超过了查询的最大数量并不会报错，而是得到一个空的结果集。</p>
+<p>OFFSET是可选的，如果只写LIMIT 15，那么相当于LIMIT 15 OFFSET 0。</p>
+<p>在MySQL中，LIMIT 15 OFFSET 30还可以简写成LIMIT 30, 15。</p>
+<p>使用<code>LIMIT &lt;M&gt; OFFSET &lt;N&gt;</code>分页时，随着N越来越大，查询效率也会越来越低。</p>
+<p>在分页查询之前，如何计算一共有几页：</p>
+<p><code>select count(*) from students;</code></p>
+<p>返回该表的记录总数量，然后除以limit指定的每页显示的数量，有余数结果加一就是页数。</p>
+<h2 id="聚合查询"><a href="#聚合查询" class="headerlink" title="聚合查询"></a>聚合查询</h2><p>对于统计总数、平均数这类计算，SQL提供了专门的聚合函数，使用聚合函数进行查询，就是聚合查询，它可以快速获得结果。</p>
+<p>仍然以查询students表一共有多少条记录为例，我们可以使用SQL内置的COUNT()函数查询：</p>
+<p><code>SELECT COUNT(*) FROM students;</code></p>
+<p><code>COUNT(*)</code>表示查询所有列的行数，要注意聚合的计算结果虽然是一个数字，但查询的结果仍然是一个二维表，只是这个二维表只有一行一列，并且列名是<code>COUNT(*)</code>。</p>
+<p>通常，使用聚合查询时，我们应该给列名设置一个别名，比如num，便于处理结果：</p>
+<p><code>SELECT COUNT(*) num FROM students;</code></p>
+<p>COUNT(*)和COUNT(id)实际上是一样的效果。另外注意，聚合查询同样可以使用WHERE条件，因此我们可以方便地统计出有多少男生、多少女生、多少80分以上的学生等：</p>
+<p><code>SELECT COUNT(*) boys FROM students WHERE gender = &#39;M&#39;;</code></p>
+<p>除了COUNT()函数外，SQL还提供了如下聚合函数：</p>
+<table>
+<thead>
+<tr><th>函数</th><th>说明</th></tr>
+</thead>
+<tbody>
+<tr><td>SUM</td><td>计算某一列的合计值，该列必须为数值类型</td></tr>
+<tr><td>AVG</td><td>计算某一列的平均值，该列必须为数值类型</td></tr>
+<tr><td>MAX</td><td>计算某一列的最大值</td></tr>
+<tr><td>MIN</td><td>计算某一列的最小值</td></tr>
+</tbody>
+</table>
+
+<p>注意，MAX()和MIN()函数并不限于数值类型。如果是字符类型，MAX()和MIN()会返回排序最后和排序最前的字符。</p>
+<p>使用聚合查询计算男生平均成绩:</p>
+<p><code>SELECT AVG(score) average FROM students WHERE gender = &#39;M&#39;;</code></p>
+<p>要特别注意：如果聚合查询的WHERE条件没有匹配到任何行，COUNT()会返回0，而SUM()、AVG()、MAX()和MIN()会返回NULL：</p>
+<p><code>SELECT AVG(score) average FROM students WHERE gender = &#39;X&#39;;</code></p>
+<p>每页3条记录，如何通过聚合查询获得总页数：</p>
+<p><code>SELECT CEILING(COUNT(*) / 3) FROM students;</code></p>
+<p>如果要统计一班的学生数量，可以用<code>SELECT COUNT(*) num FROM students WHERE class_id = 1;</code>。如果要继续统计二班、三班的学生数量，难道必须不断修改WHERE条件来执行SELECT语句吗？</p>
+<p>对于聚合查询，SQL还提供了“分组聚合”的功能。</p>
+<p><code>SELECT COUNT(*) num FROM students GROUP BY class_id;</code></p>
+<p>执行这个查询，COUNT()的结果不再是一个，而是3个，这是因为，GROUP BY子句指定了按class_id分组，因此，执行该SELECT语句时，会把class_id相同的列先分组，再分别计算，因此，得到了3行结果。</p>
+<p>但是这3行结果分别是哪三个班级的，不好看出来，所以我们可以把class_id列也放入结果集中：</p>
+<p><code>SELECT class_id, COUNT(*) num FROM students GROUP BY class_id;</code></p>
+<p>也可以使用多个列进行分组。例如，我们想统计各班的男生和女生人数：</p>
+<p><code>SELECT class_id, gender, COUNT(*) num FROM students GROUP BY class_id, gender;</code></p>
+<p>请使用一条SELECT查询查出每个班级的平均分，结果集应当有3条记录：</p>
+<p><code>SELECT class_id, AVG(score) average FROM students GROUP BY class_id;</code></p>
+<p>请使用一条SELECT查询查出每个班级男生和女生的平均分，结果集应当有6条记录：</p>
+<p><code>SELECT class_id, gender, AVG(score) average FROM students GROUP BY class_id, gender;</code></p>
+<h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><p>SELECT查询不但可以从一张表查询数据，还可以从多张表同时查询数据。查询多张表的语法是：<code>SELECT * FROM &lt;表1&gt; &lt;表2&gt;</code>。</p>
+<p>例如，同时从students表和classes表的“乘积”，即查询数据，可以这么写：</p>
+<p><code>SELECT * FROM students, classes;</code></p>
+<p>这种一次查询两个表的数据，查询的结果也是一个二维表，它是students表和classes表的“乘积”，即students表的每一行与classes表的每一行都两两拼在一起返回。结果集的列数是students表和classes表的列数之和，行数是students表和classes表的行数之积。</p>
+<p>这种多表查询又称笛卡尔查询，使用笛卡尔查询时要非常小心，由于结果集是目标表的行数乘积，对两个各自有100行记录的表进行笛卡尔查询将返回1万条记录，对两个各自有1万行记录的表进行笛卡尔查询将返回1亿条记录。</p>
+<p>你可能还注意到了，上述查询的结果集有两列id和两列name，两列id是因为其中一列是students表的id，而另一列是classes表的id，但是在结果集中，不好区分。两列name同理。</p>
+<p>要解决这个问题，我们仍然可以利用投影查询的“设置列的别名”来给两个表各自的id和name列起别名：</p>
+<p><code>SELECT students.id sid, students.name, students.gender, students.score, classes.id cid, classes.name cname FROM students, classes;</code></p>
+<p>注意，多表查询时，要使用表名.列名这样的方式来引用列和设置别名，这样就避免了结果集的列名重复问题。但是，用表名.列名这种方式列举两个表的所有列实在是很麻烦，所以SQL还允许给表设置一个别名，让我们在投影查询中引用起来稍微简洁一点：</p>
+<p><code>SELECT s.id sid, s.name, s.gender, s.score, c.id cid, c.name cname FROM students s, classes c;</code></p>
+<p>注意到FROM子句给表设置别名的语法是FROM &lt;表名1&gt; &lt;别名1&gt;, &lt;表名2&gt; &lt;别名2&gt;。这样我们用别名s和c分别表示students表和classes表。</p>
+<p>多表查询也是可以添加WHERE条件的，我们来试试：</p>
+<p><code>SELECT s.id sid, s.name, s.gender, s.score, c.id cid, c.name cname FROM students s, classes c WHERE s.gender = &#39;M&#39; AND c.id = 1;</code></p>
+<p>这个查询的结果集每行记录都满足条件s.gender &#x3D; ‘M’和c.id &#x3D; 1。添加WHERE条件后结果集的数量大大减少了。</p>
+<p>小结：</p>
+<p>使用多表查询可以获取M x N行记录；</p>
+<p>多表查询的结果集可能非常巨大，要小心使用。</p>
+<h2 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h2><p>连接查询是另一种类型的多表查询。连接查询对多个表进行JOIN运算，简单地说，就是先确定一个主表作为结果集，然后，把其他表的行有选择性地“连接”在主表结果集上。</p>
+<p>例如，我们想要选出students表的所有学生信息，可以用一条简单的SELECT语句完成：</p>
+<p><code>SELECT s.id, s.name, s.class_id, s.gender, s.score FROM students s;</code></p>
+<p>但是，假设我们希望结果集同时包含所在班级的名称，上面的结果集只有class_id列，缺少对应班级的name列。</p>
+<p>现在问题来了，存放班级名称的name列存储在classes表中，只有根据students表的class_id，找到classes表对应的行，再取出name列，就可以获得班级名称。</p>
+<p>这时，连接查询就派上了用场。我们先使用最常用的一种内连接——INNER JOIN来实现：</p>
+<p><code>SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score FROM students s INNER JOIN classes c ON s.class_id = c.id;</code></p>
+<p>注意INNER JOIN查询的写法是：</p>
+<ul>
+<li>先确定主表，仍然使用FROM &lt;表1&gt;的语法；</li>
+<li>再确定需要连接的表，使用INNER JOIN &lt;表2&gt;的语法；</li>
+<li>然后确定连接条件，使用ON &lt;条件…&gt;，这里的条件是s.class_id &#x3D; c.id，表示students表的class_id列与classes表的id列相同的行需要连接；</li>
+<li>可选：加上WHERE子句、ORDER BY等子句。</li>
+<li>使用别名不是必须的，但可以更好地简化查询语句。</li>
+</ul>
+<p>有内连接（INNER JOIN）就有外连接（OUTER JOIN）。我们把内连接查询改成外连接查询，看看效果：</p>
+<p><code>SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score FROM students s RIGHT OUTER JOIN classes c ON s.class_id = c.id;</code></p>
+<p>执行上述RIGHT OUTER JOIN可以看到，和INNER JOIN相比，RIGHT OUTER JOIN多了一行，多出来的一行是“四班”，但是，学生相关的列如name、gender、score都为NULL。</p>
+<p>这也容易理解，因为根据ON条件s.class_id &#x3D; c.id，classes表的id&#x3D;4的行正是“四班”，但是，students表中并不存在class_id&#x3D;4的行。</p>
+<p>有RIGHT OUTER JOIN，就有LEFT OUTER JOIN，以及FULL OUTER JOIN。它们的区别是：</p>
+<ul>
+<li>INNER JOIN只返回同时存在于两张表的行数据，由于students表的class_id包含1，2，3，classes表的id包含1，2，3，4，所以，INNER JOIN根据条件s.class_id &#x3D; c.id返回的结果集仅包含1，2，3。</li>
+<li>RIGHT OUTER JOIN返回右表都存在的行。如果某一行仅在右表存在，那么结果集就会以NULL填充剩下的字段。</li>
+<li>LEFT OUTER JOIN则返回左表都存在的行。如果我们给students表增加一行，并添加class_id&#x3D;5，由于classes表并不存在id&#x3D;5的行，所以，LEFT OUTER JOIN的结果会增加一行，对应的class_name是NULL：</li>
+</ul>
+<p>先增加一列class_id&#x3D;5:</p>
+<p><code>INSERT INTO students (class_id, name, gender, score) values (5, &#39;新生&#39;, &#39;M&#39;, 88);</code></p>
+<p>使用LEFT OUTER JOIN：</p>
+<p><code>SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score FROM students s LEFT OUTER JOIN classes c ON s.class_id = c.id;</code></p>
+<p>最后，我们使用FULL OUTER JOIN，它会把两张表的所有记录全部选择出来，并且，自动把对方不存在的列填充为NULL：</p>
+<p><code>SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score FROM students s FULL OUTER JOIN classes c ON s.class_id = c.id;</code></p>
+<p>注意：mysql是不支持full join的，但仍然可以同过左外连接+ union+右外连接实现</p>
+<p><code>SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score FROM students s LEFT OUTER JOIN classes c ON s.class_id = c.id UNION SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score FROM students s RIGHT OUTER JOIN classes c ON s.class_id = c.id;</code></p>
+<p>对于这么多种JOIN查询，到底什么使用应该用哪种呢？其实我们用图来表示结果集就一目了然了。</p>
+<p>假设查询语句是：</p>
+<p><code>SELECT ... FROM tableA ??? JOIN tableB ON tableA.column1 = tableB.column2;</code></p>
+<p><img src="/img/2021-12-11-self-learn-sql/1.png" srcset="/img/loading.gif" lazyload></p>
+<p>小结：</p>
+<ul>
+<li>JOIN查询需要先确定主表，然后把另一个表的数据“附加”到结果集上；</li>
+<li>INNER JOIN是最常用的一种JOIN查询，它的语法是SELECT … FROM &lt;表1&gt; INNER JOIN &lt;表2&gt; ON &lt;条件…&gt;；</li>
+<li>JOIN查询仍然可以使用WHERE条件和ORDER BY排序。</li>
+</ul>
+<h1 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h1><p>关系数据库的基本操作就是增删改查，即CRUD：Create、Retrieve、Update、Delete。其中，对于查询，我们已经详细讲述了SELECT语句的详细用法。</p>
+<p>而对于增、删、改，对应的SQL语句分别是：</p>
+<ul>
+<li>INSERT：插入新记录；</li>
+<li>UPDATE：更新已有记录；</li>
+<li>DELETE：删除已有记录。</li>
+</ul>
+<p>我们将分别讨论这三种修改数据的语句的使用方法。</p>
+<h2 id="INSERT"><a href="#INSERT" class="headerlink" title="INSERT"></a>INSERT</h2><p>当我们需要向数据库表中插入一条新记录时，就必须使用INSERT语句。</p>
+<p>INSERT语句的基本语法是：</p>
+<p><code>INSERT INTO &lt;表名&gt; (字段1, 字段2, ...) VALUES (值1, 值2, ...);</code></p>
+<p>例如，我们向students表插入一条新记录，先列举出需要插入的字段名称，然后在VALUES子句中依次写出对应字段的值：</p>
+<p>添加一条新记录:</p>
+<p><code>INSERT INTO students (class_id, name, gender, score) VALUES (2, &#39;大牛&#39;, &#39;M&#39;, 80);</code></p>
+<p>查询并观察结果:</p>
+<p><code>SELECT * FROM students;</code></p>
+<p>注意到我们并没有列出id字段，也没有列出id字段对应的值，这是因为id字段是一个自增主键，它的值可以由数据库自己推算出来。此外，如果一个字段有默认值，那么在INSERT语句中也可以不出现。</p>
+<p>要注意，字段顺序不必和数据库表的字段顺序一致，但值的顺序必须和字段顺序一致。也就是说，可以写INSERT INTO students (score, gender, name, class_id) …，但是对应的VALUES就得变成(80, ‘M’, ‘大牛’, 2)。</p>
+<p>还可以一次性添加多条记录，只需要在VALUES子句中指定多个记录值，每个记录是由(…)包含的一组值：</p>
+<p>一次性添加多条新记录:</p>
+<p><code>INSERT INTO students (class_id, name, gender, score) VALUES (1, &#39;大宝&#39;, &#39;M&#39;, 87), (2, &#39;二宝&#39;, &#39;M&#39;, 81);</code></p>
+<p><code>SELECT * FROM students;</code></p>
+<p>小结：使用INSERT，我们就可以一次向一个表中插入一条或多条记录。</p>
+<h2 id="UPDATE"><a href="#UPDATE" class="headerlink" title="UPDATE"></a>UPDATE</h2><p>如果要更新数据库表中的记录，我们就必须使用UPDATE语句。</p>
+<p>UPDATE语句的基本语法是：</p>
+<p><code>UPDATE &lt;表名&gt; SET 字段1=值1, 字段2=值2, ... WHERE ...;</code></p>
+<p>例如，我们想更新students表id&#x3D;1的记录的name和score这两个字段，先写出UPDATE students SET name&#x3D;’大牛’, score&#x3D;66，然后在WHERE子句中写出需要更新的行的筛选条件id&#x3D;1：</p>
+<p>更新id&#x3D;1的记录:</p>
+<p><code>UPDATE students SET name=&#39;大牛&#39;, score=66 WHERE id=1;</code></p>
+<p>查询并观察结果:</p>
+<p><code>SELECT * FROM students WHERE id=1;</code></p>
+<p>注意到UPDATE语句的WHERE条件和SELECT语句的WHERE条件其实是一样的，因此完全可以一次更新多条记录：</p>
+<p>更新id&#x3D;5,6,7的记录:</p>
+<p><code>UPDATE students SET name=&#39;小牛&#39;, score=77 WHERE id&gt;=5 AND id&lt;=7;</code></p>
+<p>查询并观察结果:</p>
+<p><code>SELECT * FROM students;</code></p>
+<p>在UPDATE语句中，更新字段时可以使用表达式。例如，把所有80分以下的同学的成绩加10分：</p>
+<p>更新score&lt;80的记录:</p>
+<p><code>UPDATE students SET score=score+10 WHERE score&lt;80;</code></p>
+<p>查询并观察结果:</p>
+<p><code>SELECT * FROM students;</code></p>
+<p>其中，SET score&#x3D;score+10就是给当前行的score字段的值加上了10。</p>
+<p>如果WHERE条件没有匹配到任何记录，UPDATE语句不会报错，也不会有任何记录被更新。例如：</p>
+<p>更新id&#x3D;999的记录:</p>
+<p><code>UPDATE students SET score=100 WHERE id=999;</code></p>
+<p>查询并观察结果:</p>
+<p><code>SELECT * FROM students;</code></p>
+<p>最后，要特别小心的是，UPDATE语句可以没有WHERE条件，例如：</p>
+<p><code>UPDATE students SET score=60;</code></p>
+<p>这时，整个表的所有记录都会被更新。所以，在执行UPDATE语句时要非常小心，最好先用SELECT语句来测试WHERE条件是否筛选出了期望的记录集，然后再用UPDATE更新。</p>
+<p>在使用MySQL这类真正的关系数据库时，UPDATE语句会返回更新的行数以及WHERE条件匹配的行数。</p>
+<p>例如，更新id&#x3D;1的记录时：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">mysql</span>&gt; UPDATE students SET name=&#x27;大宝&#x27; WHERE id=<span class="hljs-number">1</span>;<br><span class="hljs-attribute">Query</span> OK, <span class="hljs-number">1</span> row affected (<span class="hljs-number">0</span>.<span class="hljs-number">00</span> sec)<br><span class="hljs-attribute">Rows</span> matched: <span class="hljs-number">1</span>  Changed: <span class="hljs-number">1</span>  Warnings: <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+<p>MySQL会返回1，可以从打印的结果Rows matched: 1 Changed: 1看到。</p>
+<p>当更新id&#x3D;999的记录时：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">mysql</span>&gt; UPDATE students SET name=&#x27;大宝&#x27; WHERE id=<span class="hljs-number">999</span>;<br><span class="hljs-attribute">Query</span> OK, <span class="hljs-number">0</span> rows affected (<span class="hljs-number">0</span>.<span class="hljs-number">00</span> sec)<br><span class="hljs-attribute">Rows</span> matched: <span class="hljs-number">0</span>  Changed: <span class="hljs-number">0</span>  Warnings: <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+<p>MySQL会返回0，可以从打印的结果Rows matched: 0 Changed: 0看到。</p>
+<p>小结：使用UPDATE，我们就可以一次更新表中的一条或多条记录。</p>
+<h2 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h2><p>如果要删除数据库表中的记录，我们可以使用DELETE语句。</p>
+<p>DELETE语句的基本语法是：</p>
+<p><code>DELETE FROM &lt;表名&gt; WHERE ...;</code></p>
+<p>例如，我们想删除students表中id&#x3D;1的记录，就需要这么写：</p>
+<p>删除id&#x3D;1的记录:</p>
+<p><code>DELETE FROM students WHERE id=1;</code></p>
+<p>查询并观察结果:</p>
+<p><code>SELECT * FROM students;</code></p>
+<p>注意到DELETE语句的WHERE条件也是用来筛选需要删除的行，因此和UPDATE类似，DELETE语句也可以一次删除多条记录：</p>
+<p>删除id&#x3D;5,6,7的记录:</p>
+<p><code>DELETE FROM students WHERE id&gt;=5 AND id&lt;=7;</code></p>
+<p>查询并观察结果:</p>
+<p><code>SELECT * FROM students;</code></p>
+<p>如果WHERE条件没有匹配到任何记录，DELETE语句不会报错，也不会有任何记录被删除。例如：</p>
+<p>删除id&#x3D;999的记录:</p>
+<p><code>DELETE FROM students WHERE id=999;</code></p>
+<p>查询并观察结果:</p>
+<p><code>SELECT * FROM students;</code></p>
+<p>最后，要特别小心的是，和UPDATE类似，不带WHERE条件的DELETE语句会删除整个表的数据：</p>
+<p><code>DELETE FROM students;</code></p>
+<p>这时，整个表的所有记录都会被删除。所以，在执行DELETE语句时也要非常小心，最好先用SELECT语句来测试WHERE条件是否筛选出了期望的记录集，然后再用DELETE删除。</p>
+<p>在使用MySQL这类真正的关系数据库时，DELETE语句也会返回删除的行数以及WHERE条件匹配的行数。</p>
+<p>例如，分别执行删除id&#x3D;1和id&#x3D;999的记录：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">mysql</span>&gt; DELETE FROM students WHERE id=<span class="hljs-number">1</span>;<br><span class="hljs-attribute">Query</span> OK, <span class="hljs-number">1</span> row affected (<span class="hljs-number">0</span>.<span class="hljs-number">01</span> sec)<br><br><span class="hljs-attribute">mysql</span>&gt; DELETE FROM students WHERE id=<span class="hljs-number">999</span>;<br><span class="hljs-attribute">Query</span> OK, <span class="hljs-number">0</span> rows affected (<span class="hljs-number">0</span>.<span class="hljs-number">01</span> sec)<br></code></pre></td></tr></table></figure>
+
+<p>小结：使用DELETE，我们就可以一次删除表中的一条或多条记录。</p>
+<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p>安装完MySQL后，除了MySQL Server，即真正的MySQL服务器外，还附赠一个MySQL Client程序。MySQL Client是一个命令行客户端，可以通过MySQL Client登录MySQL，然后，输入SQL语句并执行。</p>
+<p>打开命令提示符，输入命令mysql -u root -p，提示输入口令。填入MySQL的root口令，如果正确，就连上了MySQL Server，同时提示符变为mysql&gt;。</p>
+<p>输入exit断开与MySQL Server的连接并返回到命令提示符。</p>
+<p>MySQL Client的可执行程序是mysql，MySQL Server的可执行程序是mysqld。</p>
+<p>MySQL Client和MySQL Server的关系如下：</p>
+<pre><code class="language-ascii">┌──────────────┐  SQL   ┌──────────────┐
+│ MySQL Client │───────&gt;│ MySQL Server │
+└──────────────┘  TCP   └──────────────┘
+</code></pre>
+
+<p>在MySQL Client中输入的SQL语句通过TCP连接发送到MySQL Server。默认端口号是3306，即如果发送到本机MySQL Server，地址就是127.0.0.1:3306。</p>
+<p>也可以只安装MySQL Client，然后连接到远程MySQL Server。假设远程MySQL Server的IP地址是10.0.1.99，那么就使用-h指定IP或域名：</p>
+<p><code>mysql -h 10.0.1.99 -u root -p</code></p>
+<p>小结：命令行程序mysql实际上是MySQL客户端，真正的MySQL服务器程序是mysqld，在后台运行。</p>
+<h2 id="管理MySQL"><a href="#管理MySQL" class="headerlink" title="管理MySQL"></a>管理MySQL</h2><p>要管理MySQL，可以使用可视化图形界面MySQL Workbench。</p>
+<p>MySQL Workbench可以用可视化的方式查询、创建和修改数据库表，但是，归根到底，MySQL Workbench是一个图形客户端，它对MySQL的操作仍然是发送SQL语句并执行。因此，本质上，MySQL Workbench和MySQL Client命令行都是客户端，和MySQL交互，唯一的接口就是SQL。</p>
+<p>因此，MySQL提供了大量的SQL语句用于管理。虽然可以使用MySQL Workbench图形界面来直接管理MySQL，但是，很多时候，通过SSH远程连接时，只能使用SQL命令，所以，了解并掌握常用的SQL管理操作是必须的。</p>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><p>在一个运行MySQL的服务器上，实际上可以创建多个数据库（Database）。要列出所有数据库，使用命令：<code>SHOW DATABASES;</code></p>
+<p>其中，information_schema、mysql、performance_schema和sys是系统库，不要去改动它们。其他的是用户创建的数据库。</p>
+<p>要创建一个新数据库，使用命令：<code>CREATE DATABASE test1;</code></p>
+<p>要删除一个数据库，使用命令：<code>DROP DATABASE test1;</code></p>
+<p>注意：删除一个数据库将导致该数据库的所有表全部被删除。</p>
+<p>对一个数据库进行操作时，要首先将其切换为当前数据库：<code>USE test;</code></p>
+<h3 id="表"><a href="#表" class="headerlink" title="表"></a>表</h3><p>列出当前数据库的所有表，使用命令：<code>SHOW TABLES;</code></p>
+<p>要查看一个表的结构，使用命令：<code>DESC students;</code></p>
+<p>还可以使用以下命令查看创建表的SQL语句：<code>SHOW CREATE TABLE students;</code></p>
+<p>创建表使用CREATE TABLE语句，而删除表使用DROP TABLE语句：<code>DROP TABLE classes;</code></p>
+<p>修改表就比较复杂。如果要给students表新增一列birth，使用：<code>ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL;</code></p>
+<p>要修改birth列，例如把列名改为birthday，类型改为VARCHAR(20)：<code>ALTER TABLE students CHANGE COLUMN birth birthday VARCHAR(20) NOT NULL;</code></p>
+<p>要删除列，使用：<code>ALTER TABLE students DROP COLUMN birthday;</code></p>
+<h3 id="退出MySQL"><a href="#退出MySQL" class="headerlink" title="退出MySQL"></a>退出MySQL</h3><p>使用EXIT命令退出MySQL：<code>EXIT</code></p>
+<p>注意EXIT仅仅断开了客户端和服务器的连接，MySQL服务器仍然继续运行。</p>
+<h2 id="实用SQL语句"><a href="#实用SQL语句" class="headerlink" title="实用SQL语句"></a>实用SQL语句</h2><p>在编写SQL时，灵活运用一些技巧，可以大大简化程序逻辑。</p>
+<h3 id="插入或替换"><a href="#插入或替换" class="headerlink" title="插入或替换"></a>插入或替换</h3><p>如果我们希望插入一条新记录（INSERT），但如果记录已经存在，就先删除原记录，再插入新记录。此时，可以使用REPLACE语句，这样就不必先查询，再决定是否先删除再插入：</p>
+<p><code>REPLACE INTO students (id, class_id, name, gender, score) VALUES (1, 1, &#39;小明&#39;, &#39;F&#39;, 99);</code></p>
+<p>若id&#x3D;1的记录不存在，REPLACE语句将插入新记录，否则，当前id&#x3D;1的记录将被删除，然后再插入新记录。</p>
+<h3 id="插入或更新"><a href="#插入或更新" class="headerlink" title="插入或更新"></a>插入或更新</h3><p>如果我们希望插入一条新记录（INSERT），但如果记录已经存在，就更新该记录，此时，可以使用INSERT INTO … ON DUPLICATE KEY UPDATE …语句：</p>
+<p><code>INSERT INTO students (id, class_id, name, gender, score) VALUES (1, 1, &#39;小明&#39;, &#39;F&#39;, 99) ON DUPLICATE KEY UPDATE name=&#39;小明&#39;, gender=&#39;F&#39;, score=99;</code></p>
+<p>若id&#x3D;1的记录不存在，INSERT语句将插入新记录，否则，当前id&#x3D;1的记录将被更新，更新的字段由UPDATE指定。</p>
+<h3 id="插入或忽略"><a href="#插入或忽略" class="headerlink" title="插入或忽略"></a>插入或忽略</h3><p>如果我们希望插入一条新记录（INSERT），但如果记录已经存在，就啥事也不干直接忽略，此时，可以使用INSERT IGNORE INTO …语句：</p>
+<p><code>INSERT IGNORE INTO students (id, class_id, name, gender, score) VALUES (1, 1, &#39;小明&#39;, &#39;F&#39;, 99);</code></p>
+<p>若id&#x3D;1的记录不存在，INSERT语句将插入新记录，否则，不执行任何操作。</p>
+<h3 id="快照"><a href="#快照" class="headerlink" title="快照"></a>快照</h3><p>如果想要对一个表进行快照，即复制一份当前表的数据到一个新表，可以结合CREATE TABLE和SELECT：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 对class_id=1的记录进行快照，并存储为新表students_of_class1:</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> students_of_class1 <span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> students <span class="hljs-keyword">WHERE</span> class_id<span class="hljs-operator">=</span><span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+
+<p>新创建的表结构和SELECT使用的表结构完全一致。</p>
+<h3 id="写入查询结果集"><a href="#写入查询结果集" class="headerlink" title="写入查询结果集"></a>写入查询结果集</h3><p>如果查询结果集需要写入到表中，可以结合INSERT和SELECT，将SELECT语句的结果集直接插入到指定表中。</p>
+<p>例如，创建一个统计成绩的表statistics，记录各班的平均成绩：</p>
+<p><code>CREATE TABLE statistics (id BIGINT NOT NULL AUTO_INCREMENT, class_id BIGINT NOT NULL, average DOUBLE NOT NULL, PRIMARY KEY (id));</code></p>
+<p>然后，我们就可以用一条语句写入各班的平均成绩：</p>
+<p><code>INSERT INTO statistics (class_id, average) SELECT class_id, AVG(score) FROM students GROUP BY class_id;</code></p>
+<p>确保INSERT语句的列和SELECT语句的列能一一对应，就可以在statistics表中直接保存查询的结果：</p>
+<p><code>SELECT * FROM statistics;</code></p>
+<h3 id="强制使用指定索引"><a href="#强制使用指定索引" class="headerlink" title="强制使用指定索引"></a>强制使用指定索引</h3><p>在查询的时候，数据库系统会自动分析查询语句，并选择一个最合适的索引。但是很多时候，数据库系统的查询优化器并不一定总是能使用最优索引。如果我们知道如何选择索引，可以使用FORCE INDEX强制查询使用指定的索引。例如：</p>
+<p><code>SELECT * FROM students FORCE INDEX (idx_class_id) WHERE class_id = 1 ORDER BY id DESC;</code></p>
+<p>指定索引的前提是索引idx_class_id必须存在。</p>
+<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>在执行SQL语句的时候，某些业务要求，一系列操作必须全部执行，而不能仅执行一部分。例如，一个转账操作：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs routeros">-- 从<span class="hljs-attribute">id</span>=1的账户给id=2的账户转账100元<br>-- 第一步：将<span class="hljs-attribute">id</span>=1的A账户余额减去100<br>UPDATE accounts <span class="hljs-built_in">SET</span> balance = balance - 100 WHERE id = 1;<br>-- 第二步：将<span class="hljs-attribute">id</span>=2的B账户余额加上100<br>UPDATE accounts <span class="hljs-built_in">SET</span> balance = balance + 100 WHERE id = 2;<br></code></pre></td></tr></table></figure>
+
+<p>这两条SQL语句必须全部执行，或者，由于某些原因，如果第一条语句成功，第二条语句失败，就必须全部撤销。</p>
+<p>这种把多条语句作为一个整体进行操作的功能，被称为数据库事务。数据库事务可以确保该事务范围内的所有操作都可以全部成功或者全部失败。如果事务失败，那么效果就和没有执行这些SQL一样，不会对数据库数据有任何改动。</p>
+<p>可见，数据库事务具有ACID这4个特性：</p>
+<ul>
+<li>A：Atomic，原子性，将所有SQL作为原子工作单元执行，要么全部执行，要么全部不执行；</li>
+<li>C：Consistent，一致性，事务完成后，所有数据的状态都是一致的，即A账户只要减去了100，B账户则必定加上了100；</li>
+<li>I：Isolation，隔离性，如果有多个事务并发执行，每个事务作出的修改必须与其他事务隔离；</li>
+<li>D：Duration，持久性，即事务完成后，对数据库数据的修改被持久化存储。</li>
+</ul>
+<p>对于单条SQL语句，数据库系统自动将其作为一个事务执行，这种事务被称为隐式事务。</p>
+<p>要手动把多条SQL语句作为一个事务执行，使用BEGIN开启一个事务，使用COMMIT提交一个事务，这种事务被称为显式事务，例如，把上述的转账操作作为一个显式事务：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">BEGIN</span>;<br><span class="hljs-keyword">UPDATE</span> accounts <span class="hljs-keyword">SET</span> balance <span class="hljs-operator">=</span> balance <span class="hljs-operator">-</span> <span class="hljs-number">100</span> <span class="hljs-keyword">WHERE</span> id <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br><span class="hljs-keyword">UPDATE</span> accounts <span class="hljs-keyword">SET</span> balance <span class="hljs-operator">=</span> balance <span class="hljs-operator">+</span> <span class="hljs-number">100</span> <span class="hljs-keyword">WHERE</span> id <span class="hljs-operator">=</span> <span class="hljs-number">2</span>;<br><span class="hljs-keyword">COMMIT</span>;<br></code></pre></td></tr></table></figure>
+
+<p>很显然多条SQL语句要想作为一个事务执行，就必须使用显式事务。</p>
+<p>COMMIT是指提交事务，即试图把事务内的所有SQL所做的修改永久保存。如果COMMIT语句执行失败了，整个事务也会失败。</p>
+<p>有些时候，我们希望主动让事务失败，这时，可以用ROLLBACK回滚事务，整个事务会失败：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">BEGIN</span>;<br><span class="hljs-keyword">UPDATE</span> accounts <span class="hljs-keyword">SET</span> balance <span class="hljs-operator">=</span> balance <span class="hljs-operator">-</span> <span class="hljs-number">100</span> <span class="hljs-keyword">WHERE</span> id <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br><span class="hljs-keyword">UPDATE</span> accounts <span class="hljs-keyword">SET</span> balance <span class="hljs-operator">=</span> balance <span class="hljs-operator">+</span> <span class="hljs-number">100</span> <span class="hljs-keyword">WHERE</span> id <span class="hljs-operator">=</span> <span class="hljs-number">2</span>;<br><span class="hljs-keyword">ROLLBACK</span>;<br></code></pre></td></tr></table></figure>
+
+<p>数据库事务是由数据库系统保证的，我们只需要根据业务逻辑使用它就可以。</p>
+<h2 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h2><p>对于两个并发执行的事务，如果涉及到操作同一条记录的时候，可能会发生问题。因为并发操作会带来数据的不一致性，包括脏读、不可重复读、幻读等。数据库系统提供了隔离级别来让我们有针对性地选择事务的隔离级别，避免数据不一致的问题。</p>
+<p>SQL标准定义了4种隔离级别，分别对应可能出现的数据不一致的情况：</p>
+<table>
+<thead>
+<tr><th>Isolation Level</th><th>脏读（Dirty Read）</th><th>不可重复读（Non Repeatable Read）</th><th>幻读（Phantom Read）</th></tr>
+</thead>
+<tbody>
+<tr><td>Read Uncommitted</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Read Committed</td><td>-</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Repeatable Read</td><td>-</td><td>-</td><td>Yes</td></tr>
+<tr><td>Serializable</td><td>-</td><td>-</td><td>-</td></tr>
+</tbody>
+</table>
+
+<p>我们会依次介绍4种隔离级别的数据一致性问题。</p>
+<p>小结：数据库事务具有ACID特性，用来保证多条SQL的全部执行。</p>
+<h3 id="Read-Uncommitted"><a href="#Read-Uncommitted" class="headerlink" title="Read Uncommitted"></a>Read Uncommitted</h3><p>Read Uncommitted是隔离级别最低的一种事务级别。在这种隔离级别下，一个事务会读到另一个事务更新后但未提交的数据，如果另一个事务回滚，那么当前事务读到的数据就是脏数据，这就是脏读（Dirty Read）。</p>
+<h3 id="Read-Committed"><a href="#Read-Committed" class="headerlink" title="Read Committed"></a>Read Committed</h3><p>在Read Committed隔离级别下，一个事务可能会遇到不可重复读（Non Repeatable Read）的问题。</p>
+<p>不可重复读是指，在一个事务内，多次读同一数据，在这个事务还没有结束时，如果另一个事务恰好修改了这个数据，那么，在第一个事务中，两次读取的数据就可能不一致。</p>
+<h3 id="Repeatable-Read"><a href="#Repeatable-Read" class="headerlink" title="Repeatable Read"></a>Repeatable Read</h3><p>在Repeatable Read隔离级别下，一个事务可能会遇到幻读（Phantom Read）的问题。</p>
+<p>幻读是指，在一个事务中，第一次查询某条记录，发现没有，但是，当试图更新这条不存在的记录时，竟然能成功，并且，再次读取同一条记录，它就神奇地出现了。</p>
+<h3 id="Serializable"><a href="#Serializable" class="headerlink" title="Serializable"></a>Serializable</h3><p>Serializable是最严格的隔离级别。在Serializable隔离级别下，所有事务按照次序依次执行，因此，脏读、不可重复读、幻读都不会出现。</p>
+<p>虽然Serializable隔离级别下的事务具有最高的安全性，但是，由于事务是串行执行，所以效率会大大下降，应用程序的性能会急剧降低。如果没有特别重要的情景，一般都不会使用Serializable隔离级别。</p>
+<h3 id="默认隔离级别"><a href="#默认隔离级别" class="headerlink" title="默认隔离级别"></a>默认隔离级别</h3><p>如果没有指定隔离级别，数据库就会使用默认的隔离级别。在MySQL中，如果使用InnoDB，默认的隔离级别是Repeatable Read。</p>
+<h1 id="开发集成"><a href="#开发集成" class="headerlink" title="开发集成"></a>开发集成</h1><h1 id="期末总结"><a href="#期末总结" class="headerlink" title="期末总结"></a>期末总结</h1>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="category-chain-item">编程语言</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/SQL/">#SQL</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>SQL 自学笔记</div>
+      <div>https://roachlin.github.io/2021-12-11-self-learn-sql/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>RoachLin</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年12月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021-12-21-skyeysnow-auto-reply/" title="天雪论坛自动回复水楼赚金币油猴脚本（会被封号，仅研究用）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">天雪论坛自动回复水楼赚金币油猴脚本（会被封号，仅研究用）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021-12-10-self-learn-python/" title="Python 自学笔记">
+                        <span class="hidden-mobile">Python 自学笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love" style="color:red"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

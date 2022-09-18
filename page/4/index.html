@@ -1,31 +1,24 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
+<html lang="zh-CN" data-default-color-scheme=dark>
 
 
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.png">
+  <link rel="icon" href="/img/icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="RoachLin">
   <meta name="keywords" content="blog">
   
     <meta name="description" content="RoachLin&#39;s blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="RoachLin&#39;s blog">
-<meta property="og:url" content="https://roachlin.github.io/page/4/index.html">
-<meta property="og:site_name" content="RoachLin&#39;s blog">
-<meta property="og:description" content="RoachLin&#39;s blog">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="RoachLin">
-<meta property="article:tag" content="blog">
-<meta name="twitter:card" content="summary_large_image">
   
   
   
@@ -61,7 +54,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"roachlin.github.io","root":"/","version":"1.9.3","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"roachlin.github.io","root":"/","version":"1.9.3","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":9},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -160,6 +153,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -182,7 +187,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -226,15 +231,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/06/2021-01-06-python-time/" target="_self">
+        <a href="/2021-01-06-python-time/" target="_self">
           Python 显示程序运行时间
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/06/2021-01-06-python-time/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-01-06-python-time/" target="_self">
         <div>
-          12345import timestart = time.perf_counter()# 放入程序运行代码end = time.perf_counter()print((end - start), &quot;s&quot;)
+          
         </div>
       </a>
 
@@ -259,15 +264,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/05/2021-01-05-conda-source/" target="_self">
+        <a href="/2021-01-05-conda-source/" target="_self">
           conda 换为清华源
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/05/2021-01-05-conda-source/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-01-05-conda-source/" target="_self">
         <div>
-          各类系统都可以通过修改用户目录下的 .condarc 文件实现换源。Windows 无法直接创建名为 .condarc 的文件，可先在命令行执行 conda config --set show_channel_urls yes，生成该文件后再进行修改。 .condarc 文件修改内容如下： 1234567891011121314151617channels:  - defaultsshow_cha
+          
         </div>
       </a>
 
@@ -292,15 +297,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/04/2021-01-04-pip-source/" target="_self">
+        <a href="/2021-01-04-pip-source/" target="_self">
           pip 换为清华源
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/04/2021-01-04-pip-source/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-01-04-pip-source/" target="_self">
         <div>
-          在文件夹 C:\Users\你的用户名\pip\ 下创建 pip.ini，若没有 pip 文件夹则要自行创建。 编辑 pip.ini 内容如下： 123456[global]index-url=https://pypi.tuna.tsinghua.edu.cn/simple/ [install]trusted-host=pypi.tuna.tsinghua.edu.cndisable-pip-ve
+          
         </div>
       </a>
 
@@ -325,15 +330,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/03/2021-01-03-delete-network/" target="_self">
+        <a href="/2021-01-03-delete-network/" target="_self">
           删除网络连接中多余的连接
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/03/2021-01-03-delete-network/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-01-03-delete-network/" target="_self">
         <div>
-          右键电脑右下角网络图标，打开“网络和 Internet”设置，更改适配器选项，复制多余的连接的名字。 Win+R 输入 regedit，进入注册表。Ctrl+F 搜索刚才复制的名字，把搜索到的项删掉。不断重复搜索和删除的过程，直到搜不到为止。 回到 网络连接 页面，刷新一下即可发现多余的连接已被删除。
+          
         </div>
       </a>
 
@@ -358,15 +363,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/02/2021-01-02-windows-server/" target="_self">
+        <a href="/2021-01-02-windows-server/" target="_self">
           Windows Server 开启任务管理器中的磁盘监控和网络监控
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/02/2021-01-02-windows-server/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-01-02-windows-server/" target="_self">
         <div>
-          在命令行输入 diskperf -y 即可开启，输入 diskperf -n 即可关闭。
+          
         </div>
       </a>
 
@@ -391,15 +396,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/01/2021-01-01-apk-obb/" target="_self">
+        <a href="/2021-01-01-apk-obb/" target="_self">
           安装 apk 和 obb 文件
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/01/2021-01-01-apk-obb/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2021-01-01-apk-obb/" target="_self">
         <div>
-          以下面两个文件为例： CrossChannel-1.12-release.apk main.112.com.qqh.crosschannel.obb 先安装 apk，再把 obb 放到 /Android/obb/com.qqh.crosschannel/ 文件夹下即可。 其中，/Android/obb/ 文件夹位于手机根目录下，后面的 com.qqh.crosschannel 文件夹需要自行创建，
+          
         </div>
       </a>
 
@@ -472,7 +477,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love" style="color:red"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
     </div>
   
   
